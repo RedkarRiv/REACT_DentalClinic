@@ -1,7 +1,7 @@
 .headerDesign {
     height: 10vh;
     width: 100vw;
-    background-color: rgb(48, 130, 253);
+    background-color: #3082fd;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

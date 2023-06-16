@@ -1,0 +1,8 @@
+.InputText {
+    width: 80%;
+    height: 2em;
+    margin: 1em;
+    background-color: white;
+    text-align: center;
+    border-radius: 0.5em;
+}

@@ -1,0 +1,19 @@
+.changeViewDesign {
+    height: 2em;
+    width: 6em;
+    border-radius: 1em;
+    background-color: rgb(17, 115, 99);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 1em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.changeViewDesign:hover {
+    border-radius: 1em;
+    background-color: rgb(9, 101, 9);
+    color: white;
+    transition: 0.3s
+}

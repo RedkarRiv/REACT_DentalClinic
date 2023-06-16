@@ -1,44 +1,148 @@
 .homeDesign {
-height: 85vh;
-width: 100vw;
-background-color:rgb(230, 230, 230);
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: flex-start;
-text-align: center;
+  height: 85vh;
+  width: 100vw;
+  background-color: rgb(230, 230, 230);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: center;
+}
+.slideHomeContainer {
+  height: 100%;
+  width: 60%;
+  background-color: rgb(53, 51, 51);
+  background-image: url(/src/assets/img/backgroundSlideHome.jpg); /* <a href="https://www.freepik.es/foto-gratis/dentista-profesional-masculino-guantes-mascara-discutir-como-vera-tratamiento-dientes-paciente_17751921.htm#query=dentist%20smile&position=0&from_view=search&track=ais">Imagen de ArthurHidden</a> en Freepik */
+  display: flex;
+  align-items: flex-end;
+  position: relative;
 }
 
-.slideHomeContainer {
-    height: 100%;
-    width: 60%;
-    background-color: rgb(53, 51, 51);
+.overlaySlideHome {
+  background-color: #3082fd;
+  height: 60%;
+  width: 30%;
+  border-top-right-radius: 40em;
+  position: absolute;
+}
+
+.overlaySlideHome2 {
+  background-color: #3082fd;
+  height: 30%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.372)
+  );
+  display:flex;
+  align-items: center;
+}
+
+.addresContainer {
+height: 80%;
+width: 25%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: column;
+}
+.mapContainer {
+  height: 70%;
+  width: 80%;
+  background-image: url(./mapsDefaultImg.png);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5em;
+}
+
+.mapTitleContainer{
+    color: white;
+}
+
+.logoOverlaySlideHome {
+  padding-right: 35%;
+  padding-top: 18%;
+}
+
+.overlaySlideHome {
+  background-color: #3082fd;
+  height: 60%;
+  width: 30%;
+  border-top-right-radius: 40em;
+  position: absolute;
+}
+
+.logoOverlaySlideHome:hover {
+  /* Activar la animación en el hover */
+  animation: shake 1s;
+}
+
+@keyframes shake {
+  /* Definir la animación de sacudida */
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  20% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  30% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  40% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  50% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  60% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  70% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  80% {
+    transform: translateX(10px) rotate(5deg);
+  }
+  90% {
+    transform: translateX(-10px) rotate(-5deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .appointmentHomeContainer {
-    height:100%;
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .appointmentCardContainer {
-    height: 80%;
-    width: 70%;
-    background-color: white;
-    border-radius: 1em;
-    box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+  height: 80%;
+  width: 70%;
+  background-color: white;
+  border-radius: 1em;
+  box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
 }
 
 .appointmentHomeTitle {
-    text-align: center;
-    font-size: 200%;
-    color: black;
-    font-weight: bold;
-    margin: 1em;
-    text-shadow: 0.04em 0.02em 0.01em rgba(255, 255, 255, 0.842);
-
+  text-align: center;
+  font-size: 200%;
+  color: black;
+  font-weight: bold;
+  margin: 1em;
+  text-shadow: 0.04em 0.02em 0.01em rgba(255, 255, 255, 0.842);
 }
 
