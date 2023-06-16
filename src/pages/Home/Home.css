@@ -126,8 +126,8 @@ flex-direction: column;
 }
 
 .appointmentCardContainer {
-  height: 80%;
-  width: 70%;
+  height: 70%;
+  width: 60%;
   background-color: white;
   border-radius: 1em;
   box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
