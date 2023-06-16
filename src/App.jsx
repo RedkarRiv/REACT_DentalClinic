@@ -1,6 +1,7 @@
 import React from "react";
 import { Header } from "./common/Header/Header";
 import { Body } from "./pages/Body/Body";
+import { Footer } from "./common/Footer/Footer";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <Header/>
       <Body/>
+      <Footer/>
     </>
   )
 }

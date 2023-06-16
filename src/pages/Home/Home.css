@@ -1,17 +1,44 @@
 .homeDesign {
-
-height: 90vh;
+height: 85vh;
 width: 100vw;
-background-color:rgb(166, 215, 255);
+background-color:rgb(230, 230, 230);
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: flex-start;
 align-items: flex-start;
 text-align: center;
 }
 
-.cardStructure {
-    margin-top: 10vh;
-    display: flex;
-    flex-wrap: wrap;
+.slideHomeContainer {
+    height: 100%;
+    width: 60%;
+    background-color: rgb(53, 51, 51);
 }
+
+.appointmentHomeContainer {
+    height:100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.appointmentCardContainer {
+    height: 80%;
+    width: 70%;
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+}
+
+.appointmentHomeTitle {
+    text-align: center;
+    font-size: 200%;
+    color: black;
+    font-weight: bold;
+    margin: 1em;
+    text-shadow: 0.04em 0.02em 0.01em rgba(255, 255, 255, 0.842);
+
+}
+
