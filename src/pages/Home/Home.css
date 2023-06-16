@@ -1,0 +1,17 @@
+.homeDesign {
+
+height: 90vh;
+width: 100vw;
+background-color:rgb(166, 215, 255);
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-start;
+text-align: center;
+}
+
+.cardStructure {
+    margin-top: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+}

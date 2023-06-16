@@ -1,0 +1,35 @@
+.ProductCardDesign {
+height: 10em;
+width: 7em;
+background-color: red;
+border-radius: 1em;
+cursor: pointer;
+color: white;
+transition: 0.3s;
+margin: 0.5em;
+flex-wrap: row;
+}
+
+.ProductCardDesign:hover {
+background-color: blue;
+transition: 0.3s;
+}
+
+.cardImage{
+    height: 60%;
+    width: 100%;
+}
+
+.pictureDesign {
+    height: 100%;
+    width: 100%;
+    border-radius: 1em;
+    border: green;
+}
+
+.cardText {
+    margin: 0.2em;
+    font-size: 70%;
+    width: 100%;
+    text-align: center;
+}
