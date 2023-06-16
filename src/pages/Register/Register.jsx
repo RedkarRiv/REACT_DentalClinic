@@ -4,7 +4,7 @@ import "./Register.css";
 export const Register = () => {
 
 return (
-    <div className=""></div>
+    <div className="registerDesign"></div>
 )
 
 }

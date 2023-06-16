@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-import logo from "./logoTry.svg";
+import logo from "./logoTry-svg.png";
 
 export const Header = () => {
   const [token, setToken] = useState("");
@@ -13,18 +13,19 @@ export const Header = () => {
         <img className="logoHeader" src={logo} alt="Logo" onClick={() => navigate("/")} />
       </div>
 
+
       <div className="menuDesign">
         <div className="linksDesign">
           <div className="menuLink" onClick={() => navigate("/")}>
             Home
           </div>
-          <div className="menuLink" onClick={() => navigate("/")}>
+          <div className="menuLink" onClick={() => navigate("/AboutUs")}>
             Preguntas frecuentes
           </div>
-          <div className="menuLink" onClick={() => navigate("/")}>
+          <div className="menuLink" onClick={() => navigate("/OurTeam")}>
             Nuestro Equipo
           </div>
-          <div className="menuLink" onClick={() => navigate("/")}>
+          <div className="menuLink" onClick={() => navigate("/Contact")}>
             Contacto
           </div>
         </div>

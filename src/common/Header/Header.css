@@ -1,7 +1,7 @@
 .headerDesign {
     height: 10vh;
     width: 100vw;
-    background-color: black;
+    background-color: rgb(48, 130, 253);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -15,19 +15,19 @@
     }
 
 .menuDesign {
-height: 5em;
+height: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-padding: 0.5em;
 padding-left: 3em;
 padding-right: 3em;
 }
 
 .logoHeader {
-    height: 100%;
+    height: 85%;
     width: auto;
-    cursor:pointer
+    cursor:pointer; 
+    filter: drop-shadow(0.1em 0.2em 0.1em black);
 }
 
 .menuLink {
@@ -36,13 +36,14 @@ cursor: pointer;
 text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
 font-weight: bold;
 font-size: 110%;
-transition: 0.2s;
+
 }
 
 .menuLink:hover {
 transform: scale(1.2);
 border-bottom: 0.2em white solid;
-transition: 0.2s;
+transition: 0.1s;
+
 }
 
 .authLink:hover {
