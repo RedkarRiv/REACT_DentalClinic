@@ -1,0 +1,33 @@
+.StatCardDesign {
+height: 100%;
+width: 70%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin: 1em;
+}
+
+.cardElement {
+    height: 100%;
+    width: auto;
+    margin: 0.1em;
+    font-weight: bold;
+    color: #ffffff;
+    display: flex; 
+    font-size: 100%;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0.05em 0.05em 0.2em rgba(0, 0, 0, 0.977);
+}
+
+.cardDataElement {
+    font-size: 150%;
+    margin:0;
+}
+
+
+.pictureDesign {
+    width: 50%;
+    margin: 0.5em;
+}
