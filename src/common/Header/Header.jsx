@@ -35,7 +35,7 @@ export const Header = () => {
         {token !== "" ? (
           <div>aqui si mostraríamos opciones de logeado....</div>
         ) : (
-          <div className="linksDesign">
+          <div className="authLinksDesign">
             <div className="authLink" onClick={() => navigate("/login")}>
               Login
             </div>

@@ -15,7 +15,13 @@
   background-image: url(/src/assets/img/backgroundSlideHome.jpg); /* <a href="https://www.freepik.es/foto-gratis/dentista-profesional-masculino-guantes-mascara-discutir-como-vera-tratamiento-dientes-paciente_17751921.htm#query=dentist%20smile&position=0&from_view=search&track=ais">Imagen de ArthurHidden</a> en Freepik */
   display: flex;
   align-items: flex-end;
+  background-size: cover;
   position: relative;
+}
+
+p {
+  margin-block-start: 0.1em;
+  margin-block-end: 0.1em;
 }
 
 .overlaySlideHome {
@@ -27,26 +33,27 @@
 }
 
 .overlaySlideHome2 {
-  background-color: #3082fd;
   height: 30%;
   width: 100%;
   position: absolute;
+  background-color: #3082fd;
   background-image: linear-gradient(
     to bottom,
     transparent,
     rgba(0, 0, 0, 0.372)
   );
-  display:flex;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .addresContainer {
-height: 80%;
-width: 25%;
-display: flex;
-justify-content: space-around;
-align-items: center;
-flex-direction: column;
+  height: 80%;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 }
 .mapContainer {
   height: 70%;
@@ -55,10 +62,11 @@ flex-direction: column;
   background-size: cover;
   background-position: center;
   border-radius: 0.5em;
+  margin-bottom: 0.5em;
 }
 
-.mapTitleContainer{
-    color: white;
+.mapTitleContainer {
+  color: white;
 }
 
 .logoOverlaySlideHome {
@@ -121,28 +129,66 @@ flex-direction: column;
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: flex-start ;
   align-items: center;
+  background-color: #3082fd;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 70%,
+    rgba(0, 0, 0, 0.372)
+  );
+  /* background-image: url(../../assets/img/cardBackgroundTexture.svg);
+    background-repeat: repeat;
+    background-size: auto; */
 }
 
 .appointmentCardContainer {
-  height: 70%;
-  width: 60%;
+  height: 60%;
+  width: 90%;
   background-color: white;
   border-radius: 1em;
   box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  margin-top:2em;
 }
 
 .appointmentHomeTitle {
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
   text-align: center;
-  font-size: 200%;
-  color: black;
+  width: 100%;
+  height: 20%;
+  font-size: 250%;
+  background-color:#cb1111;
+  /* ff6c03 */
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.174)
+  );
+  color: white;
+  font-family: emoji;
   font-weight: bold;
-  margin: 1em;
-  text-shadow: 0.04em 0.02em 0.01em rgba(255, 255, 255, 0.842);
+  text-shadow: 0.04em 0.02em 0.01em rgba(0, 0, 0, 0.842);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.specialitiesHomeContainer {
+  width: 70%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.specialityHomeContainer {
+  width: auto;
+  height: auto;
+  margin: 0.5em;
+}

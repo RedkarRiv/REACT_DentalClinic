@@ -1,19 +1,45 @@
-.changeViewDesign {
-    height: 2em;
-    width: 6em;
-    border-radius: 1em;
-    background-color: rgb(17, 115, 99);
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 1em;
-    margin-bottom: 2em;
-    text-align: center;
+.sendButtonDesign {
+  height: 2em;
+  width: 6em;
+  border-radius: 0.9em;
+  background-color: #0d479f;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.362)
+  );
+  color: white;
+  cursor: pointer;
+  transition: 0.1s;
+  margin: 1em;
+  margin-bottom: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: solid 0.1em white;
+  user-select: none;
 }
 
-.changeViewDesign:hover {
-    border-radius: 1em;
-    background-color: rgb(9, 101, 9);
+.sendButtonDesign:hover {
+    border-radius: 0.9em;
+    background-color: rgb(13, 164, 13);
+  color: white;
+  transition: 0.1s;
+  transform: scale(1.05);
+  border: solid 0.1em white;
+
+}
+
+.sendButtonDesign:active {
+    background-color: rgb(12, 89, 12);
+    border-radius: 0.9em;
     color: white;
-    transition: 0.3s
+    transform: scale(0.9);
+    background-image: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 0, 0, 0)
+      );
+      border: 0.1em inset rgb(12, 89, 12);
 }

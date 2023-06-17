@@ -1,13 +1,13 @@
 import React from "react";
-import "./SendButton.css";
+import "./OptionButton.css";
 import { useNavigate } from "react-router-dom";
 
-export const SendButton = ({path, name}) => {
+export const OptionButton = ({path, name}) => {
 // INSTANCIO useNavigate
 const navigate = useNavigate()
 
 return (
-    <div className="sendButtonDesign" onClick={()=>navigate(path)}
+    <div className="optionButtonDesign" onClick={()=>navigate(path)}
     >{name}</div>
 )
 }

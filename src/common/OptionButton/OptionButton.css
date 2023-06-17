@@ -1,0 +1,33 @@
+.optionButtonDesign {
+    color: #023088;
+    background-color: #fff;
+    padding: 0.4375rem 1rem;
+    font-size: 1rem;
+    border-radius: 1.5625rem;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    border: 0;
+    user-select: none;
+    text-decoration: none!important;
+    box-sizing: border-box;
+    font-family: Futura,Open Sans,sans-serif;
+    transition: 0.1s;
+    cursor: pointer;
+
+}
+
+.optionButtonDesign:hover {
+    background-color: #023088;
+    color:white;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.optionButtonDesign:active {
+transform: scale(0.9);
+transition: 0.1s;
+
+}
+
+
