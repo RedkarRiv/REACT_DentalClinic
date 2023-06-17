@@ -1,24 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import logo from "./logo-removebg-preview.png";
-import { InputText } from "../../common/InputText/InputText";
-import { SendButton } from "../../common/SendButton/SendButton";
+
 import { OptionButton } from "../../common/OptionButton/OptionButton";
 import { StatCard } from "../../common/StatCard/StatCard";
+import { SimpleContactCard } from "../../common/SimpleContactCard/SimpleContactCard";
 
 export const Home = () => {
-  const [credentials, setCredentials] = useState({
-    email: "",
-    password: "",
-  });
-
-  const InputHandler = (e) => {
-    setCredentials((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
-
   return (
     <div className="homeDesign">
       <div className="slideHomeContainer">
@@ -70,70 +58,20 @@ export const Home = () => {
         </div>
       </div>
       <div className="appointmentHomeContainer">
-        <div className="appointmentCardContainer">
-          <div className="appointmentHomeTitle">
-            <p>¡Tu primera cita gratis!</p>
-          </div>
-          <InputText
-            type={"name"}
-            placeholder={"name..."}
-            name={"name"}
-            classDesign={"InputText"}
-            functionHandler={InputHandler}
-          />
-          <InputText
-            type={"email"}
-            placeholder={"email..."}
-            name={"email"}
-            classDesign={"InputText"}
-            functionHandler={InputHandler}
-          />
-          <InputText
-            type={"date"}
-            placeholder={"date..."}
-            name={"date"}
-            classDesign={"InputText"}
-            functionHandler={InputHandler}
-          />
-          <InputText
-            type={"service"}
-            placeholder={"service..."}
-            name={"service"}
-            classDesign={"InputText"}
-            functionHandler={InputHandler}
-          />
-          <SendButton path={"/"} name={"Enviar"} />
-        </div>
+        <SimpleContactCard />
         <div className="stadisticsData">
           <div className="dataStat">
-          <StatCard
-            id="1"
-            name="CLIENTES"
-            data="+1200"
-          />
+            <StatCard id="1" name="CLIENTES" data="+1200" />
           </div>
           <div className="dataStat">
-          <StatCard
-            id="1"
-            name="INTERVENCIONES"
-            data="+800"
-          />
+            <StatCard id="1" name="INTERVENCIONES" data="+800" />
           </div>
           <div className="dataStat">
-          <StatCard
-            id="1"
-            name="EXPERIENCIA"
-            data="+15 años"
-          />
+            <StatCard id="1" name="EXPERIENCIA" data="+15 años" />
           </div>
           <div className="dataStat">
-          <StatCard
-            id="1"
-            name="SATISFACCIÓN"
-            data="4.8/5"
-          />
+            <StatCard id="1" name="SATISFACCIÓN" data="4.8/5" />
           </div>
-
         </div>
       </div>
     </div>

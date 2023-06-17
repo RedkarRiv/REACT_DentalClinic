@@ -1,7 +1,9 @@
 .InputText {
-    width: 65%;
-    height: 2em;
-    margin: 1em;
+    width: 70%;
+    height: auto;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin-bottom: 1em;
     background-color: white;
     text-align: center;
     border-radius: 0.5em;

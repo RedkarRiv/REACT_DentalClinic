@@ -16,9 +16,11 @@ margin: 1em;
     color: #ffffff;
     display: flex; 
     font-size: 100%;
+    font-family: Futura,Open Sans,sans-serif;
     justify-content: center;
     align-items: center;
     text-shadow: 0.05em 0.05em 0.2em rgba(0, 0, 0, 0.977);
+    user-select: none;
 }
 
 .cardDataElement {
@@ -30,4 +32,5 @@ margin: 1em;
 .pictureDesign {
     width: 50%;
     margin: 0.5em;
+    user-select: none;
 }

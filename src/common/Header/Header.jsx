@@ -10,9 +10,13 @@ export const Header = () => {
   return (
     <div className="headerDesign">
       <div className="menuDesign">
-        <img className="logoHeader" src={logo} alt="Logo" onClick={() => navigate("/")} />
+        <img
+          className="logoHeader"
+          src={logo}
+          alt="Logo"
+          onClick={() => navigate("/")}
+        />
       </div>
-
 
       <div className="menuDesign">
         <div className="linksDesign">
@@ -20,7 +24,7 @@ export const Header = () => {
             Home
           </div>
           <div className="menuLink" onClick={() => navigate("/AboutUs")}>
-            Preguntas frecuentes
+            Servicios{" "}
           </div>
           <div className="menuLink" onClick={() => navigate("/OurTeam")}>
             Nuestro Equipo

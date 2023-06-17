@@ -158,7 +158,7 @@ p {
 
 .appointmentCardContainer {
   height: 60%;
-  width: 90%;
+  width: 60%;
   background-color: white;
   border-radius: 1em;
   box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
@@ -166,7 +166,6 @@ p {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  margin-top: 2em;
 }
 
 .appointmentHomeTitle {
@@ -174,8 +173,8 @@ p {
   border-top-right-radius: 0.4em;
   text-align: center;
   width: 100%;
-  height: 20%;
-  font-size: 250%;
+  height: 30%;
+  font-size: 200%;
   background-color: #cb1111;
   /* ff6c03 */
   background-image: linear-gradient(
@@ -190,6 +189,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
+  margin-bottom: 1em;
 }
 
 .slideAppointmentHomeContainer {
@@ -214,4 +215,14 @@ p {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.inputNameDesign {
+  font-family: Futura,Open Sans,sans-serif;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  color: rgb(15, 15, 15);
 }
