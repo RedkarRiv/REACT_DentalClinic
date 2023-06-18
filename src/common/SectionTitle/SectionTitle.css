@@ -1,5 +1,5 @@
 .sectionTitleDesign {
-    width: 80%;
+    width: 100%;
     font-size: 300%;
     color: white;
     text-shadow: 0.05em 0.1em 0.1em rgb(0, 0, 0);
@@ -7,4 +7,7 @@
     font-weight: 1000;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+    
 }
