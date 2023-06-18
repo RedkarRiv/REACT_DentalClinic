@@ -1,8 +1,8 @@
 .registerDesign {
     overflow-x: hidden;
-  height: 85vh;
+  height: 100vh;
   width: 100vw;
-  background-color: #3082fd;
+  background-color: #0d259f;
   background-image: linear-gradient(
     to bottom,
     transparent,
@@ -13,6 +13,7 @@
   justify-content: flex-start;
   align-items: center;
   text-align: center;
+  padding-top:5em;
 }
 
 .registerCardContainer {
