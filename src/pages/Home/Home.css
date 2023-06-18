@@ -63,7 +63,7 @@
 }
 
 .risaldentResumeCard {
-  background-color: #0d479ff6;
+  background-color: #0d479fdf;
   height: 15%;
   width: 80%;
   border-top-left-radius: 10em;
@@ -84,7 +84,7 @@
 .slide2 {
   height: 100vh;
   width: 100%;
-  background-color: #0d259f;
+  background-color: #0d479f;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -117,7 +117,7 @@
 }
 
 .slide3 {
-  height: 120vh;
+  height: 100vh;
   width: 100%;
   background-image: url(../../assets//img/backgroundSlideHome.jpg);
   background-size: cover;

@@ -40,8 +40,27 @@ border-radius: 50%;
   text-align: center;
   font-weight: bold;
   font-family: emoji;
-  font-size: 120%;
+  font-size: 130%;
   align-items: flex-end;
+  user-select: none;
+cursor: pointer;
+}
+
+.treatmentTitle:hover {
+
+  background-color: white;
+  border-radius: 1.5em;
+  color: #0d259f;
+  width: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+user-select: none;
+cursor: pointer;
+}
+
+.treatmentTitle:active {
+
+transform: scale(0.9);
 }
 
 .treatmentDescription {
