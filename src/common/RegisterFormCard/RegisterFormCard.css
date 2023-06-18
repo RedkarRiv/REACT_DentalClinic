@@ -51,6 +51,7 @@
     color: #0d479f;
     margin-left: 4em;
     margin-right: 0.5em;
+    user-select: none;
   }
 
   .registerFormSection {

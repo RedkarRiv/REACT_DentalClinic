@@ -9,6 +9,7 @@
   color: white;
   position: fixed;
   backdrop-filter: invert(80%);
+  user-select: none;
 }
 
 .linksDesign {
