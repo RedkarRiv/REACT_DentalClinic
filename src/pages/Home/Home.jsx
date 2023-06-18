@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import logo from "./logo-removebg-preview.png";
-
+import logo from "../../assets/img/logo-removebg-preview.png";
 import { OptionButton } from "../../common/OptionButton/OptionButton";
 import { StatCard } from "../../common/StatCard/StatCard";
 import { ContactFormCard } from "../../common/ContactFormCard/ContactFormCard";
