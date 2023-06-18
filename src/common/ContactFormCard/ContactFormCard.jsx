@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import "./SimpleContactCard.css";
+import "./ContactFormCard.css";
 import { InputText } from "../InputText/InputText";
-import { SendButton } from "../../common/SendButton/SendButton";
+import { SendButton } from "../SendButton/SendButton";
 
-export const SimpleContactCard = () => {
+export const ContactFormCard = ({titleContact}) => {
 
     const [credentials, setCredentials] = useState({});
     
@@ -15,9 +15,9 @@ export const SimpleContactCard = () => {
       };
   return (
     <div className="simpleContactCardDesign">
-      <div className="appointmentCardContainer">
-        <div className="appointmentHomeTitle">
-          <p>¡Tu primera cita gratis!</p>
+      <div className="contactFormContainer">
+        <div className="contactTitle">
+          <p>{titleContact}</p>
         </div>
         <div className="inputNameDesign">Nombre</div>
         <InputText

@@ -1,10 +1,25 @@
 .registerDesign {
-    height: 85vh;
-    width: 100vw;
-    background-color:rgb(255, 231, 166);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    text-align: center;
-    }
+    overflow-x: hidden;
+  height: 85vh;
+  width: 100vw;
+  background-color: #3082fd;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.372)
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+
+.registerCardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65%;
+  margin-bottom: 2em;
+
+}

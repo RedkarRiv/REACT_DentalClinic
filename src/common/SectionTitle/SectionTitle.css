@@ -1,0 +1,10 @@
+.sectionTitleDesign {
+    width: 80%;
+    font-size: 300%;
+    color: white;
+    text-shadow: 0.05em 0.1em 0.1em rgb(0, 0, 0);
+    font-family: Futura,Open Sans,sans-serif;
+    font-weight: 1000;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}

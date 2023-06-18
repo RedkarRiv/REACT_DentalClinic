@@ -3,8 +3,19 @@
     height: auto;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    margin-bottom: 1em;
     background-color: white;
     text-align: center;
     border-radius: 0.5em;
 }
+
+.inputNameDesign {
+    font-family: Futura,Open Sans,sans-serif;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+  }

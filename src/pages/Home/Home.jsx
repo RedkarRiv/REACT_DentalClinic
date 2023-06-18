@@ -4,7 +4,7 @@ import logo from "./logo-removebg-preview.png";
 
 import { OptionButton } from "../../common/OptionButton/OptionButton";
 import { StatCard } from "../../common/StatCard/StatCard";
-import { SimpleContactCard } from "../../common/SimpleContactCard/SimpleContactCard";
+import { ContactFormCard } from "../../common/ContactFormCard/ContactFormCard";
 
 export const Home = () => {
   return (
@@ -59,7 +59,7 @@ export const Home = () => {
       </div>
       <div className="appointmentHomeContainer">
         <div className="appointmentInputCardContainer">
-        <SimpleContactCard />
+        <ContactFormCard titleContact={"Tu primera cita gratis"}/>
         </div>
 
 <div className="phoneHomeContainer">

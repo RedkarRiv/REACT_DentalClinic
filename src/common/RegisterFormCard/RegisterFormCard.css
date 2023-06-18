@@ -1,10 +1,10 @@
-.simpleContactCardDesign {
+.simpleRegisterCardDesign {
     height: auto;
     width: 100%;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
-.appointmentCardContainer {
+.registerFormContainer {
     height: 100%;
     width: 100%;
     background-color: white;
@@ -17,14 +17,14 @@
   }
 
   
-.appointmentHomeTitle {
+.registerFormTitle {
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
     text-align: center;
     width: 100%;
     height: 30%;
     font-size: 200%;
-    background-color: #cb1111;
+    background-color: #0d479f;
     /* ff6c03 */
     background-image: linear-gradient(
       to bottom,
@@ -42,12 +42,48 @@
     margin-bottom: 1em;
   }
 
-  .inputNameDesign {
+  .inputNameRegisterDesign {
     font-family: Futura,Open Sans,sans-serif;
     display:flex;
+    width: auto;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    font-weight: bold;
-    color: rgb(15, 15, 15);
+    color: #0d479f;
+    margin-left: 4em;
+    margin-right: 0.5em;
   }
+
+  .registerFormSection {
+display: flex;
+flex-direction: row;
+justify-content:center;
+align-items: center;
+width: 100%;
+margin-bottom:0.8em;
+  }
+
+.InputText {
+    width: 15em;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+.formSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 2em;
+}
+
+.commitedInputDesign {
+    text-decoration: underline;
+    font-weight: 1000;
+
+}
+
+.commitedAlert {
+    user-select: none;
+    margin-bottom: 1em;
+}
