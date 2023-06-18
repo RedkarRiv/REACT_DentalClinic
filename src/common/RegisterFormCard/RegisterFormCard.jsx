@@ -112,7 +112,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
         </div>
 
         <SendButton path={"/"} name={"Registrarme"} />
-        <p className="commitedAlert">*Los campos subrayados son obligatorios</p>
+        <p className="commitedAlert">*Los campos subrayados son obligatorios.</p>
       </div>
     </div>
   );

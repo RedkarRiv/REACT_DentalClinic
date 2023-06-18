@@ -2,17 +2,17 @@ import React, { useState } from "react";
 import "./ContactFormCard.css";
 import { InputText } from "../InputText/InputText";
 import { SendButton } from "../SendButton/SendButton";
+import { CaptchaCard } from "../CaptchaCard/CaptchaCard";
 
-export const ContactFormCard = ({titleContact}) => {
+export const ContactFormCard = ({ titleContact }) => {
+  const [credentials, setCredentials] = useState({});
 
-    const [credentials, setCredentials] = useState({});
-    
-      const InputHandler = (e) => {
-        setCredentials((prevState) => ({
-          ...prevState,
-          [e.target.name]: e.target.value,
-        }));
-      };
+  const InputHandler = (e) => {
+    setCredentials((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }));
+  };
   return (
     <div className="simpleContactCardDesign">
       <div className="contactFormContainer">
@@ -54,7 +54,11 @@ export const ContactFormCard = ({titleContact}) => {
           classDesign={"InputText"}
           functionHandler={InputHandler}
         />
+                <div className="captchaContainer">
+          <CaptchaCard />
+        </div>
         <SendButton path={"/"} name={"Solicitar contacto"} />
+
       </div>
     </div>
   );

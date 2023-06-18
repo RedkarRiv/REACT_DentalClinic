@@ -44,7 +44,7 @@ export const Header = () => {
               Login
             </div>
             <div className="authLink" onClick={() => navigate("/register")}>
-              Register
+              Registrarse
             </div>
           </div>
         )}
