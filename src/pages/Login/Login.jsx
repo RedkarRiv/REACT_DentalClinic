@@ -7,7 +7,7 @@ export const Login = () => {
 
 return (
     <div className="loginDesign">
-          <SectionTitle sectionTitle={"LOGIN"}/>
+          <SectionTitle sectionTitle={"LOGIN USUARIO"}/>
       <div className="loginCardContainer">
         <LoginFormCard titleLogin={"ACCEDE A TU AREA CLIENTE"} />
       </div>

@@ -6,7 +6,7 @@ import { SectionTitle } from "../../common/SectionTitle/SectionTitle";
 export const Register = () => {
   return (
     <div className="registerDesign">
-      <SectionTitle sectionTitle={"CREAR NUEVA CUENTA"} />
+      <SectionTitle sectionTitle={"REGISTRO NUEVO USUARIO"} />
       <div className="registerCardContainer">
         <RegisterFormCard titleRegister={"RELLENA EL FORMULARIO"} />
       </div>

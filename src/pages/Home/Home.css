@@ -142,7 +142,6 @@ p {
   height: 100%;
   width: 40%;
   display: flex;
-
   flex-direction: column;
   justify-content: space-between;
   align-items: center;

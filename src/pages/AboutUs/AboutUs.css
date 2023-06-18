@@ -1,8 +1,12 @@
 .aboutUsDesign {
     height: 85vh;
     width: 100vw;
-    background-color:rgb(159, 174, 174);
-    display: flex;
+    background-color: #3082fd;
+    background-image: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(0, 0, 0, 0.372)
+    );      display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
