@@ -12,8 +12,8 @@ const notFound = "https://cdn5.dibuixos.cat/dibuixos/pintar/dent-sana_2.png"
                 <img className="pictureDesign" src= {greenCheckSeal || notFound}  alt={id}></img>
             </div>
             <div className="cardTextElement">
-            <div className="cardElement">{name}</div>
             <div className="cardElement cardDataElement">{data}</div>
+            <div className="cardElement">{name}</div>
             </div>
         </div>
     )

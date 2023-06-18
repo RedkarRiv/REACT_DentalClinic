@@ -58,13 +58,21 @@ export const Home = () => {
         </div>
       </div>
       <div className="appointmentHomeContainer">
+        <div className="appointmentInputCardContainer">
         <SimpleContactCard />
+        </div>
+
+<div className="phoneHomeContainer">
+<div className="textPhoneHome">Llámanos al</div><div className="phoneLogoHome">✆
+</div><div className="phoneHome">99 111 22 33
+</div>
+</div>
         <div className="stadisticsData">
           <div className="dataStat">
             <StatCard id="1" name="CLIENTES" data="+1200" />
           </div>
           <div className="dataStat">
-            <StatCard id="1" name="INTERVENCIONES" data="+800" />
+            <StatCard id="1" name="CONSULTAS" data="+800" />
           </div>
           <div className="dataStat">
             <StatCard id="1" name="EXPERIENCIA" data="+15 años" />

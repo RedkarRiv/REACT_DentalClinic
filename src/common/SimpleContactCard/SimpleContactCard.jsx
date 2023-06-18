@@ -22,7 +22,7 @@ export const SimpleContactCard = () => {
         <div className="inputNameDesign">Nombre</div>
         <InputText
           type={"name"}
-          placeholder={"name"}
+          placeholder={""}
           name={"name"}
           classDesign={"InputText"}
           functionHandler={InputHandler}
@@ -31,16 +31,16 @@ export const SimpleContactCard = () => {
 
         <InputText
           type={"email"}
-          placeholder={"email"}
+          placeholder={""}
           name={"email"}
           classDesign={"InputText"}
           functionHandler={InputHandler}
         />
-        <div className="inputNameDesign">Telefono</div>
+        <div className="inputNameDesign">Teléfono</div>
 
         <InputText
           type={"phone"}
-          placeholder={"phone"}
+          placeholder={""}
           name={"phone"}
           classDesign={"InputText"}
           functionHandler={InputHandler}
@@ -49,7 +49,7 @@ export const SimpleContactCard = () => {
 
         <InputText
           type={"address"}
-          placeholder={"CP"}
+          placeholder={""}
           name={"CP"}
           classDesign={"InputText"}
           functionHandler={InputHandler}

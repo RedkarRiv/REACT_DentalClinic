@@ -1,11 +1,12 @@
 .simpleContactCardDesign {
     height: auto;
-    width: auto;
+    width: 100%;
+    margin-top: 2em;
 }
 
 .appointmentCardContainer {
     height: 100%;
-    width: 110%;
+    width: 100%;
     background-color: white;
     border-radius: 1em;
     box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);

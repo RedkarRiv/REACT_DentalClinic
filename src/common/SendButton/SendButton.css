@@ -23,27 +23,31 @@
   font-weight: bold;
   border: solid 0.1em white;
   user-select: none;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.842);
+
 }
 
 .sendButtonDesign:hover {
     border-radius: 0.9em;
-    background-color: rgb(13, 164, 13);
+    background-color: #88dd1a;
   color: white;
   transition: 0.1s;
-  transform: scale(1.05);
+  transform: scale(1.10);
   border: solid 0.1em white;
+  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.842);
 
 }
 
 .sendButtonDesign:active {
-    background-color: rgb(12, 89, 12);
+    background-color: #477d01;
     border-radius: 0.9em;
     color: white;
-    transform: scale(0.9);
+    transform: scale(1);
     background-image: linear-gradient(
         to bottom,
         transparent,
         rgba(0, 0, 0, 0)
       );
-      border: 0.1em inset rgb(12, 89, 12);
-}
+      border: 0.05em inset rgb(12, 89, 12);
+      text-shadow: none;
+    }
