@@ -1,84 +1,53 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 import logo from "../../assets/img/logo-removebg-preview.png";
+
 import { OptionButton } from "../../common/OptionButton/OptionButton";
 import { StatCard } from "../../common/StatCard/StatCard";
 import { ContactFormCard } from "../../common/ContactFormCard/ContactFormCard";
+import { CallUsButton } from "../../common/CallUsButton/CallUsButton";
+import { TreatmentCard } from "../../common/TreatmentCard/TreatmentCard";
 
 export const Home = () => {
   return (
     <div className="homeDesign">
-      <div className="slideHomeContainer">
-        <div className="overlaySlideHome">
-          <img className="logoOverlaySlideHome" src={logo} alt="Logo Home" />
-        </div>
-        <div className="overlaySlideHome2">
-          <div className="addresContainer">
-            <div className="mapContainer"></div>
-            <div className="mapTitleContainer">
-              {" "}
-              <p>📌 Calle Paleto Molares 13,</p>
-              <p>46005, Valencia.</p>
+      <div className="slide1">
+        <div className="slide11">
+          <div className="slide12">
+            <div className="slide121">
+              <div className="contactFormCardHomeContainer">
+                <ContactFormCard titleContact={"Nosotros te llamamos"} />
+              </div>
             </div>
-          </div>
-          <div className="specialitiesHomeContainer">
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Halitosis"} />
-            </div>
+            {/* name, data, id */}
+            <div className="slide122">
+              <div className="callUsHomeContainer">
+                <CallUsButton />
+              </div>
 
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Implantes dentales"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Ortodoncia"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Endodoncia"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Odontopediatría"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Protesis dental"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Cirugía oral"} />
-            </div>
-
-            <div className="specialityHomeContainer">
-              <OptionButton path={"/"} name={"Estética dental"} />
+              <div className="risaldentResumeCard">
+                <StatCard name={"Clientes"} data={"+1500"} id={1} />
+                <StatCard name={"Tratamientos"} data={"+1200"} id={1} />
+                <StatCard name={"Experiencia"} data={"+15 años"} id={1} />
+                <StatCard name={"Estrellas"} data={"4.8/5"} id={1} />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="appointmentHomeContainer">
-        <div className="appointmentInputCardContainer">
-        <ContactFormCard titleContact={"Tu primera cita gratis"}/>
+      <div className="slide2">
+        <div className="mainSpecialitiesCardsHomeContainer">
+        <div className="specialitiesCardsHomeContainer">
+          <div className="specialityCardHomeContainer"><TreatmentCard id={1} img_lin={"https://dr-samir.com/wp-content/uploads/2018/06/cirugia-maxilofacial-cabecera.jpg"} img_name={"cirujia_maxilar"}  treatmentTitle={"CIRUJÍA MÁXILAR"} treatmentDescription={"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias "}/></div>
+          <div className="specialityCardHomeContainer"></div>
+          <div className="specialityCardHomeContainer"></div>
+          <div className="specialityCardHomeContainer"></div></div>
+          <div className="specialitiesCardsHomeContainer">
+          <div className="specialityCardHomeContainer"></div>
+          <div className="specialityCardHomeContainer"></div>
+          <div className="specialityCardHomeContainer"></div>
+          <div className="specialityCardHomeContainer"></div>
         </div>
-
-<div className="phoneHomeContainer">
-<div className="textPhoneHome">Llámanos al</div><div className="phoneLogoHome">✆
-</div><div className="phoneHome">99 111 22 33
-</div>
-</div>
-        <div className="stadisticsData">
-          <div className="dataStat">
-            <StatCard id="1" name="CLIENTES" data="+1200" />
-          </div>
-          <div className="dataStat">
-            <StatCard id="1" name="CONSULTAS" data="+800" />
-          </div>
-          <div className="dataStat">
-            <StatCard id="1" name="EXPERIENCIA" data="+15 años" />
-          </div>
-          <div className="dataStat">
-            <StatCard id="1" name="SATISFACCIÓN" data="4.8/5" />
-          </div>
         </div>
       </div>
     </div>

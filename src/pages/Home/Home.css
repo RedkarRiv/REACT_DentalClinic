@@ -1,252 +1,124 @@
 .homeDesign {
-  height: 85vh;
+  height: auto;
   width: 100vw;
-  background-color: rgb(230, 230, 230);
+  background: rgb(0, 100, 250);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 100, 250, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
   display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.slideHomeContainer {
+
+.slide1 {
+  height: 100vh;
+  width: 100%;
+  background-color: grey;
+}
+
+.slide12 {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(183, 184, 251, 0.055);
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: 1s;
+
+}
+
+.slide121 {
+  height: 100%;
+  width: 40%;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide122 {
   height: 100%;
   width: 60%;
-  background-color: rgb(53, 51, 51);
-  background-image: url(/src/assets/img/backgroundSlideHome.jpg); /* <a href="https://www.freepik.es/foto-gratis/dentista-profesional-masculino-guantes-mascara-discutir-como-vera-tratamiento-dientes-paciente_17751921.htm#query=dentist%20smile&position=0&from_view=search&track=ais">Imagen de ArthurHidden</a> en Freepik */
-  display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  position: relative;
-}
-
-p {
-  margin-block-start: 0.1em;
-  margin-block-end: 0.1em;
-}
-
-.overlaySlideHome {
-  background-color: #3082fd;
-  height: 60%;
-  width: 30%;
-  border-top-right-radius: 40em;
-  position: absolute;
-}
-
-.overlaySlideHome2 {
-  height: 30%;
-  width: 100%;
-  position: absolute;
-  background-color: #3082fd;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.372)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.addresContainer {
-  height: 80%;
-  width: 25%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display:flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items:flex-end;
 }
-.mapContainer {
+
+.contactFormCardHomeContainer {
   height: 70%;
-  width: 80%;
-  background-image: url(./mapsDefaultImg.png);
+  width: 60%;
+  padding-left:10%;
+
+} 
+
+.slide12:hover {
+  background-color: rgba(255, 255, 255, 0.192);
+transition: 3s;
+}
+
+.slide11 {
+  height: 100%;
+  width: 100%;
+  background-image: url(../../assets/img/kidDentalBackground.jpg);     /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
   background-size: cover;
-  background-position: center;
-  border-radius: 0.5em;
-  margin-bottom: 0.5em;
 }
 
-.mapTitleContainer {
-  color: white;
-}
 
-.logoOverlaySlideHome {
-  padding-right: 20%;
-  padding-top: 25%;
-}
-
-.overlaySlideHome {
-  background-color: #3082fd;
-  height: 60%;
-  width: 30%;
-  border-top-right-radius: 40em;
-  position: absolute;
-}
-
-.logoOverlaySlideHome:hover {
-  /* Activar la animación en el hover */
-  animation: shake 1s;
-}
-
-@keyframes shake {
-  /* Definir la animación de sacudida */
-  0% {
-    transform: translateX(0);
-  }
-  10% {
-    transform: translateX(-10px) rotate(-5deg);
-  }
-  20% {
-    transform: translateX(10px) rotate(5deg);
-  }
-  30% {
-    transform: translateX(-10px) rotate(-5deg);
-  }
-  40% {
-    transform: translateX(10px) rotate(5deg);
-  }
-  50% {
-    transform: translateX(-10px) rotate(-5deg);
-  }
-  60% {
-    transform: translateX(10px) rotate(5deg);
-  }
-  70% {
-    transform: translateX(-10px) rotate(-5deg);
-  }
-  80% {
-    transform: translateX(10px) rotate(5deg);
-  }
-  90% {
-    transform: translateX(-10px) rotate(-5deg);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-.specialitiesHomeContainer {
-  width: 70%;
-  height: 65%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.specialityHomeContainer {
-  width: auto;
-  height: auto;
-  margin: 0.5em;
-}
-
-.appointmentHomeContainer {
-  min-height: 100%;
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3082fd;
-  background-image: linear-gradient(
-    to bottom,
-    transparent 70%,
-    rgba(0, 0, 0, 0.372)
-  );
-  /* background-image: url(../../assets/img/cardBackgroundTexture.svg);
-    background-repeat: repeat;
-    background-size: auto; */
-}
-
-.appointmentHomeTitle {
-  border-top-left-radius: 0.4em;
-  border-top-right-radius: 0.4em;
-  text-align: center;
-  width: 100%;
-  height: 30%;
-  font-size: 200%;
-  background-color: #cb1111;
-  /* ff6c03 */
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.174)
-  );
-  color: white;
-  font-family: emoji;
-  font-weight: bold;
-  text-shadow: 0.04em 0.02em 0.01em rgba(0, 0, 0, 0.842);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  margin-bottom: 1em;
-}
-
-.slideAppointmentHomeContainer {
-  height: 93%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.stadisticsData {
+.risaldentResumeCard {
+  background-color: #0d479fdd;
+  height: 15%;
   width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 3em;
-}
-
-.dataStat {
-  display: flex;
-  flex-direction: row;
+  border-top-left-radius: 10em;
+  display:flex;
+  padding: 2em;
   justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
+  padding-bottom: 3em;
 }
 
-.appointmentInputCardContainer {
-  width: 50%;
-  height: auto;
-}
+.callUsHomeContainer {
 
-.phoneHomeContainer {
-  font-family: fantasy;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-shadow: 0.05em 0.1em 0.01em rgb(0, 0, 0);
-  margin-top: 1.55em;
-  background-color: #0d479f;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.362)
-  );
   width: 80%;
-  user-select: none;
-  border-radius:1.5em;
-  cursor: pointer;
+  margin-top: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.slide2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #0d259f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.phoneHome {
-  font-size: 300%;
-  font-weight: bold;
+.mainSpecialitiesCardsHomeContainer {
+  width: 80%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 }
 
-.textPhoneHome {
-  font-size: 200%;
-  margin-right: 0.5em;
+.specialitiesCardsHomeContainer {
+  border:black solid 0.5em;
+    width: 90%;
+    height: 80%;
 }
 
-.phoneLogoHome {
-  margin-right: 0.3em;
-  font-size: 300%;
-  font-weight: bold;
+.specialityCardHomeContainer {
+border: red solid 0.01em;
+height: 25%;
+width: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }

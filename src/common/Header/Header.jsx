@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
-import logo from "./logoTry-svg.png";
+import logo from "../../assets/img/logoTry-svg.png";
 
 export const Header = () => {
   const [token, setToken] = useState("");

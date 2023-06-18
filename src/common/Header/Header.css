@@ -1,16 +1,14 @@
 .headerDesign {
   height: 10vh;
   width: 100vw;
-  background-color: #0d479f;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.362)
-  );  display: flex;
+  background-color: #0d479fdd;
+ display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
   color: white;
+  position: fixed;
+  backdrop-filter: invert(80%);
 }
 
 .linksDesign {

@@ -7,47 +7,30 @@
   padding-bottom: 0.2em;
   border-radius: 0.9em;
   background-color: #0d479f;
-  background-image: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(0, 0, 0, 0.362)
-  );
   color: white;
   cursor: pointer;
   transition: 0.1s;
   margin: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
   border: solid 0.1em white;
   user-select: none;
-  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.842);
 
 }
 
 .sendButtonDesign:hover {
     border-radius: 0.9em;
-    background-color: #88dd1a;
+    background-color: #558911;
   color: white;
   transition: 0.1s;
-  transform: scale(1.10);
   border: solid 0.1em white;
-  text-shadow: 0.05em 0.05em 0.1em rgba(0, 0, 0, 0.842);
 
 }
 
 .sendButtonDesign:active {
-    background-color: #477d01;
-    border-radius: 0.9em;
-    color: white;
-    transform: scale(1);
-    background-image: linear-gradient(
-        to bottom,
-        transparent,
-        rgba(0, 0, 0, 0)
-      );
-      border: 0.05em inset rgb(12, 89, 12);
-      text-shadow: none;
+    transform: scale(0.9);
+
     }

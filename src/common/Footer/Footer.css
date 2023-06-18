@@ -7,10 +7,10 @@
     justify-content: flex-end;
     align-items: center;
     color: white;
+
 }
 
 .footerElement {
-    margin:0.5em;
     border-right: solid white 0.1em;
     border-left: solid white 0.1em;
     padding-right: 0.5em;

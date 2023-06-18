@@ -1,0 +1,46 @@
+.TreatmentCardDesign {
+  height: 80%;
+  width: 90%;
+  border: green solid 0.5em;
+  display: flex;
+  align-items: center;
+}
+
+.treatmentImage {
+  height: 6em;
+  width: 6em;
+  background-color: grey;
+  border-radius: 50%;
+  margin: 1em;
+  box-shadow: 0.2em 0.2em 0.4em rgba(0, 0, 0, 0.5);
+}
+
+.treatmentText {
+  border: rgb(0, 115, 128) solid 0.2em;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.treatmentTitle {
+  border: black solid 0.2em;
+  height: 25%;
+  width: 90%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-family: emoji;
+  font-size: 120%;
+}
+
+.treatmentDescription {
+    border: rgb(149, 218, 12) solid 0.2em;
+    height: 60%;
+    width: 90%;
+    color: rgb(176, 181, 214);
+    font-size: 80%;
+    margin-top: 0.5em;
+}

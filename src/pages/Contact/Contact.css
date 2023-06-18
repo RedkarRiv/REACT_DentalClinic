@@ -1,5 +1,5 @@
 .contactDesign {
-    height: 85vh;
+    height: 95vh;
     width: 100vw;
     background-color: #3082fd;
     background-image: linear-gradient(
@@ -19,5 +19,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 20%;
+    height: 50%;
 }
