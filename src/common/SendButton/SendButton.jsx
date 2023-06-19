@@ -1,13 +1,12 @@
 import React from "react";
 import "./SendButton.css";
-import { useNavigate } from "react-router-dom";
+import { loginMe } from "../../services/apiCall";
 
-export const SendButton = ({path, name}) => {
+export const SendButton = ({path, name, functionButton}) => {
 // INSTANCIO useNavigate
-const navigate = useNavigate()
 
 return (
-    <div className="sendButtonDesign" onClick={()=>navigate(path)}
-    >{name}</div>
+    <div className="sendButtonDesign" onClick={functionButton} path={path}
+    >{name}</div> 
 )
 }

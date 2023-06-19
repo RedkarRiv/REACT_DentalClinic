@@ -1,17 +1,62 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./LoginFormCard.css";
 import { InputText } from "../InputText/InputText";
 import { SendButton } from "../../common/SendButton/SendButton";
+import { CheckError } from "../../services/useful";
+import { loginMe } from "../../services/apiCall";
+import jwt_decode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 export const LoginFormCard = ({ titleLogin }) => {
-  const [credentials, setCredentials] = useState({});
+  const navigate = useNavigate();
+
+  const [credentials, setCredentials] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [credentialsError, setCredentialsError] = useState({
+    emailError: "",
+    passwordError: "",
+  });
 
   const InputHandler = (e) => {
+    //Ahora vamos a proceder a bindear o atar los inputs mediante
+    //la presente función handler a sus correspondientes estados en el hook, que
+    //ahora se llama credentials.
+
     setCredentials((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
   };
+
+  const InputCheck = (e) => {
+    let mensajeError = CheckError(e.target.name, e.target.value);
+
+    setCredentialsError((prevState) => ({
+      ...prevState,
+      [e.target.name + "Error"]: mensajeError,
+    }));
+  };
+
+  const logMe = () => {
+    console.log("Hola pepe");
+    loginMe(credentials)
+      .then((resultado) => {
+        let decoded = jwt_decode(resultado.data.token);
+
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+
+        console.log(decoded);
+        console.log(resultado);
+      })
+
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="simpleLoginCardDesign">
       <div className="loginFormContainer">
@@ -23,20 +68,25 @@ export const LoginFormCard = ({ titleLogin }) => {
           type={"email"}
           placeholder={""}
           name={"email"}
-          classDesign={"InputText"}
+          classDesign={credentialsError.emaildError === "" ? "textInput" : "textInput errorInput"}
           functionHandler={InputHandler}
+          onBlurFunction={InputCheck}
         />
+        <div className="errorText">{credentialsError.emailError}</div>
+
         <div className="inputNameDesign">Password</div>
         <InputText
           type={"password"}
           placeholder={""}
           name={"password"}
-          classDesign={"InputText"}
+          classDesign={credentialsError.passwordError === "" ? "textInput" : "textInput errorInput"}
           functionHandler={InputHandler}
+          onBlurFunction={InputCheck}
         />
+        <div className="errorText">{credentialsError.passwordError}</div>
         <div>
-        <SendButton path={"/"} name={"Enviar"} />
-        <p className="passForgot">Olvide la contraseña</p>
+          <SendButton path={"/"} name={"Enviar"} functionButton={logMe} />
+          <p className="passForgot">Olvide la contraseña</p>
         </div>
       </div>
     </div>

@@ -21,3 +21,7 @@
   align-items: center;
   width: 40%;
 }
+
+.errorText {
+  color: red;
+}

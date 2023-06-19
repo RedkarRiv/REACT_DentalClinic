@@ -54,3 +54,14 @@
   .passForgot:hover{
     text-decoration: underline;
   }
+
+  .errorText {
+    color: red;
+  }
+
+  .errorInput {
+    border: red solid 0.2em;
+    border-radius: 0.5em;
+  }
+  
+  

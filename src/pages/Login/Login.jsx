@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import { SectionTitle } from "../../common/SectionTitle/SectionTitle";
 import { LoginFormCard } from "../../common/LoginFormCard/LoginFormCard";
 
 export const Login = () => {
-
-return (
+  return (
     <div className="loginDesign">
-          <SectionTitle sectionTitle={"LOGIN USUARIO"}/>
+      <SectionTitle sectionTitle={"LOGIN USUARIO"} />
       <div className="loginCardContainer">
-        <LoginFormCard titleLogin={"ACCEDE A TU AREA CLIENTE"} />
+        <LoginFormCard
+          titleLogin={"ACCEDE A TU AREA CLIENTE"}
+        />
       </div>
     </div>
-)
-}
+  );
+};
