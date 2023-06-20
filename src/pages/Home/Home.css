@@ -64,13 +64,14 @@
 
 .risaldentResumeCard {
   background-color: #0d479fdf;
-  height: 15%;
-  width: 80%;
+  height: 20%;
+  width: 60%;
   border-top-left-radius: 10em;
   display: flex;
-  padding: 2em;
   justify-content: center;
-  padding-bottom: 3em;
+  padding: 1.5em;
+  padding-top: 2em;
+
 }
 
 .callUsHomeContainer {

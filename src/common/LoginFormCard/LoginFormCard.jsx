@@ -21,10 +21,6 @@ export const LoginFormCard = ({ titleLogin }) => {
   });
 
   const InputHandler = (e) => {
-    //Ahora vamos a proceder a bindear o atar los inputs mediante
-    //la presente función handler a sus correspondientes estados en el hook, que
-    //ahora se llama credentials.
-
     setCredentials((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
@@ -68,7 +64,9 @@ export const LoginFormCard = ({ titleLogin }) => {
           type={"email"}
           placeholder={""}
           name={"email"}
-          classDesign={credentialsError.emaildError === "" ? "textInput" : "textInput errorInput"}
+          classDesign={
+            credentialsError.emailError === "" ? "textInput" : " textInput errorInput"
+          }
           functionHandler={InputHandler}
           onBlurFunction={InputCheck}
         />
@@ -79,7 +77,9 @@ export const LoginFormCard = ({ titleLogin }) => {
           type={"password"}
           placeholder={""}
           name={"password"}
-          classDesign={credentialsError.passwordError === "" ? "textInput" : "textInput errorInput"}
+          classDesign={
+            credentialsError.passwordError === "" ? "textInput" : "textInput errorInput"
+          }
           functionHandler={InputHandler}
           onBlurFunction={InputCheck}
         />

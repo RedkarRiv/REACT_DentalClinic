@@ -1,6 +1,4 @@
 .StatCardDesign {
-height: 8em;
-width: auto;
 display: flex;
 flex-direction: column;
 justify-content: space-around;
@@ -13,7 +11,7 @@ margin: 1em;
 }
 
 .cardElement {
-    height: 1.5em;
+    height: 40%;
     width: 100%;
     margin: 0.1em;
     font-weight: bold;
@@ -34,7 +32,8 @@ margin: 1em;
 
 
 .pictureDesign {
-    width: 35%;
+    margin: 1em;
+padding: 0.2em;
     margin: 0.5em;
     user-select: none;
 }

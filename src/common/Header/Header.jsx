@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logoTry-svg.png";
+import { ProfileButton } from "../ProfileButton/ProfileButton";
+import { LoginRegisterButtons } from "../LoginRegisterButtons/LoginRegisterButtons";
+import avatarImageLink from "../../assets/img/ProfileDefaultImage2.png";
 
 export const Header = () => {
   const [token, setToken] = useState("");
@@ -37,15 +40,12 @@ export const Header = () => {
 
       <div className="menuDesign">
         {token !== "" ? (
-          <div>aqui si mostraríamos opciones de logeado....</div>
+          <div className="profileButtonContainer">
+            <ProfileButton avatarImage={avatarImageLink} />
+          </div>
         ) : (
           <div className="authLinksDesign">
-            <div className="authLink" onClick={() => navigate("/login")}>
-              Login
-            </div>
-            <div className="authLink" onClick={() => navigate("/register")}>
-              Registrarse
-            </div>
+            <LoginRegisterButtons />
           </div>
         )}
       </div>

@@ -26,6 +26,7 @@ export const ContactFormCard = ({ titleContact }) => {
           name={"name"}
           classDesign={"InputText"}
           functionHandler={InputHandler}
+          
         />
         <div className="inputNameDesign">Email</div>
 
@@ -54,11 +55,10 @@ export const ContactFormCard = ({ titleContact }) => {
           classDesign={"InputText"}
           functionHandler={InputHandler}
         />
-                <div className="captchaContainer">
+        <div className="captchaContainer">
           <CaptchaCard />
         </div>
         <SendButton path={"/"} name={"Solicitar contacto"} />
-
       </div>
     </div>
   );

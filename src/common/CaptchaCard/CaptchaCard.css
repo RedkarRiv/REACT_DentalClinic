@@ -5,8 +5,8 @@
     transparent,
     rgba(0, 0, 0, 0.194)
   );
-  height: 2.5em;
-  width: 12em;
+  height:100%;
+  width: 100%;
   border-radius: 0.5em;
   display: flex;
   justify-content: space-between;
@@ -22,6 +22,19 @@
   background-color: white;
   border: grey solid 0.08em;
   border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.checkCaptchaVerify {
+  height: 1em;
+  width: 1em;
+  background-image: url(../../assets/img/greenCheckMark.png);
+  background-size:  cover;
+  background-repeat: no-repeat;
+  border-radius: 0.3em;
+  cursor: pointer;
+  border: transparent solid 0.08em;
+
 }
 
 .textCaptcha {
