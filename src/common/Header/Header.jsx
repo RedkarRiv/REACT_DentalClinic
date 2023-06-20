@@ -6,15 +6,35 @@ import { ProfileButton } from "../ProfileButton/ProfileButton";
 import { LoginRegisterButtons } from "../LoginRegisterButtons/LoginRegisterButtons";
 import avatarImageLink from "../../assets/img/ProfileDefaultImage2.png";
 
-
 export const Header = () => {
-  const [token, setToken] = useState("");
+  const [token, setToken] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const token = sessionStorage.getItem("token");
-    setToken(token || "");
-  }, []);
+  // useEffect(() => {
+  //   const updateToken = () => {
+  //     setToken(sessionStorage.getItem("token"));
+  //   };
+
+  //   window.addEventListener("storage", (event) => {
+  //     if (event.key === "token") {
+  //       updateToken();
+  //     }
+  //   });
+
+  //   return () => {
+  //     window.removeEventListener("storage", updateToken);
+  //   };
+  // }, []);
+
+const Newtoken = sessionStorage.getItem("token")
+
+useEffect(() => {
+  setToken(Newtoken)
+}, [Newtoken])
+
+
+
+
 
   return (
     <div className="headerDesign">
@@ -45,12 +65,13 @@ export const Header = () => {
       </div>
 
       <div className="menuDesign">
-        {token !== "" ? (
+        {token ? (
           <div className="profileButtonContainer">
             <ProfileButton avatarImage={avatarImageLink} />
           </div>
         ) : (
           <div className="authLinksDesign">
+            {console.log("esto es el token ", { token })}
             <LoginRegisterButtons />
           </div>
         )}
