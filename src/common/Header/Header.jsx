@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logoTry-svg.png";
@@ -6,9 +6,15 @@ import { ProfileButton } from "../ProfileButton/ProfileButton";
 import { LoginRegisterButtons } from "../LoginRegisterButtons/LoginRegisterButtons";
 import avatarImageLink from "../../assets/img/ProfileDefaultImage2.png";
 
+
 export const Header = () => {
   const [token, setToken] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = sessionStorage.getItem("token");
+    setToken(token || "");
+  }, []);
 
   return (
     <div className="headerDesign">

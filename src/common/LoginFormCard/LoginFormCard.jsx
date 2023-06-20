@@ -48,8 +48,9 @@ export const LoginFormCard = ({ titleLogin }) => {
 
         console.log(decoded);
         console.log(resultado);
+        sessionStorage.setItem("token", resultado.data.token)
+        console.log(resultado.data.token)
       })
-
       .catch((error) => console.log(error));
   };
 
