@@ -59,9 +59,9 @@
 
 
 .profileButtonContainer {
-  width: 20em;
+  width: 12em;
   height: 90%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }

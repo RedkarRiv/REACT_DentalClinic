@@ -7,33 +7,14 @@ import { LoginRegisterButtons } from "../LoginRegisterButtons/LoginRegisterButto
 import avatarImageLink from "../../assets/img/ProfileDefaultImage2.png";
 
 export const Header = () => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(sessionStorage.getItem("token") || "");
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const updateToken = () => {
-  //     setToken(sessionStorage.getItem("token"));
-  //   };
+  const Newtoken = sessionStorage.getItem("token");
 
-  //   window.addEventListener("storage", (event) => {
-  //     if (event.key === "token") {
-  //       updateToken();
-  //     }
-  //   });
-
-  //   return () => {
-  //     window.removeEventListener("storage", updateToken);
-  //   };
-  // }, []);
-
-const Newtoken = sessionStorage.getItem("token")
-
-useEffect(() => {
-  setToken(Newtoken)
-}, [Newtoken])
-
-
-
+  useEffect(() => {
+    window.addEventListener("storage", setToken(Newtoken));
+  }, [Newtoken]);
 
 
   return (
@@ -67,6 +48,8 @@ useEffect(() => {
       <div className="menuDesign">
         {token ? (
           <div className="profileButtonContainer">
+            {console.log("esto es el token perfil ", { token })}
+
             <ProfileButton avatarImage={avatarImageLink} />
           </div>
         ) : (
