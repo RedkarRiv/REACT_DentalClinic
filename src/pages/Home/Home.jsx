@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.css'
 import "./Home.css";
 import { StatCard } from "../../common/StatCard/StatCard";
 import { ContactFormCard } from "../../common/ContactFormCard/ContactFormCard";
@@ -22,7 +23,7 @@ export const Home = () => {
       <div className="slide1">
         <div className="slide11">
           <div className="slide12">
-            <div className="slide121">
+            <div className="slide121" class="col-lg-6">
               <div className="contactFormCardHomeContainer">
                 <ContactFormCard titleContact={"CONSULTA GRATUITA"} />
               </div>

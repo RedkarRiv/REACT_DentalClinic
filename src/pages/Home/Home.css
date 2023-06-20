@@ -17,6 +17,7 @@
   height: 100vh;
   width: 100%;
   background-color: grey;
+  border: black solid 0.1em;
 }
 
 .slide12 {
@@ -27,6 +28,8 @@
   justify-content: space-around;
   align-items: center;
   transition: 1s;
+  border: rgb(208, 25, 25) solid 0.1em;
+
 }
 .slide11 {
   height: 100%;
@@ -45,6 +48,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: rgb(33, 184, 36) solid 0.1em;
+
 }
 
 .slide122 {
@@ -54,6 +59,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  border: rgb(200, 206, 28) solid 0.1em;
+
 }
 
 .contactFormCardHomeContainer {
