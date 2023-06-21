@@ -1,19 +1,21 @@
 import React from "react";
 import "./LoginRegisterButtons.css";
 import { useNavigate } from "react-router-dom";
-
+import { Nav } from "react-bootstrap";
 
 export const LoginRegisterButtons = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
-      <div className="authLink" onClick={() => navigate("/login")}>
-        Login
-      </div>
-      <div className="authLink" onClick={() => navigate("/register")}>
-        Registrarse
-      </div>
+     
+        <Nav.Link className="authLink" onClick={() => navigate("/login")}>
+          Login
+        </Nav.Link>
+        <Nav.Link className="authLink" onClick={() => navigate("/register")}>
+          Registrarse
+        </Nav.Link>
+    
     </>
   );
 };

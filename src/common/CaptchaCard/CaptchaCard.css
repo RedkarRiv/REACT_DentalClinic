@@ -22,7 +22,8 @@
   background-color: white;
   border: grey solid 0.08em;
   border-radius: 0.3em;
-  cursor: pointer;
+  padding-right: 0.2em;
+  padding-left: 0.2em;
 }
 
 .checkCaptchaVerify {
@@ -32,15 +33,17 @@
   background-size:  cover;
   background-repeat: no-repeat;
   border-radius: 0.3em;
-  cursor: pointer;
   border: transparent solid 0.08em;
 
 }
 
 .textCaptcha {
-  font-size: 70%;
+  font-size: 60%;
   font-weight: bold;
   user-select: none;
+  border-right: solid  0.5em transparent;
+  border-left: solid 0.5em transparent;
+  padding-left: 0.5em;
 }
 
 .logoCaptcha {

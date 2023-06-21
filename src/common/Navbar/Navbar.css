@@ -1,18 +1,26 @@
 .menuDesign {
-  height: 3.5em;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 3em;
-  padding-right: 3em;
 }
 
 .logoHeader {
-  height: 90%;
-  width: auto;
+  width: 25%;
   cursor: pointer;
   filter: drop-shadow(0.1em 0.2em 0.1em black);
+  margin-left: 5%;
 }
+@media (max-width: 576px) {
+  .resizeLogoHeader{
+    width: 50%;
+  }
+  .logoHeader {
+    width: 30%;
+  }
+  }
+
+
 
 .menuLink {
   margin-right: 2em;
@@ -22,10 +30,12 @@
   font-weight: bold;
   font-size: 110%;
   height: 100%;
+  padding-right:0.2em;
+  padding-left:0.2em;
+
 }
 
 .linksDesign {
-  margin-right: 2em;
   cursor: pointer;
   text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
   border-bottom: 0.2em transparent solid;
@@ -33,12 +43,60 @@
   height: 100%;
   justify-content: center;
   width: 50vw;
+  display: flex;
 }
 
-.navbarRisaldent {
+.linksDesign {
+  cursor: pointer;
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+  border-bottom: 0.2em transparent solid;
+  font-size: 110%;
+  height: 100%;
+  justify-content: center;
+  width: 50vw;
+  display: flex;
+}
+
+.homeNavbarLink:hover {
+  border-bottom: 0.1em white solid;
+  transform: scale(1.1);
+  color: white;
+}
+
+.homeNavbarLink {
+  border-bottom: 0.2em transparent solid;
+
+}
+
+.menuItem {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.loginDesignAjust {
+  display: flex;
+  justify-content: center;
+}
+
+#navbarRisaldent {
   background-color: #053c8fe6;
   position: fixed;
   backdrop-filter: invert(80%);
   user-select: none;
   width: 100vw;
+}
+
+
+@media (max-width: 576px) {
+  .linksDesign {
+width: auto;
+  }
+}
+
+.authLinksDesign{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20%;
 }

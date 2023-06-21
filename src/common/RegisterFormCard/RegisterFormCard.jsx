@@ -26,7 +26,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"name"}
               placeholder={""}
               name={"name"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -36,7 +36,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"surname"}
               placeholder={""}
               name={"surname"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -49,7 +49,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"date"}
               placeholder={""}
               name={"date"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -59,7 +59,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"address"}
               placeholder={""}
               name={"address"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -72,7 +72,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"phone"}
               placeholder={""}
               name={"phone"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -82,7 +82,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"email"}
               placeholder={""}
               name={"email"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -95,7 +95,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"password"}
               placeholder={""}
               name={"password"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>
@@ -105,7 +105,7 @@ export const RegisterFormCard = ({ titleRegister }) => {
               type={"password"}
               placeholder={""}
               name={"password"}
-              classDesign={"InputText"}
+              classDesign={"inputText"}
               functionHandler={InputHandler}
             />
           </div>

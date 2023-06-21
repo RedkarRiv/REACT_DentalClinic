@@ -12,7 +12,7 @@ export const InputText = ({
   return (
     <>
       <input
-        className={classDesign}
+        className={"inputText " + classDesign}
         type={type}
         placeholder={placeholder}
         name={name}
