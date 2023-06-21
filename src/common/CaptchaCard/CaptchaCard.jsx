@@ -13,7 +13,6 @@ export const CaptchaCard = () => {
 
   return (
     <div className="captchaCardDesign">
-        {console.log(captchaGreenCheck.verifycaptcha)}
       <div
         className={
           captchaGreenCheck === false

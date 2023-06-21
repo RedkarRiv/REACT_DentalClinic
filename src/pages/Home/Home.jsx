@@ -18,20 +18,14 @@ import { SectionTitle } from "../../common/SectionTitle/SectionTitle";
 import { RegisterFormCard } from "../../common/RegisterFormCard/RegisterFormCard";
 import "bootstrap/dist/css/bootstrap.css";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
-import { FormContact } from "../../common/FormContact/FormContact";
+import { FormLogin } from "../../common/FormLogin/FormLogin";
 
 export const Home = () => {
   return (
-
-<div className="homeBackground">
-<div className="formContactContainer">
-<FormContact/>
-
-
-</div>
-
-</div>
-
-
+    <div className="homeBackground">
+      <div className="formContactContainer">
+        <FormLogin />
+      </div>
+    </div>
   );
 };

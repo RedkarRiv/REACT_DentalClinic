@@ -20,8 +20,6 @@
   background-color: grey;
 }
 
-
-
 .slide12 {
   height: 100%;
   width: 100%;
@@ -37,33 +35,28 @@
   transition: 3s;
 }
 
-
-
 .homeBackground {
   height: 100vh;
   width: 100vw;
-  background-color: red;
   background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
-   background-size: cover;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .formContactContainer {
-width: 30%;
-height: auto;
-background-color: white;
-border-radius: 1em;
+  width: 20%;
+  height: auto;
+  background-color: white;
+  border-radius: 1em;
 }
-@media (max-width: 576px) {
+
+@media (max-width: 768px) {
   .formContactContainer {
     width: 80%;
     height: auto;
-    background-color: white;
-    border-radius: 1em;
-    }
+
   }
-
-
+}
 

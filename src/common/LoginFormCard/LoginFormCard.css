@@ -55,10 +55,6 @@
     text-decoration: underline;
   }
 
-  .textInput {
-    border: rgb(37, 36, 36) solid 0.1em;
-    border-radius: 0.5em;
-  }
   
   
   .errorText {

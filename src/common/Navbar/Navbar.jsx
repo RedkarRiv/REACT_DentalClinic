@@ -94,13 +94,13 @@ export const Navbar2Boots = () => {
   }, [Newtoken]);
   return (
     <Navbar collapseOnSelect expand="lg" className="p-3" id="navbarRisaldent">
-      <Navbar.Brand href="#home" className="text-light">
+      <Navbar.Brand  onClick={() => navigate("/")} className="text-light">
         Risaldent{" "}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="flex-row">
         <Nav className="w-100 d-flex justify-content-center">
-          <Nav.Link className="text-light menuItem" onClick={() => navigate("/AboutUs")}>
+          <Nav.Link className="text-light menuItem" onClick={() => navigate("/")}>
             Home
           </Nav.Link>
           <Nav.Link className="text-light menuItem" onClick={() => navigate("/OurTeam")}>
