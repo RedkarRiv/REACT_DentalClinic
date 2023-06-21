@@ -110,14 +110,14 @@ export const Navbar2Boots = () => {
             Nuestra clínica
           </Nav.Link>
           <NavDropdown className="text-light menuItem" title="Servicios" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Servicio</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Servicio</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Servicio</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.1">Especialidades</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Intervenciones</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Estética</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Servicio</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4">Pide cita!</NavDropdown.Item>
           </NavDropdown>
         </Nav>
-        <Nav className="loginDesignAjust menuItem ">
+        <Nav className="loginDesignAjust ">
           {token ? (
             <div className="profileButtonContainer">
               {console.log("esto es el token perfil ", { token })}
@@ -125,7 +125,7 @@ export const Navbar2Boots = () => {
               <ProfileButton avatarImage={avatarImageLink} />
             </div>
           ) : (
-            <div className="authLinksDesign  menuItem d-flex">
+            <div className="authLinksDesign d-flex">
               {console.log("esto es el token ", { token })}
               <LoginRegisterButtons />
             </div>

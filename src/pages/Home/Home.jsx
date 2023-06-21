@@ -16,23 +16,22 @@ import dolorMaxilar from "../../assets/img/dolorMaxilar.svg";
 import cirugiaOral from "../../assets/img/cirugiaOral.svg";
 import { SectionTitle } from "../../common/SectionTitle/SectionTitle";
 import { RegisterFormCard } from "../../common/RegisterFormCard/RegisterFormCard";
+import "bootstrap/dist/css/bootstrap.css";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { FormContact } from "../../common/FormContact/FormContact";
 
 export const Home = () => {
   return (
-    <div className="homeDesign">
-      <div className="slide1">
-        <div className="slide11">
-          <Container>
-            <Row>
-              <Col sm={6}>
-              </Col>
-            </Row>
-          </Container>
-          <div className="slide12 row d-flex flex-wrap m-0">
-           
-      </div>
-        </div>
-      </div>
-    </div>
+
+<div className="homeBackground">
+<div className="formContactContainer">
+<FormContact/>
+
+
+</div>
+
+</div>
+
+
   );
 };

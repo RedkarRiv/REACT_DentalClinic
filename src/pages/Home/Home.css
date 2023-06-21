@@ -20,12 +20,6 @@
   background-color: grey;
 }
 
-.slide11 {
-  height: 100%;
-  width: 100%;
-  background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
-  background-size: cover;
-}
 
 
 .slide12 {
@@ -42,6 +36,34 @@
   background-color: rgba(255, 255, 255, 0.34);
   transition: 3s;
 }
+
+
+
+.homeBackground {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.formContactContainer {
+width: 30%;
+height: auto;
+background-color: white;
+border-radius: 1em;
+}
+@media (max-width: 576px) {
+  .formContactContainer {
+    width: 80%;
+    height: auto;
+    background-color: white;
+    border-radius: 1em;
+    }
+  }
 
 
 

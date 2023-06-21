@@ -16,7 +16,7 @@
     flex-direction: column;
   }
 
-  
+/*   
 .loginFormTitle {
     border-top-left-radius: 0.4em;
     border-top-right-radius: 0.4em;
@@ -26,7 +26,7 @@
     font-size: 200%;
     background-color: #079a02;
     /* ff6c03 */
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
       to bottom,
       transparent,
       rgba(0, 0, 0, 0.174)
@@ -40,7 +40,7 @@
     align-items: center;
     user-select: none;
     margin-bottom: 1em;
-  }
+  } */ */
 
 
   .passForgot{

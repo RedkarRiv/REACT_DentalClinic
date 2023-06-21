@@ -5,22 +5,6 @@
   align-items: center;
 }
 
-.logoHeader {
-  width: 25%;
-  cursor: pointer;
-  filter: drop-shadow(0.1em 0.2em 0.1em black);
-  margin-left: 5%;
-}
-@media (max-width: 576px) {
-  .resizeLogoHeader{
-    width: 50%;
-  }
-  .logoHeader {
-    width: 30%;
-  }
-  }
-
-
 
 .menuLink {
   margin-right: 2em;
@@ -71,7 +55,15 @@
 .menuItem {
   margin-right: 1em;
   margin-left: 1em;
+  color:white;
+  border-bottom: 0.2em transparent solid;
 }
+
+.menuItem:hover {
+  border-bottom: 0.2em white solid;
+transform: scale(1.2);
+}
+
 
 .loginDesignAjust {
   display: flex;
