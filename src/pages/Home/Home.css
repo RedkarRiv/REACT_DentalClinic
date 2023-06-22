@@ -38,13 +38,14 @@
 .homeBackground {
   height: 100vh;
   width: 100vw;
+  background-color: blue;
   background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+/* {user.name} {user.surname} {user.email} {user.address} {user.phone} {user.role_id} */
 .formContactContainer {
   width: 20%;
   height: auto;
@@ -60,3 +61,12 @@
   }
 }
 
+.employeeCardContainer {
+  text-align: center;
+  font-size: 70%;
+}
+
+.cardGridContainer{
+  width: 80vw;
+  height: 80vh;
+border: white solid 0.1em;}
