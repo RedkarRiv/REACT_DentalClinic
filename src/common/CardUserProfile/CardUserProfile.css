@@ -28,10 +28,13 @@
   .titleUserDesign {
     font-size: 120%;
   }
+  .fontResizeAppointmentsTitle {
+    font-size: 0.3em;
+}}
 
-}
 @media (min-width: 992px) {
    
+
     .titleAppointmentDesign{
       font-size:150%
     }
@@ -88,3 +91,4 @@ font-size:250%
 margin-bottom: 0.5em;
 text-align: center;
 }
+

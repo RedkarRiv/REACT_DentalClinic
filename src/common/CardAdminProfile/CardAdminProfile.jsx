@@ -151,9 +151,9 @@ export const CardAdminProfile = () => {
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
-                      <div className="titleAppointmentDesign">TUS CITAS </div>
+                      <div className="titleAppointmentDesign">Todos los usuarios </div>
                     </MDBCardText>
-                    <MDBTable align="middle">
+                    <MDBTable align="middle" className="">
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Usuario</th>

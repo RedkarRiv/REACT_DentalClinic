@@ -42,3 +42,14 @@
     user-select: none;
     cursor: pointer;
   }
+
+  @media (min-width: 992px) {
+   
+        .titleAppointmentDesign{
+          font-size:150%
+        }
+        .titleUserDesign {
+    font-size:250%
+        }
+     
+    }

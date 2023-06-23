@@ -12,3 +12,8 @@ cursor: pointer;
 .viewButtonDesign:hover {
 text-decoration: underline;
 }
+
+.responsiveAppointmentsCardsDesign {
+    width: 100%;
+    font-size: 100%;
+}

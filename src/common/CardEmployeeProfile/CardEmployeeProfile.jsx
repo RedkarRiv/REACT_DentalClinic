@@ -158,7 +158,7 @@ export const CardEmployeeProfile = () => {
                         TODAS LAS CITAS{" "}
                       </div>
                     </MDBCardText>
-                    <MDBTable align="middle">
+                    <MDBTable align="middle" className="">
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Pacientes</th>

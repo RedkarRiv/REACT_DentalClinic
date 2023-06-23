@@ -158,7 +158,7 @@ export const CardUserProfile = () => {
                     <MDBCardText className="mb-4 d-flex justify-content-between">
                       <div className="titleAppointmentDesign">TUS CITAS </div>
                     </MDBCardText>
-                    <MDBTable align="middle">
+                    <MDBTable align="middle" className="fontResizeAppointmentsTitle">
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Doctor/Doctora</th>

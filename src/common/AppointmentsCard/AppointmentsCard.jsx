@@ -7,7 +7,7 @@ export const AppointmentsCard = () => {
     const navigate = useNavigate();
 
   return (
-      <MDBTableBody>
+      <MDBTableBody className="responsiveAppointmentsCardsDesign">
         <tr>
           <td>
             <div className='d-flex align-items-center'>
