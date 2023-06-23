@@ -19,45 +19,57 @@
   transform: scale(0.9);
 }
 
-
 @media (max-width: 576px) {
-.redesignButton, .redesignButton2 .fontResizeDesign  {
-font-size: 80%;
+  .redesignButton,
+  .redesignButton2 .fontResizeDesign {
+    font-size: 80%;
+  }
+  .titleAppointmentDesign {
+    font-size:80%
+  }
 }
 
+@media (min-width: 992px) {
+   
+    .titleAppointmentDesign {
+      font-size:150%
+    }
+ 
 }
-
-
 .redesignButton2 {
-    background-color: rgb(0, 119, 255);
-    padding-left: 1em;
-    padding-right: 1em;
-    color: white;
-    border-radius: 0.3em;
-    user-select: none;
-    cursor: pointer;  
-display: flex;
-justify-content: center;
-align-items: center;
+  background-color: rgb(0, 119, 255);
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: 1em;
+  color: white;
+  border-radius: 0.3em !important;
+  user-select: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .redesignButton2:hover {
-    background-color: rgb(17, 71, 132);
-  }
-
-
-  .updateAppointmentDesign  {
-    cursor: pointer;
-    user-select: none;
-  }
-
-  .updateAppointmentDesign:active  {
-transform: scale(0.9);  }
+  background-color: rgb(17, 71, 132);
+}
 
 .menuFontDesign {
-    font-weight: bold;
-    cursor: pointer;
-    user-select: none;
-    color: rgb(38, 37, 37);
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  color: rgb(38, 37, 37);
 }
-    
+
+.searchFormDesign {
+  margin-right: 2em;
+  border-radius: 1em !important;
+}
+
+.titleAppointmentDesign {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+}

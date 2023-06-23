@@ -20,7 +20,7 @@ import {
 import { useNavigate } from "react-router-dom";
 
 export const CardUserProfile = () => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
@@ -29,7 +29,9 @@ export const CardUserProfile = () => {
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
               <MDBBreadcrumbItem>
-                <div className="menuFontDesign" onClick={() => navigate("/")}>Home</div>
+                <div className="menuFontDesign" onClick={() => navigate("/")}>
+                  Home
+                </div>
               </MDBBreadcrumbItem>
               <MDBBreadcrumbItem active>Perfil de Usuario</MDBBreadcrumbItem>
             </MDBBreadcrumb>
@@ -72,7 +74,7 @@ export const CardUserProfile = () => {
                   <MDBCol sm="3" lg="4">
                     <MDBCardText>Email</MDBCardText>
                   </MDBCol>
-                  <MDBCol sm="9"  lg="8">
+                  <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
                       example@example.com
                     </MDBCardText>
@@ -83,7 +85,7 @@ export const CardUserProfile = () => {
                   <MDBCol sm="3" lg="4">
                     <MDBCardText>Phone</MDBCardText>
                   </MDBCol>
-                  <MDBCol sm="9"  lg="8">
+                  <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
                       (097) 234-5678
                     </MDBCardText>
@@ -94,7 +96,7 @@ export const CardUserProfile = () => {
                   <MDBCol sm="3" lg="4">
                     <MDBCardText>Fecha de nacimiento</MDBCardText>
                   </MDBCol>
-                  <MDBCol sm="9"  lg="8" className=" d-flex align-items-center">
+                  <MDBCol sm="9" lg="8" className=" d-flex align-items-center">
                     <MDBCardText className="text-muted">12-06-1912</MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -103,7 +105,7 @@ export const CardUserProfile = () => {
                   <MDBCol sm="3" lg="4">
                     <MDBCardText>Address</MDBCardText>
                   </MDBCol>
-                  <MDBCol sm="9"  lg="8">
+                  <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
                       Bay Area, San Francisco, CA
                     </MDBCardText>
@@ -114,44 +116,44 @@ export const CardUserProfile = () => {
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
-                <MDBListGroup flush className="rounded-3">
-                  <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
-                    <form className="d-flex input-group w-100">
-                      <input
-                        type="search"
-                        className="form-control"
-                        placeholder="..."
-                        aria-label="Search"
-                      />
-                      <div className="redesignButton2">Buscar cita</div>
-                    </form>
-                  </MDBListGroupItem>
+              <MDBListGroup flush className="rounded-3">
+                <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
+                  <form className="d-flex input-group w-75">
+                    <input
+                      type="search"
+                      className="form-control searchFormDesign"
+                      placeholder="..."
+                      aria-label="Search"
+                    />
+                    <div className="redesignButton2">Buscar cita</div>
+                  </form>
+                </MDBListGroupItem>
 
-                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>
-                      <p>Cita el 29 de enero de 2024 a las 18:30</p>
-                    </MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>
-                      <p>Cita el 12 de febrero de 2024 a las 15:30</p>
-                    </MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>
-                      <p>Cita el 2 de marzo de 2024 a las 12:30</p>
-                    </MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>
-                      <p>Cita el 1 de agosto de 2024 a las 9:30</p>
-                    </MDBCardText>
-                  </MDBListGroupItem>
-                </MDBListGroup>
+                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                  <MDBIcon fas icon="globe fa-lg text-warning" />
+                  <MDBCardText>
+                    <p>Cita el 29 de enero de 2024 a las 18:30</p>
+                  </MDBCardText>
+                </MDBListGroupItem>
+                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                  <MDBIcon fas icon="globe fa-lg text-warning" />
+                  <MDBCardText>
+                    <p>Cita el 12 de febrero de 2024 a las 15:30</p>
+                  </MDBCardText>
+                </MDBListGroupItem>
+                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                  <MDBIcon fas icon="globe fa-lg text-warning" />
+                  <MDBCardText>
+                    <p>Cita el 2 de marzo de 2024 a las 12:30</p>
+                  </MDBCardText>
+                </MDBListGroupItem>
+                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                  <MDBIcon fas icon="globe fa-lg text-warning" />
+                  <MDBCardText>
+                    <p>Cita el 1 de agosto de 2024 a las 9:30</p>
+                  </MDBCardText>
+                </MDBListGroupItem>
+              </MDBListGroup>
             </MDBCard>
 
             <MDBRow>
@@ -159,10 +161,9 @@ export const CardUserProfile = () => {
                 <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
-                      Consulta ortodoncía: 29-12-2023 a las 19:30{" "}
-                      <span className="text-primary font-italic me-1">
-                        Modificar cita
-                      </span>{" "}
+                      <div className="titleAppointmentDesign">
+                        Consulta ortodoncía: 29-12-2023 a las 19:30
+                      </div>
                     </MDBCardText>
                     <MDBCardText
                       className="mb-1"
