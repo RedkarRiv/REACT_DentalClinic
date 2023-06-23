@@ -33,6 +33,9 @@ export const Navbar2Boots = () => {
           <Nav.Link className="text-light menuItem" onClick={() => navigate("/employeeprofile")}>
             Perfil Doctor
           </Nav.Link>
+          <Nav.Link className="text-light menuItem" onClick={() => navigate("/managerprofile")}>
+          Perfil Admin
+          </Nav.Link>
           
         </Nav>
         <Nav className="loginDesignAjust ">

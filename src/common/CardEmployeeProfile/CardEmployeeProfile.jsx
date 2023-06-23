@@ -146,39 +146,6 @@ export const CardEmployeeProfile = () => {
                     <div className="redesignButton2">Buscar cita</div>
                   </form>
                 </MDBListGroupItem>
-
-                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                  <MDBIcon fas icon="globe fa-lg text-warning" />
-                  <MDBCardText>
-                    <p>
-                      Cita de Consulta básica el 29 de enero de 2024 a las 18:30
-                    </p>
-                  </MDBCardText>
-                </MDBListGroupItem>
-                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                  <MDBIcon fas icon="globe fa-lg text-warning" />
-                  <MDBCardText>
-                    <p>
-                      Cita de Cirugia Máxilar el 12 de febrero de 2024 a las
-                      15:30
-                    </p>
-                  </MDBCardText>
-                </MDBListGroupItem>
-                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                  <MDBIcon fas icon="globe fa-lg text-warning" />
-                  <MDBCardText>
-                    <p>Cita de Caries el 2 de marzo de 2024 a las 12:30</p>
-                  </MDBCardText>
-                </MDBListGroupItem>
-                <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
-                  <MDBIcon fas icon="globe fa-lg text-warning" />
-                  <MDBCardText>
-                    <p>
-                      Cita de Exámen diagnóstico el 1 de agosto de 2024 a las
-                      9:30
-                    </p>
-                  </MDBCardText>
-                </MDBListGroupItem>
               </MDBListGroup>
             </MDBCard>
 
@@ -202,7 +169,6 @@ export const CardEmployeeProfile = () => {
                         </tr>
                       </MDBTableHead>{" "}
                       <AppointmentsCard />
-
                     </MDBTable>
                   </MDBCardBody>
                 </MDBCard>

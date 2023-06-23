@@ -1,13 +1,13 @@
 import React from "react";
 import "./AdminProfile.css";
-import { CardUserProfile } from "../../common/CardUserProfile/CardUserProfile";
+import { CardAdminProfile } from "../../common/CardAdminProfile/CardAdminProfile";
 
 export const AdminProfile = () => {
   return (
     <>
-      <div className="userProfileContainer">
-        <div className="cardUserProfileContainer">
-          <CardUserProfile />
+      <div className="adminProfileContainer">
+        <div className="cardAdminProfileContainer">
+          <CardAdminProfile />
         </div>
       </div>
     </>

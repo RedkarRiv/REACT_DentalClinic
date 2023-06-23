@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardUserProfile.css";
+import "./CardAdminProfile.css";
 import {
   MDBCol,
   MDBContainer,
@@ -22,7 +22,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
 
-export const CardUserProfile = () => {
+export const CardAdminProfile = () => {
   const navigate = useNavigate();
 
   return (
@@ -36,20 +36,20 @@ export const CardUserProfile = () => {
                   Home
                 </div>
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>Perfil de Usuario</MDBBreadcrumbItem>
+              <MDBBreadcrumbItem active>Perfil de Admin</MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
-          <div className="titleUserDesign">Bienvenido Jonathan</div>
+          <div className="titleUserDesign">Bienvenido ADMIN</div>
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                  src="https://w7.pngwing.com/pngs/812/462/png-transparent-account-avatar-profile-user-avatars-icon.png"
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: "150px" }}
