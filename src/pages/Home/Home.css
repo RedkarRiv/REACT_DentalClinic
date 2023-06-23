@@ -1,5 +1,5 @@
 .homeBackground {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: blue;
   background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: flex-end;
 }
-
 .cardGridContainer {
   width: 50vw;
   background-color: rgb(215, 210, 210);
@@ -17,7 +16,6 @@
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
-  padding:2em;
   margin-bottom: 2em;
 }
 .employeeCardContainer {
@@ -49,4 +47,11 @@
     height: auto;
     padding: 1em;
   }
+}
+
+.gridContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 6em;
 }

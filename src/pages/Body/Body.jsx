@@ -7,6 +7,8 @@ import { AboutUs } from "../AboutUs/AboutUs";
 import { OurTeam } from "../OurTeam/OurTeam";
 import { Contact } from "../Contact/Contact";
 import { UserProfile } from "../UserProfile/UserProfile";
+import { EmployeeProfile } from "../EmployeeProfile/EmployeeProfile";
+import {AdminProfile }from "../AdminProfile/AdminProfile";
 
 export const Body = () => {
 
@@ -20,8 +22,13 @@ export const Body = () => {
             <Route path="/aboutus" element={<AboutUs />}/>
             <Route path="/ourteam" element={<OurTeam />}/>
             <Route path="/contact" element={<Contact />}/>
-            <Route path="/myprofile" element={<UserProfile />}/>
+            <Route path="/userprofile" element={<UserProfile />}/>
+            <Route path="/employeeprofile" element={<EmployeeProfile />}/>
+            <Route path="/managerprofile" element={<AdminProfile />}/>
 
+
+
+            
         </Routes>
         </>
     )

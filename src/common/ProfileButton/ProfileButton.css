@@ -22,8 +22,8 @@
 }
 
 .avatarImage {
-  width: 1.2em;
-  height: 1.2em;
+  width: 1em;
+  height: 1em;
   border-radius: 50%;
 }
 
@@ -38,7 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50%;
+  font-size: 35%;
   font-weight: bold;
   user-select: none;
   height: 50%;

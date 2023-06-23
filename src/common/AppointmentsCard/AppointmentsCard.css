@@ -1,0 +1,14 @@
+.viewButtonDesign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: blue;
+padding:1em;
+user-select: none;
+cursor: pointer;
+}
+
+
+.viewButtonDesign:hover {
+text-decoration: underline;
+}

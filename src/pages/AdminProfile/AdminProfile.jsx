@@ -1,8 +1,8 @@
 import React from "react";
-import "./UserProfile.css";
+import "./AdminProfile.css";
 import { CardUserProfile } from "../../common/CardUserProfile/CardUserProfile";
 
-export const UserProfile = () => {
+export const AdminProfile = () => {
   return (
     <>
       <div className="userProfileContainer">

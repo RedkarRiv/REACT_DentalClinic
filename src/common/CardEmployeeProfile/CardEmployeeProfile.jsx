@@ -1,5 +1,5 @@
 import React from "react";
-import "./CardUserProfile.css";
+import "./CardEmployeeProfile.css";
 import {
   MDBCol,
   MDBContainer,
@@ -17,12 +17,12 @@ import {
   MDBListGroup,
   MDBListGroupItem,
   MDBTableHead,
-  MDBTable
+  MDBTable,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
 
-export const CardUserProfile = () => {
+export const CardEmployeeProfile = () => {
   const navigate = useNavigate();
 
   return (
@@ -36,26 +36,26 @@ export const CardUserProfile = () => {
                   Home
                 </div>
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>Perfil de Usuario</MDBBreadcrumbItem>
+              <MDBBreadcrumbItem active>Perfil de Empleado</MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
 
         <MDBRow>
-          <div className="titleUserDesign">Bienvenido Jonathan</div>
+          <div className="titleUserDesign">Bienvenido EMPLEADO</div>
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                  src="https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png"
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: "150px" }}
                   fluid
                 />
-                <p className="text-muted mb-1 mt-4">Jonathan Smith</p>
+                <p className="text-muted mb-1 mt-4">Alicia Taylor</p>
                 <p className="text-muted mb-4">Registro: 12-08-2022</p>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButton">Nueva cita</div>
@@ -72,7 +72,7 @@ export const CardUserProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      Johnatan Smith
+                      Alicia Taylor
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -184,15 +184,17 @@ export const CardUserProfile = () => {
 
             <MDBRow>
               <MDBCol md="6" lg="12">
-                <MDBCard className="mb-4 mb-md-0 ">
+                <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
-                      <div className="titleAppointmentDesign">TUS CITAS </div>
+                      <div className="titleAppointmentDesign">
+                        TODAS LAS CITAS{" "}
+                      </div>
                     </MDBCardText>
                     <MDBTable align="middle">
                       <MDBTableHead>
                         <tr>
-                          <th scope="col">Doctor/Doctora</th>
+                          <th scope="col">Pacientes</th>
                           <th scope="col">Tipo de consulta</th>
                           <th scope="col">Estado</th>
                           <th scope="col">Fecha</th>

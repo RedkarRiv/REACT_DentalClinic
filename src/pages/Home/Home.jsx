@@ -18,6 +18,7 @@ export const Home = () => {
 
   return (
     <div className="homeBackground">
+      <div className="gridContainer">
       <div className="cardGridContainer">
       {users.length > 0 ? (
         users.map((user) => (
@@ -35,6 +36,7 @@ export const Home = () => {
       ) : (
         <p>Loading...</p>
       )}
+      </div>
       </div>
     </div>
   );

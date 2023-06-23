@@ -18,7 +18,7 @@ export const Navbar2Boots = () => {
   }, [Newtoken]);
   return (
     <Navbar collapseOnSelect expand="lg" className="p-3" id="navbarRisaldent">
-      <Navbar.Brand  onClick={() => navigate("/")} className="text-light">
+      <Navbar.Brand  onClick={() => navigate("/")} className="text-light logoSelectDesign">
         Risaldent{" "}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -27,19 +27,13 @@ export const Navbar2Boots = () => {
           <Nav.Link className="text-light menuItem" onClick={() => navigate("/")}>
             Home
           </Nav.Link>
-          <Nav.Link className="text-light menuItem" onClick={() => navigate("/myprofile")}>
-            Nuestro equipo
+          <Nav.Link className="text-light menuItem" onClick={() => navigate("/userprofile")}>
+          Perfil Usuario
           </Nav.Link>
-          <Nav.Link className="text-light menuItem" onClick={() => navigate("/contact")}>
-            Nuestra clínica
+          <Nav.Link className="text-light menuItem" onClick={() => navigate("/employeeprofile")}>
+            Perfil Doctor
           </Nav.Link>
-          <NavDropdown className="text-light menuItem" title="Servicios" id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Especialidades</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Intervenciones</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Estética</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Pide cita!</NavDropdown.Item>
-          </NavDropdown>
+          
         </Nav>
         <Nav className="loginDesignAjust ">
           {token ? (

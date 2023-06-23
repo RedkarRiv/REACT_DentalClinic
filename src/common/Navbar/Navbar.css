@@ -71,9 +71,8 @@ transform: scale(1.2);
 }
 
 #navbarRisaldent {
-  background-color: #053c8fe6;
+  background-color: #053c8fdd;
   position: fixed;
-  backdrop-filter: invert(80%);
   user-select: none;
   width: 100vw;
   z-index: 9999;
@@ -92,4 +91,9 @@ width: auto;
   justify-content: center;
   align-items: center;
   margin-left: 20%;
+}
+
+.logoSelectDesign {
+
+  cursor: pointer;
 }
