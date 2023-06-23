@@ -1,11 +1,12 @@
 import React from 'react';
 import ("./AppointmentsCard.css")
 import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
+import { useNavigate } from "react-router-dom";
 
 export const AppointmentsCard = () => {
-  return (
-   
+    const navigate = useNavigate();
 
+  return (
       <MDBTableBody>
         <tr>
           <td>
@@ -272,7 +273,7 @@ export const AppointmentsCard = () => {
           </td>
           <td>25/03/2023</td>
           <td>
-            <div className="viewButtonDesign">
+            <div className="viewButtonDesign" onClick={() => navigate("/userdetail")}>
               Ver
             </div>
           </td>

@@ -17,14 +17,11 @@ import {
   MDBListGroup,
   MDBListGroupItem,
   MDBTableHead,
-  MDBTable
+  MDBTable,
 } from "mdb-react-ui-kit";
-import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
 
 export const CardAdminProfile = () => {
-  const navigate = useNavigate();
-
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
@@ -55,7 +52,7 @@ export const CardAdminProfile = () => {
                   style={{ width: "150px" }}
                   fluid
                 />
-                <p className="text-muted mb-1 mt-4">Jonathan Smith</p>
+                <p className="text-muted mb-1 mt-4">Arthur Arpon</p>
                 <p className="text-muted mb-4">Registro: 12-08-2022</p>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButton">Nueva cita</div>
@@ -72,7 +69,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      Johnatan Smith
+                      Arthur Arpon{" "}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -136,18 +133,16 @@ export const CardAdminProfile = () => {
             <MDBCard className="mb-4">
               <MDBListGroup flush className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
-                  <form className="d-flex input-group w-50">
+                  <form className="d-flex input-group w-100">
                     <input
-                      type="date"
+                      type="search"
                       className="form-control searchFormDesign"
-                      placeholder="..."
+                      placeholder=""
                       aria-label="Search"
                     />
-                    <div className="redesignButton2">Buscar cita</div>
+                    <div className="redesignButton2">Buscar usuario</div>
                   </form>
                 </MDBListGroupItem>
-
-               
               </MDBListGroup>
             </MDBCard>
 
@@ -161,15 +156,14 @@ export const CardAdminProfile = () => {
                     <MDBTable align="middle">
                       <MDBTableHead>
                         <tr>
-                          <th scope="col">Doctor/Doctora</th>
-                          <th scope="col">Tipo de consulta</th>
+                          <th scope="col">Usuario</th>
+                          <th scope="col">Rol</th>
                           <th scope="col">Estado</th>
-                          <th scope="col">Fecha</th>
+                          <th scope="col">Registrado</th>
                           <th scope="col">Detalle</th>
                         </tr>
                       </MDBTableHead>{" "}
                       <AppointmentsCard />
-
                     </MDBTable>
                   </MDBCardBody>
                 </MDBCard>
