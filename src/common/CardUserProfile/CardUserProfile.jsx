@@ -25,6 +25,8 @@ export const CardUserProfile = () => {
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
+
+
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
@@ -37,6 +39,13 @@ export const CardUserProfile = () => {
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
+        
+      <MDBRow>
+      <div className="titleUserDesign">
+                        Bienvenido Jonathan
+                      </div>
+
+      </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4">
