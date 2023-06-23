@@ -42,11 +42,9 @@ export const FormLogin = () => {
     loginMe(credentials)
       .then((resultado) => {
         let decoded = jwt_decode(resultado.data.token);
-
         setTimeout(() => {
           navigate("/");
         }, 1000);
-
         console.log(decoded);
         console.log(resultado);
         sessionStorage.setItem("token", resultado.data.token);
