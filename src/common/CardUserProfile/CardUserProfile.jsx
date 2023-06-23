@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import "./CardUserProfile.css";
 import {
   MDBCol,
   MDBContainer,
@@ -14,174 +15,173 @@ import {
   MDBProgressBar,
   MDBIcon,
   MDBListGroup,
-  MDBListGroupItem
-} from 'mdb-react-ui-kit';
+  MDBListGroupItem,
+} from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 export const CardUserProfile = () => {
+    const navigate = useNavigate();
+
   return (
-    <section style={{ backgroundColor: '#92e2ff' }}>
+    <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
               <MDBBreadcrumbItem>
-                <a href='#'>Home</a>
+                <div className="menuFontDesign" onClick={() => navigate("/")}>Home</div>
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem>
-                <a href="#">User</a>
-              </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
+              <MDBBreadcrumbItem active>Perfil de Usuario</MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
         </MDBRow>
-
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4">
-              <MDBCardBody className="text-center">
+              <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
                   src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                   alt="avatar"
                   className="rounded-circle"
-                  style={{ width: '150px' }}
-                  fluid />
-                <p className="text-muted mb-1">Full Stack Developer</p>
-                <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                  style={{ width: "150px" }}
+                  fluid
+                />
+                <p className="text-muted mb-1 mt-4">Jonathan Smith</p>
+                <p className="text-muted mb-4">Registro: 12-08-2022</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn>Nueva cita</MDBBtn>
-                  <MDBBtn outline className="ms-1">Editar</MDBBtn>
+                  <div className="redesignButton">Nueva cita</div>
+                  <div className="redesignButton">Editar</div>
                 </div>
               </MDBCardBody>
             </MDBCard>
 
-            <MDBCard className="mb-4 mb-lg-0">
-              <MDBCardBody className="p-0">
-                <MDBListGroup flush className="rounded-3">
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>https://mdbootstrap.com</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="github fa-lg" style={{ color: '#333333' }} />
-                    <MDBCardText>mdbootstrap</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="twitter fa-lg" style={{ color: '#55acee' }} />
-                    <MDBCardText>@mdbootstrap</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="instagram fa-lg" style={{ color: '#ac2bac' }} />
-                    <MDBCardText>mdbootstrap</MDBCardText>
-                  </MDBListGroupItem>
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fab icon="facebook fa-lg" style={{ color: '#3b5998' }} />
-                    <MDBCardText>mdbootstrap</MDBCardText>
-                  </MDBListGroupItem>
-                </MDBListGroup>
+            <MDBCard className="mb-4">
+              <MDBCardBody>
+                <MDBRow>
+                  <MDBCol sm="3" lg="4">
+                    <MDBCardText>Nombre</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9" lg="8">
+                    <MDBCardText className="text-muted">
+                      Johnatan Smith
+                    </MDBCardText>
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3" lg="4">
+                    <MDBCardText>Email</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9"  lg="8">
+                    <MDBCardText className="text-muted">
+                      example@example.com
+                    </MDBCardText>
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3" lg="4">
+                    <MDBCardText>Phone</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9"  lg="8">
+                    <MDBCardText className="text-muted">
+                      (097) 234-5678
+                    </MDBCardText>
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3" lg="4">
+                    <MDBCardText>Fecha de nacimiento</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9"  lg="8" className=" d-flex align-items-center">
+                    <MDBCardText className="text-muted">12-06-1912</MDBCardText>
+                  </MDBCol>
+                </MDBRow>
+                <hr />
+                <MDBRow>
+                  <MDBCol sm="3" lg="4">
+                    <MDBCardText>Address</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="9"  lg="8">
+                    <MDBCardText className="text-muted">
+                      Bay Area, San Francisco, CA
+                    </MDBCardText>
+                  </MDBCol>
+                </MDBRow>
               </MDBCardBody>
             </MDBCard>
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
-              <MDBCardBody>
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Nombre</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Email</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">example@example.com</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Teléfono</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">(097) 234-5678</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Dirección</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-              </MDBCardBody>
+                <MDBListGroup flush className="rounded-3">
+                  <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
+                    <form className="d-flex input-group w-100">
+                      <input
+                        type="search"
+                        className="form-control"
+                        placeholder="..."
+                        aria-label="Search"
+                      />
+                      <div className="redesignButton2">Buscar cita</div>
+                    </form>
+                  </MDBListGroupItem>
+
+                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                    <MDBIcon fas icon="globe fa-lg text-warning" />
+                    <MDBCardText>
+                      <p>Cita el 29 de enero de 2024 a las 18:30</p>
+                    </MDBCardText>
+                  </MDBListGroupItem>
+                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                    <MDBIcon fas icon="globe fa-lg text-warning" />
+                    <MDBCardText>
+                      <p>Cita el 12 de febrero de 2024 a las 15:30</p>
+                    </MDBCardText>
+                  </MDBListGroupItem>
+                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                    <MDBIcon fas icon="globe fa-lg text-warning" />
+                    <MDBCardText>
+                      <p>Cita el 2 de marzo de 2024 a las 12:30</p>
+                    </MDBCardText>
+                  </MDBListGroupItem>
+                  <MDBListGroupItem className="d-flex justify-content-start align-items-center p-3">
+                    <MDBIcon fas icon="globe fa-lg text-warning" />
+                    <MDBCardText>
+                      <p>Cita el 1 de agosto de 2024 a las 9:30</p>
+                    </MDBCardText>
+                  </MDBListGroupItem>
+                </MDBListGroup>
             </MDBCard>
 
             <MDBRow>
-              <MDBCol md="6">
+              <MDBCol md="6" lg="12">
                 <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
+                    <MDBCardText className="mb-4 d-flex justify-content-between">
+                      Consulta ortodoncía: 29-12-2023 a las 19:30{" "}
+                      <span className="text-primary font-italic me-1">
+                        Modificar cita
+                      </span>{" "}
+                    </MDBCardText>
+                    <MDBCardText
+                      className="mb-1"
+                      style={{ fontSize: ".77rem" }}
+                    >
+                      Web Design
+                    </MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={80} valuemin={0} valuemax={100} />
                     </MDBProgress>
 
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Website Markup</MDBCardText>
+                    <MDBCardText
+                      className="mt-4 mb-1"
+                      style={{ fontSize: ".77rem" }}
+                    >
+                      Website Markup
+                    </MDBCardText>
                     <MDBProgress className="rounded">
                       <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>One Page</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Mobile Template</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Backend API</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={66} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">assigment</span> Project Status</MDBCardText>
-                    <MDBCardText className="mb-1" style={{ fontSize: '.77rem' }}>Web Design</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={80} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Website Markup</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={72} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>One Page</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={89} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Mobile Template</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={55} valuemin={0} valuemax={100} />
-                    </MDBProgress>
-
-                    <MDBCardText className="mt-4 mb-1" style={{ fontSize: '.77rem' }}>Backend API</MDBCardText>
-                    <MDBProgress className="rounded">
-                      <MDBProgressBar width={66} valuemin={0} valuemax={100} />
                     </MDBProgress>
                   </MDBCardBody>
                 </MDBCard>
@@ -192,4 +192,4 @@ export const CardUserProfile = () => {
       </MDBContainer>
     </section>
   );
-}
+};

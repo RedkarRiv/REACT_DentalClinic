@@ -1,0 +1,63 @@
+.redesignButton {
+  margin: 0.5em;
+  background-color: rgb(0, 119, 255);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  color: white;
+  border-radius: 0.3em;
+  user-select: none;
+  cursor: pointer;
+}
+
+.redesignButton:hover {
+  background-color: rgb(17, 71, 132);
+}
+
+.redesignButton:active {
+  transform: scale(0.9);
+}
+
+
+@media (max-width: 576px) {
+.redesignButton, .redesignButton2 .fontResizeDesign  {
+font-size: 80%;
+}
+
+}
+
+
+.redesignButton2 {
+    background-color: rgb(0, 119, 255);
+    padding-left: 1em;
+    padding-right: 1em;
+    color: white;
+    border-radius: 0.3em;
+    user-select: none;
+    cursor: pointer;  
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.redesignButton2:hover {
+    background-color: rgb(17, 71, 132);
+  }
+
+
+  .updateAppointmentDesign  {
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .updateAppointmentDesign:active  {
+transform: scale(0.9);  }
+
+.menuFontDesign {
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    color: rgb(38, 37, 37);
+}
+    

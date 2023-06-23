@@ -76,6 +76,7 @@ transform: scale(1.2);
   backdrop-filter: invert(80%);
   user-select: none;
   width: 100vw;
+  z-index: 9999;
 }
 
 
