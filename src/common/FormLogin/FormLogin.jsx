@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import "./FormLogin.css";
-import { CaptchaCard } from "../CaptchaCard/CaptchaCard";
 import { useNavigate } from "react-router-dom";
 import { CheckError } from "../../services/useful";
 import { loginMe } from "../../services/apiCall";
@@ -11,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login, userDataCheck } from "../../pages/userSlice";
 
 export const FormLogin = () => {
+
   // Instancio Redux en modo lectura y escritura
 
   // Dispatch escritura
@@ -52,7 +52,7 @@ export const FormLogin = () => {
     console.log("Hola pepe");
     loginMe(credentials)
       .then((resultado) => {
-        console.log("Esto es el then")
+        console.log("Esto es el then");
         let decoded = jwt_decode(resultado.data.token);
 
         let datosBackend = {
@@ -63,15 +63,13 @@ export const FormLogin = () => {
         //Guardo en redux.....
         dispatch(login({ credentials: datosBackend }));
 
-        setTimeout(() => {
-        }, 1000);
+        setTimeout(() => {}, 1000);
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <Form>
-      <div className="loginFormTitle">ACCESO USUARIOS</div>
+    <Form className="formBackgroundDesign">
       <Form.Group className="mb-1 ps-3 pe-3 pt-3" controlId="formBasicEmail">
         <Form.Label>Email</Form.Label>
         <Form.Control
@@ -103,22 +101,11 @@ export const FormLogin = () => {
           onBlur={(e) => InputCheck(e)}
         />
       </Form.Group>
-      <Form.Group
-        className="mb-1 ps-3 pe-3 pt-4 pb-3 d-flex justify-content-center"
-        controlId="formBasicCheckbox"
-      >
-        <div className="catchaHomeContainer">
-          <CaptchaCard />
-        </div>
-      </Form.Group>
       <div className="m-3 d-flex justify-content-center">
         {" "}
-        <div
-          onClick={logMe}
-className="sendButtonDesign"
-        >
+        <div onClick={logMe} className="sendButtonDesign">
           Enviar
-        </div>  
+        </div>
       </div>
     </Form>
   );

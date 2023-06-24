@@ -1,21 +1,51 @@
-import React from "react";
+import { React, useState } from "react";
 import "./LoginRegisterButtons.css";
 import { useNavigate } from "react-router-dom";
 import { Nav } from "react-bootstrap";
-
+import {
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBBtn,
+  MDBModalBody,
+  MDBModalFooter,
+} from "mdb-react-ui-kit";
+import { FormLogin } from "../FormLogin/FormLogin";
 export const LoginRegisterButtons = () => {
   const navigate = useNavigate();
 
+  const [loginModal, setLoginModal] = useState(false);
+
+  const activateLoginModal = () => setLoginModal(!loginModal);
+
   return (
     <>
-     
-        <Nav.Link className="authLink" onClick={() => navigate("/login")}>
-          Login
-        </Nav.Link>
-        <Nav.Link className="authLink" onClick={() => navigate("/register")}>
-          Registrarse
-        </Nav.Link>
-    
+      <Nav.Link className="authLink" onClick={activateLoginModal}>
+        Login
+      </Nav.Link>
+
+      <MDBModal show={loginModal} setShow={setLoginModal} tabIndex="-1">
+        <MDBModalDialog>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle>ACCESO USUARIOS</MDBModalTitle>
+              <div
+                className="btn-close"
+                color="none"
+                onClick={activateLoginModal}
+              ></div>
+            </MDBModalHeader>
+            <MDBModalBody>
+              <FormLogin />
+            </MDBModalBody>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
+      <Nav.Link className="authLink" onClick={() => navigate("/register")}>
+        Registrarse
+      </Nav.Link>
     </>
   );
 };

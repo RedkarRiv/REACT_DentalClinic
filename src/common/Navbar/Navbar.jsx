@@ -14,11 +14,10 @@ export const Navbar2Boots = () => {
   const credentialsRdx = useSelector(userDataCheck);
   const [newToken, setNewToken] = useState("");
 
+
   useEffect(() => {
     setNewToken(credentialsRdx.credentials.token);
   }, [credentialsRdx]);
-
-console.log(newToken)
 
 
   return (

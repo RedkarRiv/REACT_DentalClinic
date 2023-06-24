@@ -14,3 +14,39 @@ color: white;
     text-align: center;
     color: white;
   }
+
+  .modalCloseButton {
+    background-color: rgb(194, 6, 6);
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+    color: white;
+    border-radius: 0.3em !important;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modalCloseButton:hover {
+    background-color: rgb(246, 16, 16);
+  }
+  .modalSendButton {
+    background-color: rgb(44, 116, 11);
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 1em;
+    color: white;
+    border-radius: 0.3em !important;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modalSendButton:hover {
+    background-color: rgb(60, 159, 14);
+
+  }

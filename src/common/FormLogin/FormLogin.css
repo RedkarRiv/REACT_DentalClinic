@@ -1,11 +1,13 @@
 .loginFormTitle {
-  font-size: 175%;
-  background-color: rgb(34, 114, 34);
+  font-size: 150%;
+  padding-right:0.5em;
+  padding-left:0.5em;
+  padding-top: 0.3em;
   width: 100%;
   text-align: center;
-  border-top-left-radius: 0.4em;
+  border-top-left-radius: 0.3em;
   border-top-right-radius: 0.4em;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
@@ -47,4 +49,10 @@
     appearance: none;
     border-radius: var(--bs-border-radius);
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formBackgroundDesign {
+  background-color: white;
+  border-radius: 0.5em;
+  width: 100%;
 }
