@@ -52,8 +52,8 @@ export const CardUserDetail = () => {
                 />
                                <div className="d-flex justify-content-center mb-2 mt-3">
                 <div className="redesignButtonAlert">Eliminar</div>
-                <div className="redesignButton">Ver citas</div>
-                  <div className="redesignButton">Editar</div>
+                <div className="redesignButton">Citas</div>
+                  <div className="redesignButton3">Editar</div>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -136,6 +136,23 @@ export const CardUserDetail = () => {
                   </MDBCol>
                 </MDBRow>
                 <hr />
+
+
+                <MDBRow>
+                  <MDBCol sm="3">
+                    <MDBCardText>Password</MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="6">
+                    <MDBCardText className="text-muted">******** </MDBCardText>
+                  </MDBCol>
+                  <MDBCol sm="3">
+                    <MDBCardText className="showUserPassword">Mostrar</MDBCardText>
+                  </MDBCol>
+                </MDBRow>
+                <hr/>
+
+
+
                 <MDBRow>
                   <MDBCol sm="3">
                     <MDBCardText>Fecha de creacion</MDBCardText>

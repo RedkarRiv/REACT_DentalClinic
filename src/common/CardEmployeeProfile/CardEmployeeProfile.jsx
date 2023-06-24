@@ -136,7 +136,7 @@ export const CardEmployeeProfile = () => {
             <MDBCard className="mb-4">
               <MDBListGroup flush className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
-                  <form className="d-flex input-group w-50">
+                  <form className="d-flex input-group w-75">
                     <input
                       type="date"
                       className="form-control searchFormDesign"
@@ -150,7 +150,7 @@ export const CardEmployeeProfile = () => {
             </MDBCard>
 
             <MDBRow>
-              <MDBCol md="6" lg="12">
+            <MDBCol sm="6"  md="12" lg="12">
                 <MDBCard className="mb-4 mb-md-0">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
@@ -158,11 +158,11 @@ export const CardEmployeeProfile = () => {
                         TODAS LAS CITAS{" "}
                       </div>
                     </MDBCardText>
-                    <MDBTable align="middle" className="">
+                    <MDBTable align="middle" className="fontResizeAppointmentsTitle">
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Pacientes</th>
-                          <th scope="col">Tipo de consulta</th>
+                          <th scope="col">Tipo</th>
                           <th scope="col">Estado</th>
                           <th scope="col">Fecha</th>
                           <th scope="col">Detalle</th>

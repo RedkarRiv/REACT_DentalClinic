@@ -11,10 +11,9 @@
   .menuFontDesignSelected {
     cursor: pointer;
     user-select: none;
-    color: rgb(0, 0, 0);
+    color: rgb(66, 64, 64);
     width: auto;
     user-select: none;
-    font-weight: bold;
   }
 
   .redesignButton {
@@ -28,6 +27,9 @@
     border-radius: 0.3em;
     user-select: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .redesignButtonAlert {
@@ -42,6 +44,25 @@
     user-select: none;
     cursor: pointer;
   }
+  .redesignButtonAlert:hover {
+    background-color: rgb(174, 5, 5);
+}
+
+.redesignButton3 {
+    margin: 0.5em;
+    background-color: rgb(22, 109, 14);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    color: white;
+    border-radius: 0.3em;
+    user-select: none;
+    cursor: pointer;
+  }
+  .redesignButton3:hover {
+    background-color: rgb(12, 70, 7);
+}
 
   @media (min-width: 992px) {
    
@@ -52,4 +73,16 @@
     font-size:250%
         }
      
+    }
+
+
+    .showUserPassword {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+        user-select: none;
+        font-size: 90%;
     }

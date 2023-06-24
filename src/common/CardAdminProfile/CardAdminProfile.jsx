@@ -55,8 +55,11 @@ export const CardAdminProfile = () => {
                 <p className="text-muted mb-1 mt-4">Arthur Arpon</p>
                 <p className="text-muted mb-4">Registro: 12-08-2022</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <div className="redesignButton">Nueva cita</div>
-                  <div className="redesignButton">Editar</div>
+                  <div className="redesignButtonAdmin">Nueva consulta</div>
+                  <div className="redesignButtonAdmin">Nuevo usuario</div>
+                </div>
+                <div className="d-flex justify-content-center mb-2">
+                  <div className="redesignButtonAdmin">Editar</div>
                 </div>
               </MDBCardBody>
             </MDBCard>
@@ -147,13 +150,13 @@ export const CardAdminProfile = () => {
             </MDBCard>
 
             <MDBRow>
-              <MDBCol md="6" lg="12">
+              <MDBCol sm="6"  md="12" lg="12">
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
                       <div className="titleAppointmentDesign">Todos los usuarios </div>
                     </MDBCardText>
-                    <MDBTable align="middle" className="">
+                    <MDBTable align="middle" className="fontResizeAppointmentsTitle">
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Usuario</th>

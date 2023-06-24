@@ -136,12 +136,11 @@ export const CardUserProfile = () => {
             <MDBCard className="mb-4">
               <MDBListGroup flush className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
-                  <form className="d-flex input-group w-50">
+                  <form className="d-flex input-group w-75">
                     <input
                       type="date"
                       className="form-control searchFormDesign"
                       placeholder="..."
-                      aria-label="Search"
                     />
                     <div className="redesignButton2">Buscar cita</div>
                   </form>
@@ -162,7 +161,7 @@ export const CardUserProfile = () => {
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Doctor/Doctora</th>
-                          <th scope="col">Tipo de consulta</th>
+                          <th scope="col">Tipo</th>
                           <th scope="col">Estado</th>
                           <th scope="col">Fecha</th>
                           <th scope="col">Detalle</th>

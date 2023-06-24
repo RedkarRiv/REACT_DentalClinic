@@ -7,19 +7,18 @@ export const AppointmentsCard = () => {
     const navigate = useNavigate();
 
   return (
-      <MDBTableBody className="responsiveAppointmentsCardsDesign">
+      <MDBTableBody className="w-100">
         <tr>
           <td>
             <div className='d-flex align-items-center'>
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>John Doe</p>
-                <p className='text-muted mb-0'>john.doe@gmail.com</p>
               </div>
             </div>
           </td>
@@ -44,12 +43,12 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
+
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Alex Ray</p>
-                <p className='text-muted mb-0'>alex.ray@gmail.com</p>
               </div>
             </div>
           </td>
@@ -74,12 +73,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Kate Hunington</p>
-                <p className='text-muted mb-0'>kate.hunington@gmail.com</p>
               </div>
             </div>
           </td>
@@ -104,12 +102,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>John Doe</p>
-                <p className='text-muted mb-0'>john.doe@gmail.com</p>
               </div>
             </div>
           </td>
@@ -134,12 +131,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Alex Ray</p>
-                <p className='text-muted mb-0'>alex.ray@gmail.com</p>
               </div>
             </div>
           </td>
@@ -164,12 +160,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Kate Hunington</p>
-                <p className='text-muted mb-0'>kate.hunington@gmail.com</p>
               </div>
             </div>
           </td>
@@ -194,12 +189,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>John Doe</p>
-                <p className='text-muted mb-0'>john.doe@gmail.com</p>
               </div>
             </div>
           </td>
@@ -224,12 +218,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Alex Ray</p>
-                <p className='text-muted mb-0'>alex.ray@gmail.com</p>
               </div>
             </div>
           </td>
@@ -254,12 +247,11 @@ export const AppointmentsCard = () => {
               <img
                 src='https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png'
                 alt=''
-                style={{ width: '45px', height: '45px' }}
+                style={{ width: '	2.75em', height: '2.75em' }}
                 className='rounded-circle'
               />
               <div className='ms-3'>
                 <p className='fw-bold mb-1'>Kate Hunington</p>
-                <p className='text-muted mb-0'>kate.hunington@gmail.com</p>
               </div>
             </div>
           </td>

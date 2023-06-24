@@ -29,8 +29,11 @@
     font-size: 120%;
   }
   .fontResizeAppointmentsTitle {
-    font-size: 0.3em;
-}}
+    font-size: 0.5em;
+}
+
+
+}
 
 @media (min-width: 992px) {
    
@@ -71,7 +74,10 @@ font-size:250%
 .searchFormDesign {
   margin-right: 2em;
   border-radius: 1em !important;
+  width: 75%;
 }
+
+
 
 .titleAppointmentDesign {
   display: flex;
@@ -92,3 +98,7 @@ margin-bottom: 0.5em;
 text-align: center;
 }
 
+.fontResizeAppointmentsTitle {
+    width: 100%;
+    font-size: auto;
+}
