@@ -1,20 +1,19 @@
 import React from "react";
 import "./ProfileButton.css";
 import defaultProfileImage from "../../assets/img/ProfileDefaultImage2.png";
-import {SendButton} from "../SendButton/SendButton"
 import { useNavigate } from "react-router-dom";
-
+import { userout } from "../../pages/userSlice";
+import { useDispatch  } from "react-redux";
 
 
 export const ProfileButton = ({avatarImage}) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
-    const logoutBeta = () => {
-        return(
-        sessionStorage.removeItem("token"),        
-        window.location.href = "http://localhost:5173/"
-        )
-    }
+    const logOut = () => {
+      dispatch(userout());
+    };
+
 
     return(
   <div className="profileButtonCardDesign">
@@ -31,7 +30,7 @@ export const ProfileButton = ({avatarImage}) => {
 
     </div>
     <div className="logoutButtonContainer">
-    <div className="profileLogOut" onClick={()=>logoutBeta()}>Logout</div>
+    <div className="profileLogOut" onClick={()=>logOut()}>Logout</div>
         
         
 </div>

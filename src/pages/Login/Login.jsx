@@ -8,7 +8,7 @@ export const Login = () => {
   return (
     <div className="loginbackground">
       <div className="loginFormLoginContainer">
-        <FormLogin />
+      <FormLogin/>
       </div>
     </div>
   );

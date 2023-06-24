@@ -13,10 +13,10 @@ export const userSlice = createSlice({
           ...action.payload
         }
       },
-      userOut: (state, action) => {
+      userout: (state, action) => {
         return {
           ...state,
-          ...action.payload
+          credentials: {}
         }
       }
       
@@ -25,7 +25,7 @@ export const userSlice = createSlice({
 });
 
 //exporto las ACCIONES.....
-export const { login, userOut } = userSlice.actions;
+export const { login, userout } = userSlice.actions;
 
 export const userDataCheck = (state) => state.user;
 

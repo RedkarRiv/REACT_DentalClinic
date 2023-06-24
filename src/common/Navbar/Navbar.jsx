@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useInsertionEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import "./Navbar.css";
@@ -6,14 +6,20 @@ import { useNavigate } from "react-router-dom";
 import { ProfileButton } from "../ProfileButton/ProfileButton";
 import { LoginRegisterButtons } from "../LoginRegisterButtons/LoginRegisterButtons";
 import avatarImageLink from "../../assets/img/ProfileDefaultImage2.png";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 
 export const Navbar2Boots = () => {
   const navigate = useNavigate();
   const credentialsRdx = useSelector(userDataCheck);
+  const [newToken, setNewToken] = useState("");
 
-  console.log("esto son las credenciales DE REDUX" + credentialsRdx);
+  useEffect(() => {
+    setNewToken(credentialsRdx.credentials.token);
+  }, [credentialsRdx]);
+
+console.log(newToken)
+
 
   return (
     <Navbar collapseOnSelect expand="lg" className="p-3" id="navbarRisaldent">
@@ -52,13 +58,15 @@ export const Navbar2Boots = () => {
           </Nav.Link>
         </Nav>
         <Nav className="loginDesignAjust ">
-          <div className="profileButtonContainer">
-            <ProfileButton avatarImage={avatarImageLink} />
-          </div>
-
-          <div className="authLinksDesign d-flex">
-            <LoginRegisterButtons />
-          </div>
+          {newToken? (
+            <div className="profileButtonContainer">
+              <ProfileButton avatarImage={avatarImageLink} />
+            </div>
+          ) : (
+            <div className="authLinksDesign d-flex">
+              <LoginRegisterButtons />
+            </div>
+          )}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -7,8 +7,17 @@ import { useNavigate } from "react-router-dom";
 import { CheckError } from "../../services/useful";
 import { loginMe } from "../../services/apiCall";
 import jwt_decode from "jwt-decode";
+import { useDispatch, useSelector } from "react-redux";
+import { login, userDataCheck } from "../../pages/userSlice";
 
 export const FormLogin = () => {
+  // Instancio Redux en modo lectura y escritura
+
+  // Dispatch escritura
+  const dispatch = useDispatch();
+
+  // useSelector es para el modo de lectura
+  const credentialsRdx = useSelector(userDataCheck);
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
@@ -38,17 +47,24 @@ export const FormLogin = () => {
   };
 
   const logMe = () => {
+    console.log(credentialsRdx);
+
     console.log("Hola pepe");
     loginMe(credentials)
       .then((resultado) => {
+        console.log("Esto es el then")
         let decoded = jwt_decode(resultado.data.token);
+
+        let datosBackend = {
+          token: resultado.data.token,
+          user: decoded,
+        };
+
+        //Guardo en redux.....
+        dispatch(login({ credentials: datosBackend }));
+
         setTimeout(() => {
-          navigate("/");
         }, 1000);
-        console.log(decoded);
-        console.log(resultado);
-        sessionStorage.setItem("token", resultado.data.token);
-        console.log(resultado.data.token);
       })
       .catch((error) => console.log(error));
   };
@@ -61,12 +77,14 @@ export const FormLogin = () => {
         <Form.Control
           type="email"
           className={
-            credentialsError.emailError === "" ? "textInput" : " textInput errorInput"
+            credentialsError.emailError === ""
+              ? "textInput"
+              : " textInput errorInput"
           }
           placeholder="Introduce tu correo"
           name="email"
-          onChange={(e)=>InputHandler(e)}
-          onBlur={(e)=>InputCheck(e)}
+          onChange={(e) => InputHandler(e)}
+          onBlur={(e) => InputCheck(e)}
         />
       </Form.Group>
 
@@ -76,11 +94,13 @@ export const FormLogin = () => {
           type="password"
           placeholder="Password"
           className={
-            credentialsError.passwordError === "" ? "textInput" : " textInput errorInput"
+            credentialsError.passwordError === ""
+              ? "textInput"
+              : " textInput errorInput"
           }
           name="password"
-          onChange={(e)=>InputHandler(e)}
-          onBlur={(e)=>InputCheck(e)}
+          onChange={(e) => InputHandler(e)}
+          onBlur={(e) => InputCheck(e)}
         />
       </Form.Group>
       <Form.Group
@@ -93,9 +113,12 @@ export const FormLogin = () => {
       </Form.Group>
       <div className="m-3 d-flex justify-content-center">
         {" "}
-        <Button variant="primary" type="submit" onClick={logMe} path="/" name={"Enviar"}>
+        <div
+          onClick={logMe}
+className="sendButtonDesign"
+        >
           Enviar
-        </Button>
+        </div>  
       </div>
     </Form>
   );

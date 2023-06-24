@@ -15,7 +15,7 @@ export const Home = () => {
         })
         .catch((error) => console.log(error));
     }, []);
-
+    
   return (
     <div className="homeBackground">
       <div className="gridContainer">
