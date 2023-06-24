@@ -1,0 +1,17 @@
+
+
+    .redesignButtonSearchComment {
+      margin: 0.5em;
+      background-color: rgb(149, 0, 255);
+      padding-left: 1em;
+      padding-right: 1em;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      color: white;
+      border-radius: 0.3em!important;
+      user-select: none;
+      cursor: pointer;
+      font-size: 80%;
+
+
+    }

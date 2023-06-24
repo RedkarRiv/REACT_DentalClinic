@@ -46,7 +46,7 @@ export const CardEmployeeProfile = () => {
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
-            <MDBCard className="mb-4">
+            <MDBCard className="mb-4 pt-3">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
                   src="https://www.shareicon.net/data/512x512/2016/08/18/813847_people_512x512.png"
@@ -134,7 +134,7 @@ export const CardEmployeeProfile = () => {
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
-              <MDBListGroup flush className="rounded-3">
+              <MDBListGroup className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
                   <form className="d-flex input-group w-75">
                     <input

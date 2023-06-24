@@ -43,7 +43,7 @@ export const CardAdminProfile = () => {
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
-            <MDBCard className="mb-4">
+            <MDBCard className="mb-4 pt-3">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
                   src="https://w7.pngwing.com/pngs/812/462/png-transparent-account-avatar-profile-user-avatars-icon.png"
@@ -55,12 +55,13 @@ export const CardAdminProfile = () => {
                 <p className="text-muted mb-1 mt-4">Arthur Arpon</p>
                 <p className="text-muted mb-4">Registro: 12-08-2022</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <div className="redesignButtonAdmin">Nueva consulta</div>
-                  <div className="redesignButtonAdmin">Nuevo usuario</div>
-                </div>
-                <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButtonAdmin">Editar</div>
                 </div>
+                <div className="d-flex justify-content-center mb-2">
+                  <div className="redesignButtonAdmin">Añadir tratamiento</div>
+                  <div className="redesignButtonAdmin">Crear usuario</div>
+                </div>
+
               </MDBCardBody>
             </MDBCard>
 
@@ -134,7 +135,7 @@ export const CardAdminProfile = () => {
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
-              <MDBListGroup flush className="rounded-3">
+              <MDBListGroup className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
                   <form className="d-flex input-group w-100">
                     <input

@@ -8,7 +8,7 @@ export const AdminProfile = () => {
     <>
       <div className="adminProfileContainer">
         <div className="cardAdminProfileContainer">
-          <CardAdminProfile />
+          <CardAdminProfile/>
         </div>
       </div>
     </>

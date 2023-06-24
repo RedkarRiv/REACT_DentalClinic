@@ -1,9 +1,9 @@
 import React from 'react';
-import ("./AppointmentsCard.css")
+import ("./CommentsCard.css")
 import { MDBBadge, MDBBtn, MDBTable, MDBTableHead, MDBTableBody } from 'mdb-react-ui-kit';
 import { useNavigate } from "react-router-dom";
 
-export const AppointmentsCard = () => {
+export const CommentsCard = () => {
     const navigate = useNavigate();
 
   return (
@@ -23,12 +23,7 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Consulta básica</p>
-          </td>
-          <td>
-            <MDBBadge color='success' pill>
-              Concertada
-            </MDBBadge>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
           <td>29/12/2023</td>
           <td>
@@ -54,12 +49,7 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Sesion ortodoncía</p>
-          </td>
-          <td>
-            <MDBBadge color='primary' pill>
-              Realizada
-            </MDBBadge>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
           <td>21/04/2023</td>
           <td>
@@ -83,13 +73,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Extracción de muela</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='danger' pill>
-              Cancelada
-            </MDBBadge>
-          </td>
+
           <td>25/03/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -112,13 +98,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Consulta básica</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='success' pill>
-              Concertada
-            </MDBBadge>
-          </td>
+
           <td>29/12/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -141,13 +123,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Sesion ortodoncía</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='primary' pill>
-              Realizada
-            </MDBBadge>
-          </td>
+
           <td>21/04/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -170,13 +148,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Extracción de muela</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='danger' pill>
-              Cancelada
-            </MDBBadge>
-          </td>
+
           <td>25/03/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -199,13 +173,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Consulta básica</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='success' pill>
-              Concertada
-            </MDBBadge>
-          </td>
+
           <td>29/12/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -228,13 +198,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Sesion ortodoncía</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='primary' pill>
-              Realizada
-            </MDBBadge>
-          </td>
+
           <td>21/04/2023</td>
           <td>
             <div className="viewButtonDesign">
@@ -257,13 +223,9 @@ export const AppointmentsCard = () => {
             </div>
           </td>
           <td>
-            <p className='fw-normal mb-1'>Extracción de muela</p>
+            <p className='fw-normal mb-1'>Esto es el comentario de una cita desplegado en la vista en detalle de cada cita concertada por le cliente o por el doctor.</p>
           </td>
-          <td>
-            <MDBBadge color='danger' pill>
-              Cancelada
-            </MDBBadge>
-          </td>
+
           <td>25/03/2023</td>
           <td>
             <div className="viewButtonDesign" >

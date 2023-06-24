@@ -46,17 +46,17 @@ export const CardUserProfile = () => {
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
-            <MDBCard className="mb-4">
+            <MDBCard className="mb-4 pt-3">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                  src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: "150px" }}
                   fluid
                 />
-                <p className="text-muted mb-1 mt-4">Jonathan Smith</p>
-                <p className="text-muted mb-4">Registro: 12-08-2022</p>
+                <div className="text-muted mb-1 mt-4">Jonathan Smith</div>
+                <div className="text-muted mb-4">Registro: 12-08-2022</div>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButton">Nueva cita</div>
                   <div className="redesignButton">Editar</div>
@@ -134,7 +134,7 @@ export const CardUserProfile = () => {
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
-              <MDBListGroup flush className="rounded-3">
+              <MDBListGroup className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
                   <form className="d-flex input-group w-75">
                     <input
@@ -154,9 +154,9 @@ export const CardUserProfile = () => {
               <MDBCol md="6" lg="12">
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
-                    <MDBCardText className="mb-4 d-flex justify-content-between">
+                    <MDBCard className="mb-4 d-flex justify-content-between">
                       <div className="titleAppointmentDesign">TUS CITAS </div>
-                    </MDBCardText>
+                    </MDBCard>
                     <MDBTable align="middle" className="fontResizeAppointmentsTitle">
                       <MDBTableHead>
                         <tr>
@@ -166,7 +166,7 @@ export const CardUserProfile = () => {
                           <th scope="col">Fecha</th>
                           <th scope="col">Detalle</th>
                         </tr>
-                      </MDBTableHead>{" "}
+                      </MDBTableHead>
                       <AppointmentsCard />
 
                     </MDBTable>
