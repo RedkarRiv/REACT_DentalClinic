@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CheckError } from "../../services/useful";
 import { registerMe } from "../../services/apiCall";
+import { useNavigate } from "react-router-dom";
 
 import {
   MDBContainer,
@@ -15,22 +16,11 @@ import {
 import "./FormRegister.css";
 
 export const FormRegister = () => {
-  const logMe = () => {
-    console.log(credentialsRdx);
-
-    console.log("Hola pepe");
-    loginMe(credentials)
+  const registerMeHandler = () => {
+    console.log("Registro iniciado");
+    registerMe(newCredentials)
       .then((resultado) => {
-        console.log("Esto es el then");
-        let decoded = jwt_decode(resultado.data.token);
-
-        let datosBackend = {
-          token: resultado.data.token,
-          user: decoded,
-        };
-
-        //Guardo en redux.....
-        dispatch(login({ credentials: datosBackend }));
+        console.log("Registro resuelto correctamente" + JSON.stringify(resultado));
 
         setTimeout(() => {}, 1000);
       })
@@ -44,10 +34,10 @@ export const FormRegister = () => {
     name: "",
     surname: "",
     phone: "",
-    dni:"",
-    cp:"",
-    birth_date:"",
-
+    dni: "",
+    cp: "",
+    birth_date: "",
+    avatar:"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
   });
 
   const [newCredentialsError, setNewCredentialsError] = useState({
@@ -55,10 +45,10 @@ export const FormRegister = () => {
     passwordError: "",
     nameError: "",
     surnameError: "",
-phoneError: "",
-dniError:"",
-cpError:"",
-birth_dateError:"",
+    phoneError: "",
+    dniError: "",
+    cpError: "",
+    birth_dateError: "",
   });
 
   const InputHandler = (e) => {
@@ -91,7 +81,7 @@ birth_dateError:"",
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
-                      maxLength={20} 
+                        maxLength={20}
                         placeholder="Nombre"
                         size="lg"
                         id="form1"
@@ -109,7 +99,7 @@ birth_dateError:"",
 
                     <MDBCol md="6">
                       <MDBInput
-                                            maxLength={20} 
+                        maxLength={20}
                         wrapperClass="mb-4"
                         placeholder="Apellidos"
                         size="lg"
@@ -233,7 +223,7 @@ birth_dateError:"",
                     wrapperClass="mb-4"
                     size="lg"
                     id="form4"
-                    type="text"
+                    type="password"
                     placeholder="Contraseña"
                     className={
                       newCredentialsError.passwordError === ""
@@ -245,7 +235,12 @@ birth_dateError:"",
                   />
 
                   <div className="d-flex justify-content-center pt-3">
-                    <div className="sendButtonRegisterDesign">Enviar</div>
+                    <div
+                      onClick={registerMeHandler}
+                      className="sendButtonRegisterDesign"
+                    >
+                      Enviar
+                    </div>
                   </div>
                 </MDBCardBody>
               </MDBCol>
