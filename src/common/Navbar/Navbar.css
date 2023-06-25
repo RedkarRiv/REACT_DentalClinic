@@ -58,12 +58,13 @@
   color:white;
   border-bottom: 0.2em transparent solid;
 }
+@media (min-width: 992px) {
 
 .menuItem:hover {
   border-bottom: 0.2em white solid;
 transform: scale(1.2);
 }
-
+}
 
 .loginDesignAjust {
   display: flex;

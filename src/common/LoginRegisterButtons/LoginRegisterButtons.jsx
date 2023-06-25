@@ -13,6 +13,8 @@ import {
   MDBModalFooter,
 } from "mdb-react-ui-kit";
 import { FormLogin } from "../FormLogin/FormLogin";
+
+
 export const LoginRegisterButtons = () => {
   const navigate = useNavigate();
 
@@ -30,12 +32,7 @@ export const LoginRegisterButtons = () => {
         <MDBModalDialog>
           <MDBModalContent>
             <MDBModalHeader>
-              <MDBModalTitle>ACCESO USUARIOS</MDBModalTitle>
-              <div
-                className="btn-close"
-                color="none"
-                onClick={activateLoginModal}
-              ></div>
+              <MDBModalTitle className="titleModalLogin">ACCESO USUARIOS</MDBModalTitle>
             </MDBModalHeader>
             <MDBModalBody>
               <FormLogin />

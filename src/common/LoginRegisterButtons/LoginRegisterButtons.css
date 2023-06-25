@@ -50,3 +50,12 @@ color: white;
     background-color: rgb(60, 159, 14);
 
   }
+
+  .titleModalLogin{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+  }
+
