@@ -8,15 +8,20 @@
 
 }
 .userNavbarName {
-  color: white;
+  color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 80%;
+  font-size: 70%;
   user-select: none;
   width: auto;
   height: 1.5em;
-  margin-right: 0.5em;
+  margin: 1em;
+  padding-right: 0.4em;
+  padding-left: 0.4em;
+
+  border-radius: 0.3em;
+  background-color: white;
   user-select: none;
 }
 
@@ -63,10 +68,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 80%;
+  font-size: 70%;
   user-select: none;
   cursor: pointer;
-  margin-left: 1em;
+  margin-left: 0.5em;
   border-radius: 1em;
   padding-right: 0.5em;
   padding-left: 0.5em;

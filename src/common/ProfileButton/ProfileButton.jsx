@@ -3,49 +3,51 @@ import "./ProfileButton.css";
 import defaultProfileImage from "../../assets/img/ProfileDefaultImage2.png";
 import { useNavigate } from "react-router-dom";
 import { userout } from "../../pages/userSlice";
-import { useDispatch, useSelector  } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 
+export const ProfileButton = ({ avatarImage }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [newName, setNewName] = useState("Usuario");
 
-export const ProfileButton = ({avatarImage}) => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const [newName, setNewName] = useState("Usuario");
+  const credentialsRdx = useSelector(userDataCheck);
 
-    const credentialsRdx = useSelector(userDataCheck);
-
-
-    useEffect(() => {
+  useEffect(() => {
+    if (!credentialsRdx.credentials.user) {
+      setNewName("Usuario")
+      
+    } else {
       setNewName(credentialsRdx.credentials.user.email);
-    }, [credentialsRdx]);
-  
+    }
+  }, [credentialsRdx]);
 
-const username = "Carlos"
-    const logOut = () => {
-      dispatch(userout());
-    };
+  const logOut = () => {
+    dispatch(userout());
+  };
 
-
-    return(
-  <div className="profileButtonCardDesign">
-      <div className="userNavbarName"><p>{newName}</p></div>
-
-    <div className="profileAvatar">
+  return (
+    <div className="profileButtonCardDesign">
+      <div className="profileAvatar">
         <div className="avatarImage">
-        <img
-          className="avatarImageDesign"
-          src={avatarImage ? avatarImage : defaultProfileImage}
-          alt="Avatar Profile Image"
-          onClick={() => navigate("/")}
-        />
-            </div>
-            <div className="profileName">ÁREA CLIENTE</div>
+          <img
+            className="avatarImageDesign"
+            src={avatarImage ? avatarImage : defaultProfileImage}
+            alt="Avatar Profile Image"
+            onClick={() => navigate("/")}
+          />
+        </div>
+        <div className="profileName">ÁREA CLIENTE</div>
+      </div>
+      <div className="userNavbarName">
+        <p>{newName}</p>
+      </div>
 
+      <div className="logoutButtonContainer">
+        <div className="profileLogOut" onClick={() => logOut()}>
+          Logout
+        </div>
+      </div>
     </div>
-    <div className="logoutButtonContainer">
-    <div className="profileLogOut" onClick={()=>logOut()}>Logout</div>
-        
-        
-</div>
-  </div>)
+  );
 };
