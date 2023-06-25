@@ -109,11 +109,11 @@ export const CardUserDetail = () => {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Dirección</MDBCardText>
+                    <MDBCardText>Código postal</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
                     <MDBCardText className="text-muted">
-                      Bay Area, San Francisco, CA
+                      46009
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>

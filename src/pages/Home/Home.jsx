@@ -30,6 +30,7 @@ export const Home = () => {
               email={user.email}
               address={user.address}
               phone={user.phone}
+              avatar={user.avatar_img}
             />
           </div>
         ))

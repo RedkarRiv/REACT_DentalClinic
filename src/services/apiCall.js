@@ -18,3 +18,8 @@ export const loginMe = async (credentials) => {
 };
 
 
+export const registerMe = async (newCredentials) => {
+
+    return await axios.post(`${root}auth/register`, newCredentials)
+}
+

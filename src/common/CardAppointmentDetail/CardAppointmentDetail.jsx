@@ -36,7 +36,7 @@ export const CardAppointmentDetail = () => {
                 Perfil de Admin
               </MDBBreadcrumbItem>
               <MDBBreadcrumbItem className="menuFontDesignSelected">
-                Perfil de Usuario en Detalle
+                Visita en Detalle
               </MDBBreadcrumbItem>
             </MDBBreadcrumb>
           </MDBCol>
