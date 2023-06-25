@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { CheckError } from "../../services/useful";
-import { registerMe } from "../../services/apiCall";
+import { loginMe, registerMe } from "../../services/apiCall";
+import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { login} from "../../pages/userSlice";
 import {
   MDBContainer,
   MDBCard,
@@ -16,11 +18,36 @@ import {
 import "./FormRegister.css";
 
 export const FormRegister = () => {
+    const dispatch = useDispatch();
+
   const registerMeHandler = () => {
     console.log("Registro iniciado");
     registerMe(newCredentials)
       .then((resultado) => {
-        console.log("Registro resuelto correctamente" + JSON.stringify(resultado));
+        console.log((resultado.data.id));
+        if (resultado.data.id !== "undefined") {
+            const instantLoginCredentials = {
+                email: resultado.data.email,
+                password:newCredentials.password,
+            }
+            loginMe(instantLoginCredentials)
+            .then((resultado) => {
+                console.log("Esto es el login correcto");
+                let decoded = jwt_decode(resultado.data.token);
+        
+                let datosBackend = {
+                  token: resultado.data.token,
+                  user: decoded,
+                };
+        
+                //Guardo en redux.....
+                dispatch(login({ credentials: datosBackend }));
+        
+                setTimeout(() => {}, 1000);
+              })
+            .catch((error) => console.log(error));
+        }
+
 
         setTimeout(() => {}, 1000);
       })
