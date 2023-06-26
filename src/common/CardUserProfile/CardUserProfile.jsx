@@ -16,38 +16,41 @@ import {
   MDBListGroup,
   MDBListGroupItem,
   MDBTableHead,
-  MDBTable
+  MDBTable,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
 import { getOneUser } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
-import React, { useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
 
 export const CardUserProfile = () => {
   const navigate = useNavigate();
-   
+  const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
-  const credentialCheck = credentialsRdx.credentials.token
-  
-  
+  const credentialCheck = credentialsRdx?.credentials?.token;
+
   const getMyProfile = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
         console.log("Esto es el then de getOneUser");
         console.log(resultado);
+        console.log("Esto es el nombre del usuario");
+        console.log(resultado.data.data);
+        if (resultado.data.message == "Token invalido") {
+            navigate("/")
+          return;
+        } else {
+          setUserData(resultado.data.data);
+        }
       })
       .catch((error) => console.log(error));
   };
-  
+
   useEffect(() => {
     getMyProfile();
-  }, []);
-
-
-
+  }, [credentialsRdx]);
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
@@ -66,21 +69,22 @@ export const CardUserProfile = () => {
         </MDBRow>
 
         <MDBRow>
-          <div className="titleUserDesign">Bienvenido Jonathan</div>
+          <div className="titleUserDesign">Bienvenido {userData.name}</div>
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
             <MDBCard className="mb-4 pt-3">
               <MDBCardBody className="text-center pt-4">
                 <MDBCardImage
-                  src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+                  src={userData.avatar_img}
                   alt="avatar"
                   className="rounded-circle"
                   style={{ width: "150px" }}
                   fluid
                 />
-                <div className="text-muted mb-1 mt-4">Jonathan Smith</div>
-                <div className="text-muted mb-4">Registro: 12-08-2022</div>
+                <div className="text-muted mb-4 mt-4">
+                  {userData.name} {userData.surname}
+                </div>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButton">Nueva cita</div>
                   <div className="redesignButton">Editar</div>
@@ -96,7 +100,7 @@ export const CardUserProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      Johnatan Smith
+                      {userData.name} {userData.surname}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -107,7 +111,7 @@ export const CardUserProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      example@example.com
+                      {userData.email}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -118,7 +122,7 @@ export const CardUserProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      (097) 234-5678
+                      {userData.phone}{" "}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -128,7 +132,9 @@ export const CardUserProfile = () => {
                     <MDBCardText>Fecha de nacimiento</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8" className=" d-flex align-items-center">
-                    <MDBCardText className="text-muted">12-06-1912</MDBCardText>
+                    <MDBCardText className="text-muted">
+                      {userData.birth_date}
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -138,7 +144,7 @@ export const CardUserProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      46009
+                      {userData.cp}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -149,7 +155,9 @@ export const CardUserProfile = () => {
                     <MDBCardText>DNI</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">76443237F </MDBCardText>
+                    <MDBCardText className="text-muted">
+                      {userData.dni}{" "}
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -169,8 +177,6 @@ export const CardUserProfile = () => {
                     <div className="redesignButton2">Buscar cita</div>
                   </form>
                 </MDBListGroupItem>
-
-               
               </MDBListGroup>
             </MDBCard>
 
@@ -181,7 +187,10 @@ export const CardUserProfile = () => {
                     <MDBCard className="mb-4 d-flex justify-content-between">
                       <div className="titleAppointmentDesign">TUS CITAS </div>
                     </MDBCard>
-                    <MDBTable align="middle" className="fontResizeAppointmentsTitle">
+                    <MDBTable
+                      align="middle"
+                      className="fontResizeAppointmentsTitle"
+                    >
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Doctor/Doctora</th>
@@ -192,7 +201,6 @@ export const CardUserProfile = () => {
                         </tr>
                       </MDBTableHead>
                       <AppointmentsCard />
-
                     </MDBTable>
                   </MDBCardBody>
                 </MDBCard>
