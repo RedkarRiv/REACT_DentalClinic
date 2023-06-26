@@ -26,12 +26,18 @@ export const getOneUser = async (credentialCheck) => {
   });
 };
 
+export const getAllAppointmentsByUser = async (credentialCheck) => {
+  return await axios.get(`${root}appointment/all`, {
+    headers: {
+      authorization: "Bearer " + credentialCheck,
+    },
+  });
+};
 
 export const getAllAppointments = async (credentialCheck) => {
-    return await axios.get(`${root}appointment/all`, {
-        headers: {
-          authorization: "Bearer " + credentialCheck,
-        },
-      });
+    return await axios.get(`${root}appointment/list`, {
+      headers: {
+        authorization: "Bearer " + credentialCheck,
+      },
+    });
   };
-  

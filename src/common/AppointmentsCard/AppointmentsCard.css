@@ -17,3 +17,8 @@ text-decoration: underline;
     width: 100%;
     font-size: 100%;
 }
+
+.dateAppointmentDesign {
+    font-size: 70%;
+    font-weight: bold;
+}
