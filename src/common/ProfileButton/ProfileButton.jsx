@@ -28,7 +28,7 @@ export const ProfileButton = ({ avatarImage }) => {
 
   return (
     <div className="profileButtonCardDesign">
-      <div className="profileAvatar">
+      <div className="profileAvatar ps-2 pe-2">
         <div className="avatarImage">
           <img
             className="avatarImageDesign"

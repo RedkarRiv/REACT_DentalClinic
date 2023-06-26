@@ -20,15 +20,18 @@ import {
   MDBTable,
 } from "mdb-react-ui-kit";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
+import { useNavigate } from "react-router-dom";
 
 export const CardAdminProfile = () => {
+  const navigate = useNavigate()
+
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem>
+              <MDBBreadcrumbItem >
                 <div className="menuFontDesign" onClick={() => navigate("/")}>
                   Home
                 </div>
@@ -58,9 +61,14 @@ export const CardAdminProfile = () => {
                   <div className="redesignButtonAdmin">Editar</div>
                 </div>
                 <div className="d-flex justify-content-center mb-2">
-                  <div className="redesignButtonAdmin">Añadir tratamiento</div>
-                  <div className="redesignButtonAdmin">Crear usuario</div>
+                  <div className="redesignButtonAdmin">Crear tratamiento</div>
+                  <div className="redesignButtonAdmin">Crear empleado</div>
                 </div>
+                <div className="d-flex justify-content-center mb-2">
+                  <div className="redesignButtonAdmin">Editar tratamiento</div>
+                  <div className="redesignButtonAdmin">Editar empleado</div>
+                </div>
+
 
               </MDBCardBody>
             </MDBCard>
@@ -155,7 +163,7 @@ export const CardAdminProfile = () => {
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
-                      <div className="titleAppointmentDesign">Todos los usuarios </div>
+                      <div className="titleAppointmentDesign">TODOS LOS USUARIOS</div>
                     </MDBCardText>
                     <MDBTable align="middle" className="fontResizeAppointmentsTitle">
                       <MDBTableHead>

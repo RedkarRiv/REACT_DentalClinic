@@ -13,6 +13,7 @@ import {
   MDBModalFooter,
 } from "mdb-react-ui-kit";
 import { FormLogin } from "../FormLogin/FormLogin";
+import { FormRegister } from "../FormRegister/FormRegister";
 
 
 export const LoginRegisterButtons = () => {
@@ -21,6 +22,12 @@ export const LoginRegisterButtons = () => {
   const [loginModal, setLoginModal] = useState(false);
 
   const activateLoginModal = () => setLoginModal(!loginModal);
+
+
+  const [registerModal, setRegisterModal] = useState(false);
+
+  const activateRegisterModal = () => setRegisterModal(!registerModal);
+
 
   return (
     <>
@@ -40,9 +47,29 @@ export const LoginRegisterButtons = () => {
           </MDBModalContent>
         </MDBModalDialog>
       </MDBModal>
-      <Nav.Link className="authLink" onClick={() => navigate("/register")}>
+
+
+      <Nav.Link className="authLink" onClick={activateRegisterModal}>
         Registrarse
       </Nav.Link>
+
+
+      <MDBModal show={registerModal} setShow={setRegisterModal} tabIndex="-1">
+        <MDBModalDialog className="marginModalSizeDesign">
+          <MDBModalContent className="registerModalSizeDesign">
+            <MDBModalHeader>
+              <MDBModalTitle className="titleModalLogin">REGISTRO DE NUEVOS USUARIOS</MDBModalTitle>
+            </MDBModalHeader>
+            <MDBModalBody>
+              <FormRegister />
+            </MDBModalBody>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
+
+
+
+
     </>
   );
 };

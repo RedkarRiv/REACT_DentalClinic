@@ -1,4 +1,3 @@
-import React from "react";
 import "./CardUserProfile.css";
 import {
   MDBCol,
@@ -21,9 +20,34 @@ import {
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
+import { getOneUser } from "../../services/apiCall";
+import { useSelector } from "react-redux";
+import { userDataCheck } from "../../pages/userSlice";
+import React, { useEffect } from "react";
+
 
 export const CardUserProfile = () => {
   const navigate = useNavigate();
+   
+  const credentialsRdx = useSelector(userDataCheck);
+  const credentialCheck = credentialsRdx.credentials.token
+  
+  
+  const getMyProfile = () => {
+    getOneUser(credentialCheck)
+      .then((resultado) => {
+        console.log("Esto es el then de getOneUser");
+        console.log(resultado);
+      })
+      .catch((error) => console.log(error));
+  };
+  
+  useEffect(() => {
+    getMyProfile();
+  }, []);
+
+
+
 
   return (
     <section style={{ backgroundColor: "#eee" }}>

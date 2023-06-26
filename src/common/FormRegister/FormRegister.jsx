@@ -97,19 +97,19 @@ export const FormRegister = () => {
     <MDBContainer fluid className="registerCardFormBackground">
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
         <MDBCol>
-          <MDBCard className="my-4">
+          <MDBCard className="my-4 p-3">
             <MDBRow className="g-0">
               <MDBCol md="12">
                 <MDBCardBody className="text-black d-flex flex-column justify-content-center">
-                  <h3 className="mb-5 text-uppercase fw-bold">
-                    Registro de nuevo usuario
-                  </h3>
+
 
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
                         maxLength={20}
                         placeholder="Nombre"
+                        wrapperClass="mb-4"
+
                         size="lg"
                         id="form1"
                         type="text"
@@ -147,6 +147,8 @@ export const FormRegister = () => {
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
+                                              maxLength={20}
+
                         wrapperClass="mb-4"
                         placeholder="Email"
                         size="lg"
@@ -165,6 +167,8 @@ export const FormRegister = () => {
 
                     <MDBCol md="6">
                       <MDBInput
+                                            maxLength={9}
+
                         wrapperClass="mb-4"
                         placeholder="Teléfono"
                         size="lg"
@@ -185,6 +189,8 @@ export const FormRegister = () => {
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
+                                              maxLength={9}
+
                         wrapperClass="mb-4"
                         placeholder="DNI"
                         size="lg"
@@ -203,6 +209,8 @@ export const FormRegister = () => {
 
                     <MDBCol md="6">
                       <MDBInput
+                                              maxLength={6}
+
                         wrapperClass="mb-4"
                         placeholder="Código postal"
                         size="lg"
@@ -247,21 +255,24 @@ export const FormRegister = () => {
                   </MDBRow>
 
                   <MDBInput
+                                          maxLength={20}
+
                     wrapperClass="mb-4"
                     size="lg"
                     id="form4"
                     type="password"
                     placeholder="Contraseña"
+                    name="password"
                     className={
                       newCredentialsError.passwordError === ""
                         ? "textInput"
-                        : " textInput"
+                        : " textInput errorInput"
                     }
                     onChange={(e) => InputHandler(e)}
                     onBlur={(e) => InputCheck(e)}
                   />
 
-                  <div className="d-flex justify-content-center pt-3">
+                  <div className="d-flex justify-content-center p-0">
                     <div
                       onClick={registerMeHandler}
                       className="sendButtonRegisterDesign"

@@ -11,8 +11,8 @@ export const CheckError = (name, value) => {
 
     case "password":
     case "contraseña":
-      if (/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{4,}$/.test(value)) {
-        return "El password tiene que tener una mayuscula, una minuscula y un número";
+      if (!/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{4,}$/.test(value)) {
+        return "El password no tiene el formato correcto.";
       }
       return "";
 

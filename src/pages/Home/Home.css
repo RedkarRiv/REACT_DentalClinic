@@ -1,8 +1,7 @@
 .homeBackground {
   min-height: 100vh;
   width: 100vw;
-  background-color: blue;
-  background-image: url(../../assets/img/kidDentalBackground.jpg); /* <a href="https://www.freepik.es/foto-gratis/nina-hermosa-dentista-sonriendo_18892629.htm#query=dentistas&position=7&from_view=search&track=sph">Imagen de ArthurHidden</a> en Freepik */
+  background-color: rgb(107, 107, 220);
   background-size: cover;
   display: flex;
   justify-content: center;

@@ -20,19 +20,21 @@ import {
   MDBTableHead,
 } from "mdb-react-ui-kit";
 import { CommentsCard } from "../CommentsCard/CommentsCard";
+import { useNavigate } from "react-router-dom";
 
 
 export const CardAppointmentDetail = () => {
+  const navigate = useNavigate()
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem className="menuFontDesign">
+              <MDBBreadcrumbItem className="menuFontDesign" onClick={() => navigate("/")}>
                 Home
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem className="menuFontDesign">
+              <MDBBreadcrumbItem className="menuFontDesign"onClick={() => navigate("/")}>
                 Perfil de Admin
               </MDBBreadcrumbItem>
               <MDBBreadcrumbItem className="menuFontDesignSelected">

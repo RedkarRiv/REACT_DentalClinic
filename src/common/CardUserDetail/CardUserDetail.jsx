@@ -1,5 +1,5 @@
 import "./CardUserDetail.css";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   MDBCol,
   MDBContainer,
@@ -17,19 +17,29 @@ import {
   MDBListGroup,
   MDBListGroupItem,
 } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 export const CardUserDetail = () => {
-    
+
+ 
+
+  const navigate = useNavigate();
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem className="menuFontDesign">
+              <MDBBreadcrumbItem
+                className="menuFontDesign"
+                onClick={() => navigate("/")}
+              >
                 Home
               </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem className="menuFontDesign">
+              <MDBBreadcrumbItem
+                className="menuFontDesign"
+                onClick={() => navigate("/managerprofile")}
+              >
                 Perfil de Admin
               </MDBBreadcrumbItem>
               <MDBBreadcrumbItem className="menuFontDesignSelected">
@@ -50,15 +60,13 @@ export const CardUserDetail = () => {
                   style={{ width: "150px" }}
                   fluid
                 />
-                               <div className="d-flex justify-content-center mb-2 mt-3">
-                <div className="redesignButtonAlert">Eliminar</div>
-                <div className="redesignButton">Citas</div>
+                <div className="d-flex justify-content-center mb-2 mt-3">
+                  <div className="redesignButtonAlert">Eliminar</div>
+                  <div className="redesignButton">Citas</div>
                   <div className="redesignButton3">Editar</div>
                 </div>
               </MDBCardBody>
             </MDBCard>
-
-           
           </MDBCol>
           <MDBCol lg="8">
             <MDBCard className="mb-4">
@@ -112,9 +120,7 @@ export const CardUserDetail = () => {
                     <MDBCardText>Código postal</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">
-                      46009
-                    </MDBCardText>
+                    <MDBCardText className="text-muted">46009</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -137,7 +143,6 @@ export const CardUserDetail = () => {
                 </MDBRow>
                 <hr />
 
-
                 <MDBRow>
                   <MDBCol sm="3">
                     <MDBCardText>Password</MDBCardText>
@@ -146,12 +151,12 @@ export const CardUserDetail = () => {
                     <MDBCardText className="text-muted">******** </MDBCardText>
                   </MDBCol>
                   <MDBCol sm="3">
-                    <MDBCardText className="showUserPassword">Mostrar</MDBCardText>
+                    <MDBCardText className="showUserPassword">
+                      Mostrar
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
-                <hr/>
-
-
+                <hr />
 
                 <MDBRow>
                   <MDBCol sm="3">
