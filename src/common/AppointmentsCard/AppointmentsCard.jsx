@@ -6,7 +6,7 @@ import {
   MDBTableHead,
   MDBTableBody,
 } from "mdb-react-ui-kit";
-import { getOneAppointment } from "../../services/apiCall";
+import { getAllAppointments } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
@@ -15,17 +15,22 @@ import { useNavigate } from "react-router-dom";
 export const AppointmentsCard = () => {
   const navigate = useNavigate();
 
-  const [appointmentData, setappointmentData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
-
+//   const getFormatDate = (appointmentDate) => {
+//     const [date, time] = appointmentDate.split('T');
+//     const formattedTime = time.substring(0, time.lastIndexOf(':'))
+//     console.log("eso es la fecha");
+//     console.log(date);
+//     console.log("eso es la hora");
+//     console.log(formattedTime); 
+// }
   const getMyAppointments = () => {
-    getOneAppointment(credentialCheck)
+    getAllAppointments(credentialCheck)
       .then((resultado) => {
-        console.log("Esto es el then de getOneUser");
-        console.log(resultado);
-        console.log("Esto es el nombre del usuario");
+        console.log("Esto es el resultado getAllAppointments");
         console.log(resultado.data.data);
+        
         if (resultado.data.message == "Token invalido") {
           navigate("/");
           return;
@@ -35,9 +40,28 @@ export const AppointmentsCard = () => {
       })
       .catch((error) => console.log(error));
   };
+
   useEffect(() => {
     getMyAppointments();
   }, [credentialsRdx]);
+
+  const [appointmentData, setappointmentData] = useState({});
+
+//   const [formatDate, setformatDate] = useState({});
+//   useEffect(() => {
+//     if (resultado.data.data[0].appointment_date) {
+//         getFormatDate(resultado.data.data[0].appointment_date);
+//       }  }, [appointmentData]);
+
+
+
+
+
+
+
+
+
+
 
   return (
     <>
@@ -63,12 +87,12 @@ export const AppointmentsCard = () => {
               </td>
               <td>
                 <MDBBadge color="success" pill>
-                  Concertada
-                </MDBBadge>
+                {appointment.status}                </MDBBadge>
               </td>
-              <td>{appointment.appointment_date}</td>
+              <td> {appointment.appointment_date} </td>
               <td>
                 <div
+                id={appointment.id}
                   className="viewButtonDesign"
                   onClick={() => navigate("/appointmentdetail")}
                 >
