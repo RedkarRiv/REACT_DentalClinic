@@ -39,7 +39,7 @@ export const CardUserProfile = () => {
         console.log("Esto es el nombre del usuario");
         console.log(resultado.data.data);
         if (resultado.data.message == "Token invalido") {
-            navigate("/")
+          navigate("/");
           return;
         } else {
           setUserData(resultado.data.data);
