@@ -26,7 +26,11 @@ import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
 
 export const CardUserProfile = () => {
+
+
   const navigate = useNavigate();
+
+
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
@@ -52,6 +56,12 @@ export const CardUserProfile = () => {
     getMyProfile();
   }, [credentialsRdx]);
 
+
+
+
+
+
+  
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
