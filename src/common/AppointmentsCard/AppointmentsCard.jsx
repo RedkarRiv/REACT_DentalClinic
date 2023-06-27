@@ -31,8 +31,8 @@ export const AppointmentsCard = () => {
             console.log(resultado.data.data);
 
             if (resultado.data.message == "Token invalido") {
-                navigate("/");
-                return;
+              navigate("/");
+              return;
             } else {
               setappointmentData(resultado.data.data);
             }
@@ -103,15 +103,11 @@ export const AppointmentsCard = () => {
 
   const [appointmentData, setappointmentData] = useState({});
 
-  //   const appointmentDate = '2023-06-05T12:00:00.000Z';
-  //   const dia = appointmentDate.slice(0, 10);
-  //   const hora = appointmentDate.slice(11, 16);
-
   return (
     <>
       {appointmentData.length > 0 ? (
         appointmentData.map((appointment) => (
-          <MDBTableBody className="w-100" id={appointment.id}>
+          <MDBTableBody className="w-100" key={appointment.id}>
             <tr>
               <td>
                 <div className="d-flex align-items-center">
@@ -123,14 +119,11 @@ export const AppointmentsCard = () => {
                   />
                   <div className="ms-3">
                     <div className="fw-bold mb-1">
-                      
-                     {credentialRolCheck == 2 || credentialRolCheck == 3 ? (
-                     
-                        <p>Nombre de usuario</p> 
-                      
-                      ) : <p> {appointment?.doctor?.User?.name} {appointment?.doctor?.User?.surname}</p>}
-                      
-
+                      <p>
+                        {" "}
+                        {appointment?.doctor?.User?.name}{" "}
+                        {appointment?.doctor?.User?.surname}
+                      </p>
                     </div>
                   </div>
                 </div>

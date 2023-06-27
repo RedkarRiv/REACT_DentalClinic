@@ -14,7 +14,6 @@ export const Navbar2Boots = () => {
   const credentialsRdx = useSelector(userDataCheck);
   const [newToken, setNewToken] = useState("");
 
-
   useEffect(() => {
     setNewToken(credentialsRdx.credentials.token);
   }, [credentialsRdx]);
@@ -42,12 +41,6 @@ export const Navbar2Boots = () => {
             onClick={() => navigate("/userprofile")}
           >
             Perfil Usuario
-          </Nav.Link>
-          <Nav.Link
-            className="text-light menuItem"
-            onClick={() => navigate("/employeeprofile")}
-          >
-            Perfil Doctor
           </Nav.Link>
           <Nav.Link
             className="text-light menuItem"

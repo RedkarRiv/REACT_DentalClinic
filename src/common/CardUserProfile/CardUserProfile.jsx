@@ -17,6 +17,12 @@ import {
   MDBListGroupItem,
   MDBTableHead,
   MDBTable,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
@@ -24,12 +30,9 @@ import { getOneUser } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
-
+import { FormAppointment } from "../FormAppointment/FormAppointment";
 export const CardUserProfile = () => {
-
-
   const navigate = useNavigate();
-
 
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
@@ -56,12 +59,10 @@ export const CardUserProfile = () => {
     getMyProfile();
   }, [credentialsRdx]);
 
+  const [appointmentModal, setAppointmentModal] = useState(false);
 
+  const activateAppointmentModal = () => setAppointmentModal(!appointmentModal);
 
-
-
-
-  
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
@@ -96,7 +97,31 @@ export const CardUserProfile = () => {
                   {userData.name} {userData.surname}
                 </div>
                 <div className="d-flex justify-content-center mb-2">
-                  <div className="redesignButton">Nueva cita</div>
+                  <div
+                    className="redesignButton"
+                    onClick={activateAppointmentModal}
+                  >
+                    Nueva cita
+                  </div>
+                  <MDBModal
+                    show={appointmentModal}
+                    setShow={setAppointmentModal}
+                    tabIndex="-1"
+                  >
+                    <MDBModalDialog className="appointmentModalDesign">
+                      <MDBModalContent>
+                        <MDBModalHeader>
+                          <MDBModalTitle className="titleModalLogin">
+                            NUEVA CITA
+                          </MDBModalTitle>
+                        </MDBModalHeader>
+                        <MDBModalBody>
+                          <FormAppointment />
+                        </MDBModalBody>
+                      </MDBModalContent>
+                    </MDBModalDialog>
+                  </MDBModal>
+
                   <div className="redesignButton">Editar</div>
                 </div>
               </MDBCardBody>
@@ -195,7 +220,7 @@ export const CardUserProfile = () => {
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
                     <MDBCard className="mb-4 d-flex justify-content-between">
-                      <div className="titleAppointmentDesign">TUS CITAS </div>
+                      <div className="titleAppointmentDesign">CITAS </div>
                     </MDBCard>
                     <MDBTable
                       align="middle"
