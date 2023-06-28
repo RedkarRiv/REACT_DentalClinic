@@ -4,7 +4,7 @@ import { loginMe, registerMe } from "../../services/apiCall";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { login} from "../../pages/userSlice";
+import { login } from "../../pages/userSlice";
 import {
   MDBContainer,
   MDBCard,
@@ -18,36 +18,35 @@ import {
 import "./FormRegister.css";
 
 export const FormRegister = () => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const registerMeHandler = () => {
     console.log("Registro iniciado");
     registerMe(newCredentials)
       .then((resultado) => {
-        console.log((resultado.data.id));
+        console.log(resultado.data.id);
         if (resultado.data.id !== "undefined") {
-            const instantLoginCredentials = {
-                email: resultado.data.email,
-                password:newCredentials.password,
-            }
-            loginMe(instantLoginCredentials)
+          const instantLoginCredentials = {
+            email: resultado.data.email,
+            password: newCredentials.password,
+          };
+          loginMe(instantLoginCredentials)
             .then((resultado) => {
-                console.log("Esto es el login correcto");
-                let decoded = jwt_decode(resultado.data.token);
-        
-                let datosBackend = {
-                  token: resultado.data.token,
-                  user: decoded,
-                };
-        
-                //Guardo en redux.....
-                dispatch(login({ credentials: datosBackend }));
-        
-                setTimeout(() => {}, 1000);
-              })
+              console.log("Esto es el login correcto");
+              let decoded = jwt_decode(resultado.data.token);
+
+              let datosBackend = {
+                token: resultado.data.token,
+                user: decoded,
+              };
+
+              //Guardo en redux.....
+              dispatch(login({ credentials: datosBackend }));
+
+              setTimeout(() => {}, 1000);
+            })
             .catch((error) => console.log(error));
         }
-
 
         setTimeout(() => {}, 1000);
       })
@@ -64,7 +63,8 @@ export const FormRegister = () => {
     dni: "",
     cp: "",
     birth_date: "",
-    avatar:"https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png"
+    avatar:
+      "https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper-thumbnail.png",
   });
 
   const [newCredentialsError, setNewCredentialsError] = useState({
@@ -85,8 +85,8 @@ export const FormRegister = () => {
     }));
   };
 
-  const InputCheck = (e) => {
-    let mensajeError = CheckError(e.target.name, e.target.value);
+  const InputCheck = (e, password) => {
+    let mensajeError = CheckError(e.target.name, e.target.value, password);
 
     setNewCredentialsError((prevState) => ({
       ...prevState,
@@ -101,15 +101,12 @@ export const FormRegister = () => {
             <MDBRow className="g-0">
               <MDBCol md="12">
                 <MDBCardBody className="text-black d-flex flex-column justify-content-center">
-
-
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
                         maxLength={20}
                         placeholder="Nombre"
                         wrapperClass="mb-4"
-
                         size="lg"
                         id="form1"
                         type="text"
@@ -147,8 +144,7 @@ export const FormRegister = () => {
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
-                                              maxLength={20}
-
+                        maxLength={20}
                         wrapperClass="mb-4"
                         placeholder="Email"
                         size="lg"
@@ -167,8 +163,7 @@ export const FormRegister = () => {
 
                     <MDBCol md="6">
                       <MDBInput
-                                            maxLength={9}
-
+                        maxLength={9}
                         wrapperClass="mb-4"
                         placeholder="Teléfono"
                         size="lg"
@@ -189,18 +184,17 @@ export const FormRegister = () => {
                   <MDBRow>
                     <MDBCol md="6">
                       <MDBInput
-                                              maxLength={9}
-
+                        maxLength={9}
                         wrapperClass="mb-4"
                         placeholder="DNI"
                         size="lg"
-                        id="form1"
+                        id="form5"
                         type="integer"
                         name="dni"
                         className={
                           newCredentialsError.dniError === ""
                             ? "textInput"
-                            : " textInput errorInput"
+                            : "textInput errorInput"
                         }
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
@@ -209,18 +203,17 @@ export const FormRegister = () => {
 
                     <MDBCol md="6">
                       <MDBInput
-                                              maxLength={6}
-
+                        maxLength={6}
                         wrapperClass="mb-4"
                         placeholder="Código postal"
                         size="lg"
-                        id="form5"
+                        id="form6"
                         type="integer"
                         name="cp"
                         className={
                           newCredentialsError.cpError === ""
                             ? "textInput"
-                            : " textInput errorInput"
+                            :  "textInput errorInput"
                         }
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
@@ -240,46 +233,66 @@ export const FormRegister = () => {
                         wrapperClass="mb-4"
                         placeholder="Año de nacimiento"
                         size="lg"
-                        id="form6"
+                        id="form7"
                         type="date"
                         name="birth_date"
                         className={
                           newCredentialsError.birth_dateError === ""
                             ? "textInput"
-                            : " textInput"
+                            :  "textInput errorInput"
                         }
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
                       />
                     </MDBCol>
                   </MDBRow>
-
-                  <MDBInput
-                                          maxLength={20}
-
-                    wrapperClass="mb-4"
-                    size="lg"
-                    id="form4"
-                    type="password"
-                    placeholder="Contraseña"
-                    name="password"
-                    className={
-                      newCredentialsError.passwordError === ""
-                        ? "textInput"
-                        : " textInput errorInput"
-                    }
-                    onChange={(e) => InputHandler(e)}
-                    onBlur={(e) => InputCheck(e)}
-                  />
-
-                  <div className="d-flex justify-content-center p-0">
-                    <div
-                      onClick={registerMeHandler}
-                      className="sendButtonRegisterDesign"
-                    >
-                      Enviar
+                  <MDBRow>
+                    <MDBInput
+                      maxLength={20}
+                      wrapperClass="mb-4"
+                      size="lg"
+                      id="form8"
+                      type="password"
+                      placeholder="Contraseña"
+                      name="password"
+                      className={
+                        newCredentialsError.passwordError === ""
+                          ? "textInput"
+                          :  "textInput errorInput"
+                      }
+                      onChange={(e) => InputHandler(e)}
+                      onBlur={(e) => InputCheck(e)}
+                    />
+                  </MDBRow>
+                  <MDBRow>
+                    <MDBInput
+                      maxLength={20}
+                      wrapperClass="mb-4"
+                      size="lg"
+                      id="form9"
+                      type="password"
+                      placeholder="Repite la contraseña"
+                      name="doubleCheckPassword"
+                      className={
+                        newCredentialsError.doubleCheckPasswordError === ""
+                          ? "textInput"
+                          :  "textInput errorInput"
+                      }
+                      onChange={(e) => InputHandler(e)}
+                      onBlur={(e) => InputCheck(e, newCredentials.password)}
+                    />
+                  </MDBRow>
+                  <MDBRow>
+                    <div className="d-flex justify-content-center p-0">
+                      <button
+                        type="submit"
+                        onClick={registerMeHandler}
+                        className="sendButtonRegisterDesign"
+                      >
+                        Enviar
+                      </button>
                     </div>
-                  </div>
+                  </MDBRow>
                 </MDBCardBody>
               </MDBCol>
             </MDBRow>

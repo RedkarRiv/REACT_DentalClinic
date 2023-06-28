@@ -1,4 +1,4 @@
-export const CheckError = (name, value) => {
+export const CheckError = (name, value, password1) => {
   switch (name) {
     case "email":
     case "e-mail":
@@ -15,6 +15,11 @@ export const CheckError = (name, value) => {
         return "El password no tiene el formato correcto.";
       }
       return "";
+    case "doubleCheckPassword":
+      if (value !== password1) {
+        return "Las dos contraseñas tienen que ser iguales.";
+      }
+      return "";
 
     case "name":
       if (!/^([A-Z][a-z]{2,}(?: [A-Z][a-z]{2,})*)$/.test(value)) {
@@ -22,17 +27,14 @@ export const CheckError = (name, value) => {
       }
       return "";
 
-
-
-
-      case "surname":
-        if (!/^([A-Z][a-zA-Z]{2,}(?: [A-Za-z]{2,})*)$/.test(value)) {
-          return "El formato del apellido no es válido";
-        }
-        return "";
+    case "surname":
+      if (!/^([A-Z][a-zA-Z]{2,}(?: [A-Za-z]{2,})*)$/.test(value)) {
+        return "El formato del apellido no es válido";
+      }
+      return "";
 
     case "phone":
-      if (!/^(9\d{8,9}|[67]\d{8})$/.test(value)) {
+      if (!/^(9\d{8}|[67]\d{8})$/.test(value)) {
         return "El formato del teléfono no es válido";
       }
       return "";
@@ -47,13 +49,13 @@ export const CheckError = (name, value) => {
         return "El código postal no es válido";
       }
       return "";
-      case "birth_date":
-        if ("2005-01-01" < value  > "1923-01-01") {
-          console.log("Esto es el value de birthdate" + value.toString())
+    case "birth_date":
+      if ("2005-01-01" < value > "1923-01-01") {
+        console.log("Esto es el value de birthdate" + value.toString());
 
-          return "La fecha no es válida";
-        }
-        break;
+        return "La fecha no es válida";
+      }
+      break;
 
     default:
       console.log("Unknown format");

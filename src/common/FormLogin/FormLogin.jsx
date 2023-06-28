@@ -18,7 +18,7 @@ export const FormLogin = () => {
 
   // useSelector es para el modo de lectura
   const credentialsRdx = useSelector(userDataCheck);
-  
+
   const navigate = useNavigate();
 
   const [credentials, setCredentials] = useState({
@@ -47,7 +47,8 @@ export const FormLogin = () => {
     }));
   };
 
-  const logMe = () => {
+  const logMe = (e) => {
+    e.preventDefault()
     console.log(credentialsRdx);
 
     console.log("Hola pepe");
@@ -63,8 +64,10 @@ export const FormLogin = () => {
 
         //Guardo en redux.....
         dispatch(login({ credentials: datosBackend }));
+        setTimeout(() => {
+          navigate("/userprofile")
 
-        setTimeout(() => {}, 1000);
+        }, 500);
       })
       .catch((error) => console.log(error));
   };
@@ -104,9 +107,9 @@ export const FormLogin = () => {
       </Form.Group>
       <div className="m-3 d-flex justify-content-center">
         {" "}
-        <div onClick={logMe} className="sendButtonDesign">
+        <button onClick={(e)=>logMe(e)} type="submit" className="sendButtonDesign">
           Enviar
-        </div>
+        </button>
       </div>
     </Form>
   );

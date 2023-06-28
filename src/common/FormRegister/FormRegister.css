@@ -53,3 +53,7 @@ padding-left: 1em;
       .errorInput {
         border: red solid 0.2em;
       }
+
+      .textInput {
+        border: transparent solid 0.2em;
+      }

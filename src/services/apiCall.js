@@ -41,3 +41,12 @@ export const getAllAppointments = async (credentialCheck) => {
       },
     });
   };
+
+
+export const appointMe = async (credentialCheck, newAppointment) => {
+    return await axios.post(`${root}appointment/new`, newAppointment, {
+        headers: {
+            authorization: "Bearer " + credentialCheck,
+        }
+    })
+}
