@@ -98,7 +98,7 @@ export const FormLogin = () => {
           className={
             credentialsError.passwordError === ""
               ? "textInput"
-              : " textInput errorInput"
+              : " textInput"
           }
           name="password"
           onChange={(e) => InputHandler(e)}

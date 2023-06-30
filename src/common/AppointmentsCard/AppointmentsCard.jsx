@@ -42,7 +42,8 @@ export const AppointmentsCard = () => {
       case 3:
         return getAllAppointments(credentialCheck)
           .then((resultado) => {
-            console.log("Esto es el resultado getAllAppointmentsByUser");
+            console.log("Esto es el resultado getAllAppointments");
+            console.log(resultado)
             console.log(resultado.data.data);
 
             if (

@@ -6,7 +6,6 @@ export const CheckError = (name, value, password1) => {
       if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
         return "El formato de e-mail es incorrecto";
       }
-
       return "";
 
     case "password":

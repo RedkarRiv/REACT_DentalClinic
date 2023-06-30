@@ -22,14 +22,7 @@ export const FormAppointment = () => {
   const [doctorSelected, setDoctorSelected] = useState({});
 
     // HOOKS Y HANDLERS PARA VALIDACION DE INPUTS DEL FORMULARIO
-    const [newAppointment, setNewAppointment] = useState({
-      employee_id: doctorSelected?.value,
-      appointment_date: "2023-06-21 09:00",
-      treatment: treatmentSelected?.value,
-      comments: "",
-      status:"Concertada",
-    });
-  
+
     const [newAppointmentError, setNewAppointmentError] = useState({});
 
   const InputHandler = (e) => {
@@ -40,13 +33,14 @@ export const FormAppointment = () => {
     console.log(newAppointment)
   };
 
-  const InputHandlerSelect = (inputName, selectedOption) => {
+  const InputHandlerSelect = (e) => {
+    console.log("esto es el target.value ")
+    console.log(e);
+
     setNewAppointment((prevValues) => ({
       ...prevValues,
-      [inputName]: selectedOption.value,
+      [e.name]: e.value,
     }));
-    console.log("Esto es el setNewAppointment")
-    console.log(setNewAppointment)
   };
 
   const dropDownHandler = (e) => {
@@ -71,23 +65,30 @@ export const FormAppointment = () => {
       .catch((error) => console.log(error));
   };
 
-  
+  const [newAppointment, setNewAppointment] = useState({
+    employee_id: doctorSelected?.value,
+    appointment_date: "2023-06-21 09:00",
+    treatment: treatmentSelected?.value,
+    comments: "",
+    status:"Concertada",
+  });
+
 
   const treatmentsDropdown = [
-    { value: 1, label: "Consulta" },
-    { value: "Revisión", label: "Revisión" },
-    { value: "Limpieza bucal", label: "Limpieza" },
-    { value: "Extracción", label: "Extracción" },
-    { value: "Ortodoncia", label: "Ortodoncia" },
-    { value: "Intervencion especial", label: "Intervencion" },
+    { value: 1, label: "Consulta", name:"treatment" },
+    { value: "Revisión", label: "Revisión", name:"treatment" },
+    { value: "Limpieza bucal", label: "Limpieza", name:"treatment" },
+    { value: "Extracción", label: "Extracción", name:"treatment" },
+    { value: "Ortodoncia", label: "Ortodoncia", name:"treatment" },
+    { value: "Intervencion especial", label: "Intervencion", name:"treatment" },
   ];
 
   const doctorDropdown = [
-    { value: 7, label: "Marta Martinez" },
-    { value: "Pedro Palomares", label: "Pedro Palomares" },
-    { value: "Sara Sueca", label: "Sara Sueca" },
-    { value: "Zaida Zore", label: "Zaida Zore" },
-    { value: "Marcos Ruperto", label: "Marcos Ruperto" },
+    { value: 7, label: "Marta Martinez", name:"employee_id" },
+    { value: "Pedro Palomares", label: "Pedro Palomares", name:"employee_id" },
+    { value: "Sara Sueca", label: "Sara Sueca", name:"employee_id" },
+    { value: "Zaida Zore", label: "Zaida Zore", name:"employee_id" },
+    { value: "Marcos Ruperto", label: "Marcos Ruperto", name:"employee_id" },
   ];
 
   const checkUserData = () => {
@@ -137,9 +138,9 @@ export const FormAppointment = () => {
                         wrapperClass="mb-4"
                         placeholder="Escoge un tratamiento"
                         options={treatmentsDropdown}
-                        value={treatmentSelected}
+                        value={treatmentsDropdown.value}
                         name="treatment"
-                        onChange={(e) => InputHandlerSelect("treatment", treatmentSelected )}
+                        onChange={(InputHandlerSelect)}
                       />
                     </MDBCol>
                   </MDBRow>
@@ -150,9 +151,9 @@ export const FormAppointment = () => {
                         wrapperClass="mb-4"
                         placeholder="Escoge un doctor"
                         options={doctorDropdown}
-                        value={doctorSelected}
+                        value={doctorDropdown.value}
                         name="employee_id"
-                        onChange={(e) => InputHandlerSelect("employee_id", treatmentSelected )}
+                        onChange={InputHandlerSelect}
                       />
                     </MDBCol>
                   </MDBRow>
