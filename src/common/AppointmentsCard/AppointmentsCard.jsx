@@ -43,7 +43,7 @@ export const AppointmentsCard = () => {
         return getAllAppointments(credentialCheck)
           .then((resultado) => {
             console.log("Esto es el resultado getAllAppointments");
-            console.log(resultado)
+            console.log(resultado);
             console.log(resultado.data.data);
 
             if (
@@ -103,7 +103,6 @@ export const AppointmentsCard = () => {
     getMyAppointments();
   }, [credentialsRdx]);
 
-
   return (
     <>
       {appointmentData.length > 0 ? (
@@ -133,7 +132,12 @@ export const AppointmentsCard = () => {
                 <p className="fw-normal mb-1">{appointment.Treatment.name}</p>
               </td>
               <td>
-                <MDBBadge color="success" pill>
+                <MDBBadge
+                  color={
+                    appointment.status == "Concertada" ? "success" : appointment.status == "Anulada" ? "danger" : "primary"
+                  }
+                  pill
+                >
                   {appointment.status}{" "}
                 </MDBBadge>
               </td>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./CardAdminProfile.css";
 import {
   MDBCol,
@@ -19,11 +19,21 @@ import {
   MDBTableHead,
   MDBTable,
 } from "mdb-react-ui-kit";
-import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
 import { useNavigate } from "react-router-dom";
+import { EmployeeCard } from "../EmployeeCard/EmployeeCard";
+import { bringAllUsers } from "../../services/apiCall";
 
 export const CardAdminProfile = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    bringAllUsers()
+      .then((resultados) => {
+        setUsers(resultados.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
@@ -31,7 +41,7 @@ export const CardAdminProfile = () => {
         <MDBRow>
           <MDBCol>
             <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem >
+              <MDBBreadcrumbItem>
                 <div className="menuFontDesign" onClick={() => navigate("/")}>
                   Home
                 </div>
@@ -68,8 +78,6 @@ export const CardAdminProfile = () => {
                   <div className="redesignButtonAdmin">Editar tratamiento</div>
                   <div className="redesignButtonAdmin">Editar empleado</div>
                 </div>
-
-
               </MDBCardBody>
             </MDBCard>
 
@@ -122,9 +130,7 @@ export const CardAdminProfile = () => {
                     <MDBCardText>Código postal</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">
-                      46009
-                    </MDBCardText>
+                    <MDBCardText className="text-muted">46009</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -159,13 +165,18 @@ export const CardAdminProfile = () => {
             </MDBCard>
 
             <MDBRow>
-              <MDBCol sm="6"  md="12" lg="12">
+              <MDBCol sm="6" md="12" lg="12">
                 <MDBCard className="mb-4 mb-md-0 ">
                   <MDBCardBody>
                     <MDBCardText className="mb-4 d-flex justify-content-between">
-                      <div className="titleAppointmentDesign">TODOS LOS USUARIOS</div>
+                      <div className="titleAppointmentDesign">
+                        TODOS LOS USUARIOS
+                      </div>
                     </MDBCardText>
-                    <MDBTable align="middle" className="fontResizeAppointmentsTitle">
+                    <MDBTable
+                      align="middle"
+                      className="fontResizeAppointmentsTitle"
+                    >
                       <MDBTableHead>
                         <tr>
                           <th scope="col">Usuario</th>
@@ -175,7 +186,23 @@ export const CardAdminProfile = () => {
                           <th scope="col">Detalle</th>
                         </tr>
                       </MDBTableHead>{" "}
-                      <AppointmentsCard />
+                      {users.length > 0 ? (
+                        users.map((user) => (
+                          <div className="employeeCardContainer" key={user.id}>
+                            <EmployeeCard
+                              id={user.id}
+                              name={user.name}
+                              surname={user.surname}
+                              email={user.email}
+                              address={user.address}
+                              phone={user.phone}
+                              avatar={user.avatar_img}
+                            />
+                          </div>
+                        ))
+                      ) : (
+                        <p>Loading...</p>
+                      )}
                     </MDBTable>
                   </MDBCardBody>
                 </MDBCard>
