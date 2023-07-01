@@ -179,11 +179,12 @@ export const CardAdminProfile = () => {
                       className="fontResizeAppointmentsTitle"
                     >
                       <MDBTableHead>
-                        <tr>
+                        <tr className="allUserTitleDesign">
                           <th scope="col">Usuario</th>
                           <th scope="col">Rol</th>
-                          <th scope="col">Estado</th>
-                          <th scope="col">Registrado</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Phone</th>
+                          <th scope="col">DNI</th>
                           <th scope="col">Detalle</th>
                         </tr>
                       </MDBTableHead>
@@ -195,9 +196,12 @@ export const CardAdminProfile = () => {
                               name={user.name}
                               surname={user.surname}
                               email={user.email}
-                              address={user.address}
+                              cp={user.cp}
+                              birth_date={user.birth_date}
+                              createdAt={user.createdAt}
                               phone={user.phone}
                               avatar={user.avatar_img}
+                              dni={user.dni}
                             />
                         ))
                       ) : (
