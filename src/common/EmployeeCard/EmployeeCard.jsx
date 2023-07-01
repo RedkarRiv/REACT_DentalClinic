@@ -1,27 +1,53 @@
-import Card from "react-bootstrap/Card";
-import ListGroup from "react-bootstrap/ListGroup";
 import "./EmployeeCard.css";
+import {
+  MDBTableBody,
+  MDBBadge,
+} from "mdb-react-ui-kit";
 
-export const EmployeeCard = ({id, name, surname, email, address, phone, avatar}) => {
+export const EmployeeCard = ({id, name, surname, email, cp, phone, avatar, birth_date}) => {
   return (
-    <Card>
-      <Card.Img className="p-4" variant="top" src={avatar} />
-      <Card.Body>
-        <Card.Title>{id} {name} {surname}</Card.Title>
-        <Card.Text>
 
-        </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>{email}</ListGroup.Item>
-        <ListGroup.Item>{address}</ListGroup.Item>
-        <ListGroup.Item>{phone}</ListGroup.Item>
-      </ListGroup>
-      <Card.Body className="d-flex justify-content-center">
-        <Card.Link href="#">Ver en detalle</Card.Link>
-        <Card.Link href="#">Agendar cita</Card.Link>
-      </Card.Body>
-    </Card>
+
+<MDBTableBody className="w-100" key={id}>
+            <tr>
+              <td>
+                <div className="d-flex align-items-center">
+                  <img
+                    src={avatar}
+                    alt="Avatar"
+                    style={{ width: "	2.75em", height: "2.75em" }}
+                    className="rounded-circle"
+                  />
+                  <div className="ms-3">
+                    <div className="fw-bold mb-1">
+                      <p>{id}
+                        {" "}
+                        {name}{" "}
+                        {surname}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <p className="fw-normal mb-1">{cp}</p>
+              </td>
+              <td>
+              </td>
+              <td className="dateAppointmentDesign">
+                {" "}
+                {birth_date}{" "}
+              </td>
+              <td>
+                <div
+                  className="viewButtonDesign"
+                >
+                  Ver
+                </div>
+              </td>
+            </tr>
+          </MDBTableBody>
+
   );
 };
 

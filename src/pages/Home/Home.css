@@ -17,36 +17,7 @@
   align-items: center;
   margin-bottom: 2em;
 }
-.employeeCardContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 70%;
-  padding: 0.5em;
-}
 
-@media (max-width: 576px) {
-  .cardGridContainer {
-    width: 95vw;
-    height: 90vh;
-    border: #ffffff solid 0.1em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-  }
-  .employeeCardContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 70%;
-    width: 100%;
-    height: auto;
-    padding: 1em;
-  }
-}
 
 .gridContainer {
   width: 100%;

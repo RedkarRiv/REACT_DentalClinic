@@ -18,6 +18,7 @@ import {
   MDBListGroupItem,
   MDBTableHead,
   MDBTable,
+  MDBTableBody,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { EmployeeCard } from "../EmployeeCard/EmployeeCard";
@@ -185,11 +186,11 @@ export const CardAdminProfile = () => {
                           <th scope="col">Registrado</th>
                           <th scope="col">Detalle</th>
                         </tr>
-                      </MDBTableHead>{" "}
+                      </MDBTableHead>
                       {users.length > 0 ? (
                         users.map((user) => (
-                          <div className="employeeCardContainer" key={user.id}>
                             <EmployeeCard
+                            key={user.id}
                               id={user.id}
                               name={user.name}
                               surname={user.surname}
@@ -198,7 +199,6 @@ export const CardAdminProfile = () => {
                               phone={user.phone}
                               avatar={user.avatar_img}
                             />
-                          </div>
                         ))
                       ) : (
                         <p>Loading...</p>
