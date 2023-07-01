@@ -5,17 +5,18 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 .cardGridContainer {
-  width: 50vw;
+  width: auto;
   background-color: rgb(215, 210, 210);
   border-radius: 0.8em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 2em;
+  border: 0.1em solid black
 }
 
 
@@ -24,4 +25,10 @@
   display: flex;
   justify-content: center;
   padding-top: 6em;
+  
+}
+
+.employeeCardContainer {
+  border: 0.1em solid black
+
 }

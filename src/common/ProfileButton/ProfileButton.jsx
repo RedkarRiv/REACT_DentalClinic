@@ -24,6 +24,7 @@ export const ProfileButton = ({ avatarImage }) => {
 
   const logOut = () => {
     dispatch(userout());
+  navigate("/")
   };
 
   return (

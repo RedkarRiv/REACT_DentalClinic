@@ -65,8 +65,11 @@ export const FormLogin = () => {
         //Guardo en redux.....
         dispatch(login({ credentials: datosBackend }));
         setTimeout(() => {
-          navigate("/userprofile")
-
+          if (datosBackend.user.roleId==3) {
+            navigate("/managerprofile")
+          } else {
+            navigate("/userprofile")
+          }
         }, 500);
       })
       .catch((error) => console.log(error));

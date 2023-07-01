@@ -22,10 +22,39 @@ import {
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { EmployeeCard } from "../EmployeeCard/EmployeeCard";
-import { bringAllUsers } from "../../services/apiCall";
+import { bringAllUsers, getOneUser } from "../../services/apiCall";
+import { useSelector } from "react-redux";
+import { userDataCheck } from "../../pages/userSlice";
+import moment from "moment/moment";
 
 export const CardAdminProfile = () => {
   const navigate = useNavigate();
+
+  const [userData, setUserData] = useState({});
+  const credentialsRdx = useSelector(userDataCheck);
+  const credentialCheck = credentialsRdx?.credentials?.token;
+
+  const getMyProfile = () => {
+    getOneUser(credentialCheck)
+      .then((res) => {
+        console.log("Esto es el then de getOneUser");
+        console.log(res);
+        console.log("Esto es el nombre del usuario");
+        console.log(res.data.data);
+        if (res.data.data == "Token invalido" || !res.data.data) {
+          navigate("/");
+          return;
+        } else {
+          setUserData(res.data.data);
+        }
+      })
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getMyProfile();
+  }, [credentialsRdx]);
+
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -53,7 +82,7 @@ export const CardAdminProfile = () => {
         </MDBRow>
 
         <MDBRow>
-          <div className="titleUserDesign">Bienvenido ADMIN</div>
+          <div className="titleUserDesign">Bienvenido {userData.name}</div>
         </MDBRow>
         <MDBRow>
           <MDBCol lg="4">
@@ -66,8 +95,12 @@ export const CardAdminProfile = () => {
                   style={{ width: "150px" }}
                   fluid
                 />
-                <p className="text-muted mb-1 mt-4">Arthur Arpon</p>
-                <p className="text-muted mb-4">Registro: 12-08-2022</p>
+                <p className="text-muted mb-1 mt-4">
+                  {userData.name} {userData.surname}
+                </p>
+                <p className="text-muted mb-4"> Registro:{" "}
+                  {moment(userData.createdAt).format("YYYY-MM-DD HH:mm")}
+                </p>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButtonAdmin">Editar</div>
                 </div>
@@ -90,7 +123,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      Arthur Arpon{" "}
+                    {userData.name} {userData.surname}{" "}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -101,7 +134,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      example@example.com
+                    {userData.email}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -112,7 +145,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                      (097) 234-5678
+                    {userData.phone}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -122,7 +155,9 @@ export const CardAdminProfile = () => {
                     <MDBCardText>Fecha de nacimiento</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8" className=" d-flex align-items-center">
-                    <MDBCardText className="text-muted">12-06-1912</MDBCardText>
+                    <MDBCardText className="text-muted">
+                    {userData.birth_date}
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -131,7 +166,7 @@ export const CardAdminProfile = () => {
                     <MDBCardText>Código postal</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">46009</MDBCardText>
+                    <MDBCardText className="text-muted">   {userData.cp}</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -141,7 +176,7 @@ export const CardAdminProfile = () => {
                     <MDBCardText>DNI</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">76443237F </MDBCardText>
+                    <MDBCardText className="text-muted">   {userData.dni} </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -190,19 +225,19 @@ export const CardAdminProfile = () => {
                       </MDBTableHead>
                       {users.length > 0 ? (
                         users.map((user) => (
-                            <EmployeeCard
+                          <EmployeeCard
                             key={user.id}
-                              id={user.id}
-                              name={user.name}
-                              surname={user.surname}
-                              email={user.email}
-                              cp={user.cp}
-                              birth_date={user.birth_date}
-                              createdAt={user.createdAt}
-                              phone={user.phone}
-                              avatar={user.avatar_img}
-                              dni={user.dni}
-                            />
+                            id={user.id}
+                            name={user.name}
+                            surname={user.surname}
+                            email={user.email}
+                            cp={user.cp}
+                            birth_date={user.birth_date}
+                            createdAt={user.createdAt}
+                            phone={user.phone}
+                            avatar={user.avatar_img}
+                            dni={user.dni}
+                          />
                         ))
                       ) : (
                         <p>Loading...</p>
