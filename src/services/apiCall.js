@@ -50,3 +50,14 @@ export const appointMe = async (credentialCheck, newAppointment) => {
         }
     })
 }
+
+
+
+
+export const editMe = async (credentialCheck, newUserData) => {
+  return await axios.put(`${root}users/update`, newUserData, {
+      headers: {
+          authorization: "Bearer " + credentialCheck,
+      }
+  })
+}

@@ -97,12 +97,12 @@ export const AppointmentsCard = () => {
         .catch((error) => console.log(error));
     }
   };
+  const [appointmentData, setappointmentData] = useState({});
 
   useEffect(() => {
     getMyAppointments();
   }, [credentialsRdx]);
 
-  const [appointmentData, setappointmentData] = useState({});
 
   return (
     <>

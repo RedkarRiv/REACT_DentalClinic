@@ -1,0 +1,57 @@
+.dateOfBirthTitleDesign {
+    font-weight: bold;
+    font-size: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+padding-top: 0.1em;
+padding-left: 1em;
+}
+
+.registerCardFormBackground {
+
+    background-color: transparent;
+}
+
+.sendButtonRegisterDesign {
+    height: 2em;
+    width: auto;
+    padding-right: 1em;
+    padding-left: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    border-radius: 0.4em;
+    background-color: #0d479f;
+    color: white;
+    cursor: pointer;
+    transition: 0.1s;
+    margin: 1em;
+    margin-bottom: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: solid 0.1em white;
+    user-select: none;
+  
+  }
+  
+  .sendButtonRegisterDesign:hover {
+      border-radius: 0.4em;
+      background-color: #558911;
+    color: white;
+    transition: 0.1s;
+    border: solid 0.1em white;
+  
+  }
+  
+  .sendButtonRegisterDesign:active {
+      transform: scale(0.9);
+  
+      }
+  
+      .errorInput {
+        border: red solid 0.2em;
+      }
+
+  

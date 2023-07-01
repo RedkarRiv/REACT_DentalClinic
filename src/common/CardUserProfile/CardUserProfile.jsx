@@ -31,6 +31,7 @@ import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
 import { FormAppointment } from "../FormAppointment/FormAppointment";
+import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
 export const CardUserProfile = () => {
   const navigate = useNavigate();
 
@@ -62,6 +63,10 @@ export const CardUserProfile = () => {
   const [appointmentModal, setAppointmentModal] = useState(false);
 
   const activateAppointmentModal = () => setAppointmentModal(!appointmentModal);
+
+  const [userEditModal, setUserEditeModal] = useState(false);
+
+  const activateuserEditModal = () => setUserEditeModal(!appointmentModal);
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
@@ -122,7 +127,31 @@ export const CardUserProfile = () => {
                     </MDBModalDialog>
                   </MDBModal>
 
-                  <div className="redesignButton">Editar</div>
+                  <div
+                    className="redesignButton"
+                    onClick={activateuserEditModal}
+                  >
+                    Editar
+                  </div>
+
+                  <MDBModal
+                    show={userEditModal}
+                    setShow={setUserEditeModal}
+                    tabIndex="-1"
+                  >
+                    <MDBModalDialog className="editUserModalDesign">
+                      <MDBModalContent>
+                        <MDBModalHeader>
+                          <MDBModalTitle className="titleModalLogin">
+                            EDITAR USUARIO{" "}
+                          </MDBModalTitle>
+                        </MDBModalHeader>
+                        <MDBModalBody>
+                          <FormEditProfile />
+                        </MDBModalBody>
+                      </MDBModalContent>
+                    </MDBModalDialog>
+                  </MDBModal>
                 </div>
               </MDBCardBody>
             </MDBCard>
