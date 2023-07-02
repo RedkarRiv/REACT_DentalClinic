@@ -5,6 +5,7 @@ import { userDataCheck } from "../../pages/userSlice";
 import { getOneUser, appointMe, getAllEmployees, getAllTreatments } from "../../services/apiCall";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
+import moment from "moment/moment";
 
 import {
   MDBContainer,
@@ -166,6 +167,7 @@ export const FormAppointment = () => {
                         id="form2"
                         type="date"
                         name="appDate"
+                        min={moment().format('YYYY-MM-DD')}
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
                       />
