@@ -50,7 +50,7 @@ export const AppointmentsCard = ({ searchDate }) => {
             console.log("he buscado");
             console.log(resultado);
 
-            setappointmentData(resultado.data.results);
+            setappointmentData(resultado.data.data);
           })
           .catch((error) => console.log(error));
         ///////////////////////////////////////////
@@ -114,7 +114,7 @@ export const AppointmentsCard = ({ searchDate }) => {
     <>
       {appointmentData ? (
         appointmentData.map((appointment) => (
-          <MDBTableBody className="w-100" key={appointment.id}>
+          <MDBTableBody className="w-100" key={appointment?.id}>
             <tr>
               <td>
                 <div className="d-flex align-items-center">
@@ -136,7 +136,7 @@ export const AppointmentsCard = ({ searchDate }) => {
                 </div>
               </td>
               <td>
-                <p className="fw-normal mb-1">{appointment.Treatment.name}</p>
+                <p className="fw-normal mb-1">{appointment?.Treatment?.name}</p>
               </td>
               <td>
                 <MDBBadge
@@ -153,7 +153,7 @@ export const AppointmentsCard = ({ searchDate }) => {
                 </MDBBadge>
               </td>
               <td className="dateAppointmentDesign">
-                {moment(appointment.appointment_date).format(
+                {moment(appointment?.appointment_date).format(
                   "YYYY-MM-DD HH:mm"
                 )}
               </td>
@@ -168,16 +168,16 @@ export const AppointmentsCard = ({ searchDate }) => {
             </tr>
             <tr>
               <td colSpan="5" className="p-0">
-                {dropdownState[appointment.id] && (
+                {dropdownState[appointment?.id] && (
                   <div className="d-flex flex-column justify-content-center ps-3 pe-3">
                     <div>
                       <div className="pt-2">
                         <p>
                           <strong>Tratamiento:</strong>{" "}
-                          {appointment.Treatment.name}
+                          {appointment?.Treatment?.name}
                         </p>
                         <p>
-                          <strong>Precio:</strong> {appointment.Treatment.price}{" "}
+                          <strong>Precio:</strong> {appointment?.Treatment?.price}{" "}
                           €
                         </p>
                       </div>
@@ -187,11 +187,11 @@ export const AppointmentsCard = ({ searchDate }) => {
                           {appointment.Treatment.comments}
                         </p>
                         <p>
-                          <strong>Comentarios:</strong> {appointment.comments}
+                          <strong>Comentarios:</strong> {appointment?.comments}
                         </p>
                       </div>
                     </div>
-                    {appointment.status !== "Anulada" ? (
+                    {appointment?.status !== "Anulada" ? (
                       <div className="appointmentButtonsContainerDesign">
                         <div
                           className="appointmentButtonsDesign"
