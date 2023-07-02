@@ -8,10 +8,20 @@ import { loginMe } from "../../services/apiCall";
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from "react-redux";
 import { login, userDataCheck } from "../../pages/userSlice";
+import {
+  MDBContainer,
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBRow,
+  MDBCol,
+  MDBInput,
+  MDBRadio,
+} from "mdb-react-ui-kit";
 
 export const FormLogin = () => {
 
-  // Instancio Redux en modo lectura y escritura
+const  [errorMessage, setErrorMessage] = useState("")  // Instancio Redux en modo lectura y escritura
 
   // Dispatch escritura
   const dispatch = useDispatch();
@@ -48,15 +58,13 @@ export const FormLogin = () => {
   };
 
   const logMe = (e) => {
-    e.preventDefault()
-    console.log(credentialsRdx);
+    e.preventDefault();
 
     console.log("Hola pepe");
     loginMe(credentials)
       .then((resultado) => {
         console.log("Esto es el then");
         let decoded = jwt_decode(resultado.data.token);
-
         let datosBackend = {
           token: resultado.data.token,
           user: decoded,
@@ -65,14 +73,17 @@ export const FormLogin = () => {
         //Guardo en redux.....
         dispatch(login({ credentials: datosBackend }));
         setTimeout(() => {
-          if (datosBackend.user.roleId==3) {
-            navigate("/managerprofile")
+          if (datosBackend.user.roleId == 3) {
+            navigate("/managerprofile");
           } else {
-            navigate("/userprofile")
+            navigate("/userprofile");
           }
         }, 500);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error.response.data.message);
+        setErrorMessage(error.response.data.message)
+      });
   };
 
   return (
@@ -81,11 +92,7 @@ export const FormLogin = () => {
         <Form.Label>Email</Form.Label>
         <Form.Control
           type="email"
-          className={
-            credentialsError.emailError === ""
-              ? "textInput"
-              : " textInput errorInput"
-          }
+          className="textInput"
           placeholder="Introduce tu correo"
           name="email"
           onChange={(e) => InputHandler(e)}
@@ -98,19 +105,24 @@ export const FormLogin = () => {
         <Form.Control
           type="password"
           placeholder="Password"
-          className={
-            credentialsError.passwordError === ""
-              ? "textInput"
-              : " textInput"
-          }
+          className="textInput"
           name="password"
           onChange={(e) => InputHandler(e)}
           onBlur={(e) => InputCheck(e)}
         />
       </Form.Group>
+      <MDBRow>
+        <MDBCol md="12" className="errorMessageDesign">
+          <p md="12">{errorMessage}</p>
+        </MDBCol>
+      </MDBRow>
       <div className="m-3 d-flex justify-content-center">
         {" "}
-        <button onClick={(e)=>logMe(e)} type="submit" className="sendButtonDesign">
+        <button
+          onClick={(e) => logMe(e)}
+          type="submit"
+          className="sendButtonRegisterDesign"
+        >
           Enviar
         </button>
       </div>
