@@ -22,7 +22,6 @@ export const FormRegister = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const registerMeHandler = () => {
-    console.log("Registro iniciado");
     registerMe(newCredentials)
       .then((resultado) => {
         if (resultado.data.message == "No ha sido posible crear la cuenta") {
@@ -36,7 +35,6 @@ export const FormRegister = () => {
           };
           loginMe(instantLoginCredentials)
             .then((resultado) => {
-              console.log("Esto es el login correcto");
               let decoded = jwt_decode(resultado.data.token);
 
               let datosBackend = {

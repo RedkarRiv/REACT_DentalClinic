@@ -5,30 +5,30 @@ import {
   MDBContainer,
   MDBCard,
   MDBCardBody,
-  MDBCardImage,
   MDBRow,
   MDBCol,
   MDBInput,
-  MDBRadio,
 } from "mdb-react-ui-kit";
 import "./FormEditProfile.css";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export const FormEditProfile = () => {
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
   const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
 
   const editMeHandler = () => {
-    console.log("Edicion iniciada");
     editMe(credentialCheck, newUserData)
       .then((resultado) => {
-        console.log(resultado);
-            })
-            .catch((error) => console.log(error));
-        }
+       
+        navigate("/userprofile");
+      })
 
+      .catch((error) => console.log(error));
+  };
 
   // HOOKS Y HANDLERS PARA VALIDACION DE INPUTS DEL FORMULARIO
   const [newUserData, setNewUserData] = useState({});
@@ -105,24 +105,24 @@ export const FormEditProfile = () => {
                     </MDBCol>
                   </MDBRow>
 
-                    <MDBCol md="12">
-                      <MDBInput
-                        maxLength={9}
-                        wrapperClass="mb-4"
-                        placeholder="Teléfono"
-                        size="lg"
-                        id="form4"
-                        type="phone"
-                        name="phone"
-                        className={
-                          newUserDataError.phoneError === ""
-                            ? "textInput"
-                            : " textInput errorInput"
-                        }
-                        onChange={(e) => InputHandler(e)}
-                        onBlur={(e) => InputCheck(e)}
-                      />
-                    </MDBCol>
+                  <MDBCol md="12">
+                    <MDBInput
+                      maxLength={9}
+                      wrapperClass="mb-4"
+                      placeholder="Teléfono"
+                      size="lg"
+                      id="form4"
+                      type="phone"
+                      name="phone"
+                      className={
+                        newUserDataError.phoneError === ""
+                          ? "textInput"
+                          : " textInput errorInput"
+                      }
+                      onChange={(e) => InputHandler(e)}
+                      onBlur={(e) => InputCheck(e)}
+                    />
+                  </MDBCol>
 
                   <MDBRow>
                     <MDBCol md="6">
@@ -178,7 +178,7 @@ export const FormEditProfile = () => {
                         className={
                           newUserDataError.birth_dateError === ""
                             ? "textInput"
-                            :  "textInput errorInput"
+                            : "textInput errorInput"
                         }
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
@@ -186,7 +186,7 @@ export const FormEditProfile = () => {
                     </MDBCol>
                   </MDBRow>
                   <MDBRow>
-                  <MDBCol md="12" className="errorMessageDesign">
+                    <MDBCol md="12" className="errorMessageDesign">
                       <p md="12">{newUserDataError.nameError}</p>{" "}
                       <p md="12">{newUserDataError.surnameError}</p>{" "}
                       <p md="12">{newUserDataError.phoneError}</p>{" "}

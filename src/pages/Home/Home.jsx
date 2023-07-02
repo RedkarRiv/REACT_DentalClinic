@@ -18,27 +18,11 @@ export const Home = () => {
     
   return (
     <div className="homeBackground">
-      <div className="gridContainer">
-      {/* <div className="cardGridContainer">
-      {users.length > 0 ? (
-        users.map((user) => (
-          <div className="employeeCardContainer" key={user.id}>
-            <EmployeeCard
-              id={user.id}
-              name={user.name}
-              surname={user.surname}
-              email={user.email}
-              address={user.address}
-              phone={user.phone}
-              avatar={user.avatar_img}
-            />
-          </div>
-        ))
-      ) : (
-        <p>Loading...</p>
-      )}
-      </div> */}
-      </div>
+
+
+
+
+
     </div>
   );
 };

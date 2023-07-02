@@ -8,7 +8,6 @@ import { OurTeam } from "../OurTeam/OurTeam";
 import { Contact } from "../Contact/Contact";
 import { UserProfile } from "../UserProfile/UserProfile";
 import {AdminProfile }from "../AdminProfile/AdminProfile";
-import { UserDetail } from "../UserDetail/UserDetail";
 
 export const Body = () => {
 
@@ -24,7 +23,6 @@ export const Body = () => {
             <Route path="/contact" element={<Contact />}/>
             <Route path="/userprofile" element={<UserProfile />}/>
             <Route path="/managerprofile" element={<AdminProfile />}/>
-            <Route path="/userdetail" element={<UserDetail />}/>
 
 
 

@@ -31,13 +31,10 @@ export const FormAppointment = () => {
       appointment_date: `${prevState.appDate} ${prevState.appTime}`
 
     }));
-    console.log(newAppointment);
   };
 
   const InputHandlerSelect = (e) => {
-    console.log("esto es el target.value ");
-    console.log(e);
-
+  
     setNewAppointment((prevValues) => ({
       ...prevValues,
       [e.name]: e.value,
@@ -50,12 +47,9 @@ export const FormAppointment = () => {
   const credentialCheck = credentialsRdx?.credentials?.token;
 
   const appointMeHandler = () => {
-    console.log("Registro de cita iniciado");
-    console.log(credentialsRdx?.credentials?.token);
-
+   
     appointMe(credentialCheck, newAppointment)
       .then((resultado) => {
-        console.log(resultado);
         setErrorMessage(resultado.data.message)
         setTimeout(() => {
           navigate("/userprofile");
@@ -82,8 +76,7 @@ export const FormAppointment = () => {
   useEffect(() => {
     getAllEmployees()
     .then((resultado) => {
-      console.log("Esto es el resultado de traer todos los doctores ----------------------")
-      console.log(resultado.data.data);
+   
       setDoctorList(resultado.data.data)
     })
     .catch((error) =>{
@@ -95,8 +88,7 @@ export const FormAppointment = () => {
   useEffect(() => {
     getAllTreatments()
     .then((resultado) => {
-      console.log("Esto es el resultado de traer todos los treatments ----------------------")
-      console.log(resultado.data.data);
+     
       setTreatmentList(resultado.data.data)
     })
     .catch((error) =>{
@@ -109,7 +101,7 @@ export const FormAppointment = () => {
   const checkUserData = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
-        console.log(resultado);
+       
         if (resultado.data.message == "Token invalido") {
           return;
         } else {

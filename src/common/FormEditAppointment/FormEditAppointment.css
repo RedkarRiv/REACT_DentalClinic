@@ -67,15 +67,15 @@
   text-align: start;
 }
 
-.sendButtonNewAppointmentDesign {
+.sendButtonEditAppointmentDesign {
   height: 2em;
-  width: 8em;
+  width: 10em;
   padding-right: 1em;
   padding-left: 1em;
   padding-top: 0.1em;
   padding-bottom: 0.1em;
   border-radius: 0.4em;
-  background-color: #0d479f;
+  background-color: #144b9d;
   color: white;
   cursor: pointer;
   transition: 0.1s;
@@ -85,8 +85,13 @@
   justify-content: center;
   font-weight: bold;
   border: solid 0.1em white;
+  font-size: 70%;
   user-select: none;}
 
+  .sendButtonEditAppointmentDesign:hover {
+    background-color: #0d3166;
+
+  }
 
   .cardBorderDeleteDesign {
     border: transparent;

@@ -17,6 +17,8 @@ import {
   getAllAppointmentsByUser,
   getAllAppointments,
   searchAppointments,
+  searchAppointmentsByEmployee,
+  editMyAppoint,
 } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
@@ -39,31 +41,32 @@ export const AppointmentsCard = ({ searchDate }) => {
   const [dropdownState, setDropdownState] = useState({});
 
   const getMyAppointments = () => {
-    console.log("Esto es el searchDate");
-    console.log(searchDate);
     if (searchDate !== "") {
       const bring = setTimeout(() => {
-        //El siguiente bloque es la búsqueda en si
-        searchAppointments(credentialsRdx, searchDate)
-          .then((resultado) => {
-            console.log(searchDate)
-            console.log("he buscado");
-            console.log(resultado);
-
-            setappointmentData(resultado.data.data);
-          })
-          .catch((error) => console.log(error));
-        ///////////////////////////////////////////
+        if (credentialRolCheck === 1) {
+          searchAppointments(credentialsRdx, searchDate)
+            .then((resultado) => {
+            
+              setappointmentData(resultado.data.data);
+            })
+            .catch((error) => console.log(error));
+        } else {
+          searchAppointmentsByEmployee(credentialsRdx, searchDate)
+            .then((resultado) => {
+            
+              setappointmentData(resultado.data.data);
+            })
+            .catch((error) => console.log(error));
+        }
       }, 350);
+
       return () => clearTimeout(bring);
     } else
       switch (credentialRolCheck) {
         case 1:
           return getAllAppointmentsByUser(credentialCheck)
             .then((resultado) => {
-              console.log("Esto es el resultado getAllAppointmentsByUser");
-              console.log(resultado.data.data);
-
+           
               if (resultado.data.message == "Token invalido") {
                 navigate("/");
                 return;
@@ -76,9 +79,7 @@ export const AppointmentsCard = ({ searchDate }) => {
         case 3:
           return getAllAppointments(credentialCheck)
             .then((resultado) => {
-              console.log("Esto es el resultado getAllAppointments");
-              console.log(resultado);
-              console.log(resultado.data.data);
+            
 
               if (
                 resultado.data.message == "Token invalido" ||
@@ -106,9 +107,10 @@ export const AppointmentsCard = ({ searchDate }) => {
     }));
   };
 
+  
   useEffect(() => {
     getMyAppointments();
-  }, [credentialsRdx, searchDate]);
+  }, [credentialsRdx, searchDate, ]);
 
   return (
     <>
@@ -175,8 +177,8 @@ export const AppointmentsCard = ({ searchDate }) => {
                           {appointment?.Treatment?.name}
                         </p>
                         <p>
-                          <strong>Precio:</strong> {appointment?.Treatment?.price}{" "}
-                          €
+                          <strong>Precio:</strong>{" "}
+                          {appointment?.Treatment?.price} €
                         </p>
                       </div>
                       <div className="pb-2">
@@ -190,31 +192,33 @@ export const AppointmentsCard = ({ searchDate }) => {
                       </div>
                     </div>
                     {appointment?.status !== "Anulada" ? (
-                      <div className="appointmentButtonsContainerDesign">
-                        <div
-                          className="appointmentButtonsDesign"
-                          onClick={activateAppointmentEditModal}
-                        >
-                          Modificiar cita
+                      <div className="d-flex justify-content-center align-items-center">
+                        <div className="appointmentButtonsContainerDesign">
+                          <div
+                            className="appointmentButtonsDesign"
+                            onClick={activateAppointmentEditModal}
+                          >
+                            Modificar cita
+                          </div>
+                          <MDBModal
+                            show={appointmentEditModal}
+                            setShow={setAppointmentEditModal}
+                            tabIndex="-1"
+                          >
+                            <MDBModalDialog className="appointmentModalDesign">
+                              <MDBModalContent>
+                                <MDBModalHeader>
+                                  <MDBModalTitle className="titleModalLogin">
+                                    Editar cita{" "}
+                                  </MDBModalTitle>
+                                </MDBModalHeader>
+                                <MDBModalBody>
+                                  <FormEditAppointment id={appointment.id} />
+                                </MDBModalBody>
+                              </MDBModalContent>
+                            </MDBModalDialog>
+                          </MDBModal>
                         </div>
-                        <MDBModal
-                          show={appointmentEditModal}
-                          setShow={setAppointmentEditModal}
-                          tabIndex="-1"
-                        >
-                          <MDBModalDialog className="appointmentModalDesign">
-                            <MDBModalContent>
-                              <MDBModalHeader>
-                                <MDBModalTitle className="titleModalLogin">
-                                  Editar cita{" "}
-                                </MDBModalTitle>
-                              </MDBModalHeader>
-                              <MDBModalBody>
-                                <FormEditAppointment id={appointment.id} />
-                              </MDBModalBody>
-                            </MDBModalContent>
-                          </MDBModalDialog>
-                        </MDBModal>
                       </div>
                     ) : null}
                   </div>
@@ -224,7 +228,7 @@ export const AppointmentsCard = ({ searchDate }) => {
           </MDBTableBody>
         ))
       ) : (
-        <p>NO HAY CITAS</p>
+        <p className="noAppointmentTextDesign">NO HAY CITAS</p>
       )}
     </>
   );

@@ -26,7 +26,7 @@ import {
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { AppointmentsCard } from "../AppointmentsCard/AppointmentsCard";
-import { getOneUser } from "../../services/apiCall";
+import { getOneUser  } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
@@ -46,12 +46,8 @@ export const CardUserProfile = () => {
   const getMyProfile = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
-        console.log("Esto es el then de getOneUser");
-        console.log(resultado);
-        console.log("Esto es el nombre del usuario");
-        console.log(resultado.data.data);
+      
         if (resultado.data.message == "Token invalido") {
-          console.log(resultado.data.data)
           navigate("/");
           return;
         } else {
@@ -74,7 +70,11 @@ const [resetCriteria, setResetCriteria] = useState("")
 
   const [userEditModal, setUserEditeModal] = useState(false);
 
-  const activateuserEditModal = () => setUserEditeModal(!appointmentModal);
+  const activateuserEditModal = () => setUserEditeModal(!userEditModal);
+
+  const closeModal = () => {
+    setUserEditeModal(false);
+  };
 
   return (
     <section style={{ backgroundColor: "#eee" }}>
@@ -157,7 +157,7 @@ const [resetCriteria, setResetCriteria] = useState("")
                           </MDBModalTitle>
                         </MDBModalHeader>
                         <MDBModalBody>
-                          <FormEditProfile />
+                          <FormEditProfile/>
                         </MDBModalBody>
                       </MDBModalContent>
                     </MDBModalDialog>
@@ -275,7 +275,13 @@ const [resetCriteria, setResetCriteria] = useState("")
                     >
                       <MDBTableHead>
                         <tr>
+
                           <th scope="col">Doctor/Doctora</th>
+
+
+
+
+
                           <th scope="col">Tipo</th>
                           <th scope="col">Estado</th>
                           <th scope="col">Fecha</th>

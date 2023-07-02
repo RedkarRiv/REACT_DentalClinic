@@ -60,10 +60,8 @@ const  [errorMessage, setErrorMessage] = useState("")  // Instancio Redux en mod
   const logMe = (e) => {
     e.preventDefault();
 
-    console.log("Hola pepe");
     loginMe(credentials)
       .then((resultado) => {
-        console.log("Esto es el then");
         let decoded = jwt_decode(resultado.data.token);
         let datosBackend = {
           token: resultado.data.token,

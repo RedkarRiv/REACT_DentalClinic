@@ -25,7 +25,6 @@ export const ProfileButton = ({ avatarImage }) => {
     dispatch(userout());
   navigate("/")
   };
-console.log(credentialsRdx?.credentials?.user?.roleId)
   return (
     <div className="profileButtonCardDesign">
       <div className="profileAvatar ps-2 pe-2"  onClick={

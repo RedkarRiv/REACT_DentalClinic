@@ -64,6 +64,7 @@ export const editMyAppoint = async (credentialCheck, newEditAppointment, id) => 
 
 
 
+
 export const editMe = async (credentialCheck, newUserData) => {
   return await axios.put(`${root}users/update`, newUserData, {
       headers: {
@@ -81,6 +82,19 @@ export const searchAppointments = async (credentialCheck, criteria) => {
     }
 }) 
 }
+
+
+
+export const searchAppointmentsByEmployee = async (credentialCheck, criteria) => {
+
+  return await axios.post(`${root}appointment/search`, { date: criteria }, {
+    headers: {
+        authorization: "Bearer " + credentialCheck.credentials.token,
+    }
+}) 
+}   
+
+
 
 export const getAllEmployees = async () => {
   return await axios.get(`${root}employees/all`);

@@ -27,21 +27,40 @@ export const FormEditAppointment = ({id}) => {
       [e.target.name]: e.target.value,
       appointment_date: `${prevState.appDate} ${prevState.appTime}`
     }));
-    console.log(editAppointment);
   };
+
+
+
   const appointEditMeHandler = () => {
-    console.log("Edicion de cita iniciado");
-    console.log("esto es la id del appointmnet")
-    console.log(id)
+   
     editMyAppoint(credentialCheck, editAppointment, id)
       .then((resultado) => {
-        console.log(resultado);
         setTimeout(() => {
           navigate("/userprofile");
         }, 500);
       })
       .catch((error) => console.log(error));
   };
+
+const appointCancelMeHandler = () => {
+  setEditAppointment({
+    status:"Anulada",
+  appointment_date: "2020-00-00 12:00",
+  })
+  editMyAppoint(credentialCheck, editAppointment, id)
+  .then((resultado) => {
+   
+
+  })
+  .catch((error) => console.log(error));
+}
+
+
+
+
+
+
+
 
   const checkUserData = () => {
     getOneUser(credentialCheck)
@@ -124,13 +143,19 @@ export const FormEditAppointment = ({id}) => {
                     </MDBCol>
                   </MDBRow>
 
-                  <MDBRow className="d-flex justify-content-center">
+                  <MDBRow className="d-flex justify-content-center w-100">
                     <div
-                      className="sendButtonNewAppointmentDesign"
+                      className="sendButtonEditAppointmentDesign"
                       onClick={appointEditMeHandler}
                     >
                       Editar cita
                     </div>
+                      {/* <div
+                        className="sendButtonEditAppointmentDesign"
+                        onClick={appointCancelMeHandler}
+                      >
+                        Cancelar cita
+                      </div> */}
                   </MDBRow>
                 </MDBCardBody>
               </MDBCol>

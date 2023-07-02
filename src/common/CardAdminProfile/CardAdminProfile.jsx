@@ -49,10 +49,7 @@ export const CardAdminProfile = () => {
     } else {
       getOneUser(credentialCheck)
         .then((res) => {
-          console.log("Esto es el then de getOneUser");
-          console.log(res);
-          console.log("Esto es el nombre del usuario");
-          console.log(res.data.data);
+        
           if (res.data.data == "Token invalido" || !res.data.data) {
             navigate("/");
             return;
@@ -73,7 +70,6 @@ export const CardAdminProfile = () => {
     bringAllUsers(credentialCheck)
       .then((resultados) => {
         setUsers(resultados.data.data);
-        console.log(resultados)
       })
       .catch((error) => console.log(error));
   }, []);
