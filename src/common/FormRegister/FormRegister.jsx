@@ -25,12 +25,6 @@ export const FormRegister = () => {
     console.log("Registro iniciado");
     registerMe(newCredentials)
       .then((resultado) => {
-        console.log(resultado.data.id);
-        console.log("Esto es el resultado del registro");
-        console.log(resultado);
-        console.log("Esto es el message de error resultado del registro");
-        console.log(resultado.data.message); //No ha sido posible crear la cuenta
-
         if (resultado.data.message == "No ha sido posible crear la cuenta") {
           setErrorMessage("Ya existe una cuenta con ese DNI o ese email");
         }
@@ -60,7 +54,10 @@ export const FormRegister = () => {
 
         setTimeout(() => {}, 1000);
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setErrorMessage(error.request.status);
+      });
   };
 
   // HOOKS Y HANDLERS PARA VALIDACION DE INPUTS DEL FORMULARIO
@@ -289,15 +286,12 @@ export const FormRegister = () => {
                     />
                   </MDBRow>
                   <MDBRow>
-                  <MDBCol md="12" className="errorMessageDesign">
-                      <p md="12">{errorMessage}</p>
-                      <p md="12">{newCredentialsError.nameError}</p>{" "}
-                      <p md="12">{newCredentialsError.surnameError}</p>{" "}
-                      <p md="12">{newCredentialsError.emailError}</p>{" "}
-                      <p md="12">{newCredentialsError.phoneError}</p>{" "}
-                      <p md="12">{newCredentialsError.passwordError}</p>{" "}
-                      <p md="12">{newCredentialsError.doubleCheckPasswordError}</p>
-                      <p md="12">{newCredentialsError.dniError}</p>{" "}
+                    <MDBCol md="12" className="errorMessageDesign">
+                      {errorMessage == 400 ? (
+                        <p>Tienes que completar todos los campos</p>
+                      ) : (
+                        <p></p>
+                      )}
                     </MDBCol>
                   </MDBRow>
                   <MDBRow>

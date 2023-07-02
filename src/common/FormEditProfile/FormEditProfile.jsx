@@ -18,6 +18,7 @@ import { userDataCheck } from "../../pages/userSlice";
 export const FormEditProfile = () => {
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
+  const [errorMessage, setErrorMessage] = useState("");
 
   const editMeHandler = () => {
     console.log("Edicion iniciada");
@@ -182,6 +183,14 @@ export const FormEditProfile = () => {
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
                       />
+                    </MDBCol>
+                  </MDBRow>
+                  <MDBRow>
+                  <MDBCol md="12" className="errorMessageDesign">
+                      <p md="12">{newUserDataError.nameError}</p>{" "}
+                      <p md="12">{newUserDataError.surnameError}</p>{" "}
+                      <p md="12">{newUserDataError.phoneError}</p>{" "}
+                      <p md="12">{newUserDataError.dniError}</p>{" "}
                     </MDBCol>
                   </MDBRow>
                   <MDBRow>

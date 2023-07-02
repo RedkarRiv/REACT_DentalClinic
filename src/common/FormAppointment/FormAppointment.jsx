@@ -20,13 +20,12 @@ import "./FormAppointment.css";
 
 export const FormAppointment = () => {
   const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const [treatmentSelected, setTreatmentSelected] = useState({});
   const [doctorSelected, setDoctorSelected] = useState({});
 
   // HOOKS Y HANDLERS PARA VALIDACION DE INPUTS DEL FORMULARIO
-
-  const [newAppointmentError, setNewAppointmentError] = useState({});
 
   const InputHandler = (e) => {
     setNewAppointment((prevState) => ({
@@ -57,18 +56,17 @@ export const FormAppointment = () => {
     console.log("Registro de cita iniciado");
     console.log(credentialsRdx?.credentials?.token);
 
-
-
-
-
     appointMe(credentialCheck, newAppointment)
       .then((resultado) => {
         console.log(resultado);
+        setErrorMessage(resultado.data.message)
         setTimeout(() => {
           navigate("/userprofile");
         }, 500);
       })
-      .catch((error) => console.log(error));
+      .catch((error) =>{
+        console.log(error)
+      });
   };
 
   const [newAppointment, setNewAppointment] = useState({
@@ -103,7 +101,6 @@ export const FormAppointment = () => {
   const checkUserData = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
-        console.log("Esto es el credentialCheck de FomrAppointment");
         console.log(resultado);
         if (resultado.data.message == "Token invalido") {
           return;
@@ -123,7 +120,7 @@ export const FormAppointment = () => {
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
         <MDBCol>
           <MDBCard className="ps-2 pe-2 cardBorderDeleteDesign">
-            <MDBRow className="g-0">
+            <MDBRow className="g -0">
               <MDBCol md="12">
                 <MDBCardBody className="text-black d-flex flex-column justify-content-center m-0 p-0">
                   <MDBRow>
@@ -208,7 +205,11 @@ export const FormAppointment = () => {
                       />
                     </MDBCol>
                   </MDBRow>
-
+                  <MDBRow>
+                    <MDBCol md="12" className="errorMessageDesign">
+                      {errorMessage}
+                    </MDBCol>
+                  </MDBRow>
                   <MDBRow className="d-flex justify-content-center">
                     <div
                       className="sendButtonNewAppointmentDesign"
