@@ -8,7 +8,8 @@
   align-items: flex-start;
 }
 .cardGridContainer {
-  width: auto;
+  width: 70%;
+  height: auto;
   background-color: rgb(215, 210, 210);
   border-radius: 0.8em;
   display: grid;
@@ -22,6 +23,7 @@
 
 .gridContainer {
   width: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   padding-top: 6em;
@@ -29,6 +31,6 @@
 }
 
 .employeeCardContainer {
-  border: 0.1em solid black
-
+  border: 0.1em solid black;
+width: 100%;
 }

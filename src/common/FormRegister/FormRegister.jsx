@@ -97,14 +97,14 @@ export const FormRegister = () => {
     <MDBContainer fluid className="registerCardFormBackground">
       <MDBRow className="d-flex justify-content-center align-items-center h-100">
         <MDBCol>
-          <MDBCard className="my-4 p-3">
+          <MDBCard className="ps-2 pe-2">
             <MDBRow className="g-0">
               <MDBCol md="12">
                 <MDBCardBody className="text-black d-flex flex-column justify-content-center">
                   <MDBRow>
-                    <MDBCol md="6">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
-                        maxLength={20}
+                        maxLength={20} 
                         placeholder="Nombre"
                         wrapperClass="mb-4"
                         size="lg"
@@ -121,7 +121,7 @@ export const FormRegister = () => {
                       />
                     </MDBCol>
 
-                    <MDBCol md="6">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={20}
                         wrapperClass="mb-4"
@@ -142,7 +142,7 @@ export const FormRegister = () => {
                   </MDBRow>
 
                   <MDBRow>
-                    <MDBCol md="6">
+                  <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={20}
                         wrapperClass="mb-4"
@@ -161,7 +161,7 @@ export const FormRegister = () => {
                       />
                     </MDBCol>
 
-                    <MDBCol md="6">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={9}
                         wrapperClass="mb-4"
@@ -182,7 +182,7 @@ export const FormRegister = () => {
                   </MDBRow>
 
                   <MDBRow>
-                    <MDBCol md="6">
+                  <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={9}
                         wrapperClass="mb-4"
@@ -201,7 +201,7 @@ export const FormRegister = () => {
                       />
                     </MDBCol>
 
-                    <MDBCol md="6">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={6}
                         wrapperClass="mb-4"

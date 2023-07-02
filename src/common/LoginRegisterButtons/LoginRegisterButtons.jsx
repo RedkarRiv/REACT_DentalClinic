@@ -55,8 +55,8 @@ export const LoginRegisterButtons = () => {
 
 
       <MDBModal show={registerModal} setShow={setRegisterModal} tabIndex="-1">
-        <MDBModalDialog className="marginModalSizeDesign">
-          <MDBModalContent className="registerModalSizeDesign">
+        <MDBModalDialog>
+          <MDBModalContent className="marginRegisterModalDesign">
             <MDBModalHeader>
               <MDBModalTitle className="titleModalLogin">REGISTRO DE NUEVOS USUARIOS</MDBModalTitle>
             </MDBModalHeader>

@@ -1,6 +1,5 @@
 .dateOfBirthTitleDesign {
     font-weight: bold;
-    font-size: 90%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -8,10 +7,6 @@ padding-top: 0.1em;
 padding-left: 1em;
 }
 
-.registerCardFormBackground {
-
-    background-color: transparent;
-}
 
 .sendButtonRegisterDesign {
     height: 2em;

@@ -19,7 +19,7 @@ export const Home = () => {
   return (
     <div className="homeBackground">
       <div className="gridContainer">
-      <div className="cardGridContainer">
+      {/* <div className="cardGridContainer">
       {users.length > 0 ? (
         users.map((user) => (
           <div className="employeeCardContainer" key={user.id}>
@@ -37,7 +37,7 @@ export const Home = () => {
       ) : (
         <p>Loading...</p>
       )}
-      </div>
+      </div> */}
       </div>
     </div>
   );
