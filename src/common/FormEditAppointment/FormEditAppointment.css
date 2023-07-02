@@ -1,0 +1,93 @@
+.sendButtonRegisterDesign {
+  height: 2em;
+  width: auto;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  border-radius: 0.4em;
+  background-color: #0d479f;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s;
+  margin: 1em;
+  margin-bottom: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: solid 0.1em white;
+  user-select: none;
+}
+
+.sendButtonRegisterDesign:hover {
+  border-radius: 0.4em;
+  background-color: #558911;
+  color: white;
+  transition: 0.1s;
+  border: solid 0.1em white;
+}
+
+.sendButtonRegisterDesign:active {
+  transform: scale(0.9);
+}
+
+.errorInput {
+  border: red solid 0.2em;
+}
+
+.nameAppointment {
+  font-size: 150%;
+  font-weight: bold;
+  display: flex;
+  justify-content: end;
+}
+
+.surnameAppointment {
+  font-size: 150%;
+  font-weight: bold;
+  display: flex;
+  justify-content: start;
+}
+
+.treatmentAppointment {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .nameAppointment,
+  .surnameAppointment {
+    justify-content: center;
+  }
+}
+
+.commentInputSize {
+  height: 5em;
+  text-align: start;
+}
+
+.sendButtonNewAppointmentDesign {
+  height: 2em;
+  width: 8em;
+  padding-right: 1em;
+  padding-left: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  border-radius: 0.4em;
+  background-color: #0d479f;
+  color: white;
+  cursor: pointer;
+  transition: 0.1s;
+  margin: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border: solid 0.1em white;
+  user-select: none;}
+
+
+  .cardBorderDeleteDesign {
+    border: transparent;
+  }

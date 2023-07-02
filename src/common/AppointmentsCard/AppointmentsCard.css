@@ -6,11 +6,12 @@
 padding:1em;
 user-select: none;
 cursor: pointer;
+font-size: 90%;
+font-weight: bold;
 }
 
-
-.viewButtonDesign:hover {
-text-decoration: underline;
+.viewButtonDesign:active {
+    transform: scale(0.8);
 }
 
 .responsiveAppointmentsCardsDesign {
@@ -22,3 +23,34 @@ text-decoration: underline;
     font-size: 70%;
     font-weight: bold;
 }
+.appointmentButtonsContainerDesign {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1em;
+
+}
+
+
+.appointmentButtonsDesign {
+    margin: 0.5em;
+    background-color: rgb(0, 119, 255);
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    color: white;
+    border-radius: 0.3em;
+    user-select: none;
+    cursor: pointer;
+    font-size: 90%;
+  }
+  
+  .appointmentButtonsDesign:hover {
+    background-color: rgb(17, 71, 132);
+  }
+  
+  .appointmentButtonsDesign:active {
+    transform: scale(0.9);
+  }

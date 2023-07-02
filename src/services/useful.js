@@ -47,13 +47,6 @@ export const CheckError = (name, value, password1) => {
       if (!/^\d{5,6}$/.test(value)) {
         return "El código postal no es válido";
       }
-      return "";
-    case "birth_date":
-      if ("2005-01-01" < value > "1923-01-01") {
-        console.log("Esto es el value de birthdate" + value.toString());
-
-        return "La fecha no es válida";
-      }
       break;
 
     default:

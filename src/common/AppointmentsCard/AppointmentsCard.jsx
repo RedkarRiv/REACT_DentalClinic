@@ -5,7 +5,14 @@ import {
   MDBTable,
   MDBTableHead,
   MDBTableBody,
+  MDBModal,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalDialog,
 } from "mdb-react-ui-kit";
+import { FormEditAppointment } from "../FormEditAppointment/FormEditAppointment";
 import {
   getAllAppointmentsByUser,
   getAllAppointments,
@@ -14,9 +21,15 @@ import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import moment from "moment/moment";
 
 export const AppointmentsCard = () => {
   const navigate = useNavigate();
+
+  const [appointmentEditModal, setAppointmentEditModal] = useState(false);
+
+  const activateAppointmentEditModal = () =>
+    setAppointmentEditModal(!appointmentEditModal);
 
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
@@ -99,6 +112,15 @@ export const AppointmentsCard = () => {
   };
   const [appointmentData, setappointmentData] = useState({});
 
+  const [dropdownState, setDropdownState] = useState({});
+
+  const toggleDropdown = (appointmentId) => {
+    setDropdownState((prevState) => ({
+      ...prevState,
+      [appointmentId]: !prevState[appointmentId],
+    }));
+  };
+
   useEffect(() => {
     getMyAppointments();
   }, [credentialsRdx]);
@@ -134,7 +156,11 @@ export const AppointmentsCard = () => {
               <td>
                 <MDBBadge
                   color={
-                    appointment.status == "Concertada" ? "success" : appointment.status == "Anulada" ? "danger" : "primary"
+                    appointment.status == "Concertada"
+                      ? "success"
+                      : appointment.status == "Anulada"
+                      ? "danger"
+                      : "primary"
                   }
                   pill
                 >
@@ -142,22 +168,80 @@ export const AppointmentsCard = () => {
                 </MDBBadge>
               </td>
               <td className="dateAppointmentDesign">
-                {" "}
-                {appointment.appointment_date}{" "}
+                {moment(appointment.appointment_date).format(
+                  "YYYY-MM-DD HH:mm"
+                )}
               </td>
               <td>
                 <div
                   className="viewButtonDesign"
-                  onClick={() => navigate("/appointmentdetail")}
+                  onClick={() => toggleDropdown(appointment.id)}
                 >
                   Ver
                 </div>
               </td>
             </tr>
+            <tr>
+              <td colSpan="5" className="p-0">
+                {dropdownState[appointment.id] && (
+                  <div className="d-flex flex-column justify-content-center ps-3 pe-3">
+                    <div>
+                      <div className="pt-2">
+                        <p>
+                          <strong>Tratamiento:</strong>{" "}
+                          {appointment.Treatment.name}
+                        </p>
+                        <p>
+                          <strong>Precio:</strong> {appointment.Treatment.price}{" "}
+                          €
+                        </p>
+                      </div>
+                      <div className="pb-2">
+                        <p>
+                          <strong>Descripción:</strong>{" "}
+                          {appointment.Treatment.comments}
+                        </p>
+                        <p>
+                          <strong>Comentarios:</strong> {appointment.comments}
+                        </p>
+                      </div>
+                    </div>
+                    {appointment.status !== "Anulada" ? (
+                      <div className="appointmentButtonsContainerDesign">
+                        <div
+                          className="appointmentButtonsDesign"
+                          onClick={activateAppointmentEditModal}
+                        >
+                          Modificiar cita
+                        </div>
+                        <MDBModal
+                          show={appointmentEditModal}
+                          setShow={setAppointmentEditModal}
+                          tabIndex="-1"
+                        >
+                          <MDBModalDialog className="appointmentModalDesign">
+                            <MDBModalContent>
+                              <MDBModalHeader>
+                                <MDBModalTitle className="titleModalLogin">
+                                  Editar cita{" "}
+                                </MDBModalTitle>
+                              </MDBModalHeader>
+                              <MDBModalBody>
+                                <FormEditAppointment id={appointment.id} />
+                              </MDBModalBody>
+                            </MDBModalContent>
+                          </MDBModalDialog>
+                        </MDBModal>
+                      </div>
+                    ) : null}
+                  </div>
+                )}
+              </td>
+            </tr>
           </MDBTableBody>
         ))
       ) : (
-        <p>Loading...</p>
+        <p>NO HAY CITAS</p>
       )}
     </>
   );
