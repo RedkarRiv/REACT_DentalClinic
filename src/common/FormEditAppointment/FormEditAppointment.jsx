@@ -25,6 +25,7 @@ export const FormEditAppointment = ({id}) => {
     setEditAppointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
+      appointment_date: `${prevState.appDate} ${prevState.appTime}`
     }));
     console.log(editAppointment);
   };
@@ -86,7 +87,7 @@ export const FormEditAppointment = ({id}) => {
                         size="lg"
                         id="form2"
                         type="date"
-                        name="newAppointmentDate"
+                        name="appDate"
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
                       />
@@ -100,7 +101,7 @@ export const FormEditAppointment = ({id}) => {
                         size="lg"
                         id="form2"
                         type="time"
-                        name="newAppointmentTime"
+                        name="appTime"
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
                       />
