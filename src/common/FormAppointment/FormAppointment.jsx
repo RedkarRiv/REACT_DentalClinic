@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CheckError } from "../../services/useful";
 import { useDispatch, useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
-import { getOneUser, appointMe, getAllEmployees } from "../../services/apiCall";
+import { getOneUser, appointMe, getAllEmployees, getAllTreatments } from "../../services/apiCall";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 
@@ -21,9 +21,6 @@ import "./FormAppointment.css";
 export const FormAppointment = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [treatmentSelected, setTreatmentSelected] = useState({});
-  const [doctorSelected, setDoctorSelected] = useState({});
 
   // HOOKS Y HANDLERS PARA VALIDACION DE INPUTS DEL FORMULARIO
 
@@ -72,13 +69,14 @@ export const FormAppointment = () => {
   const [newAppointment, setNewAppointment] = useState({
     employee_id: "",
     appointment_date: "",
-    treatment: treatmentSelected?.value,
+    treatment: "",
     comments: "",
     status: "Concertada",
   });
 
   const [doctorList, setDoctorList] = useState([])
 
+  const [treatmentList, setTreatmentList] = useState([])
 
 
   useEffect(() => {
@@ -94,32 +92,19 @@ export const FormAppointment = () => {
 
   }, []);
 
+  useEffect(() => {
+    getAllTreatments()
+    .then((resultado) => {
+      console.log("Esto es el resultado de traer todos los treatments ----------------------")
+      console.log(resultado.data.data);
+      setTreatmentList(resultado.data.data)
+    })
+    .catch((error) =>{
+      console.log(error)
+    });
 
+  }, []);
 
-
-
-
-
-  const treatmentsDropdown = [
-    { value: 1, label: "Consulta", name: "treatment" },
-    { value: "Revisión", label: "Revisión", name: "treatment" },
-    { value: "Limpieza bucal", label: "Limpieza", name: "treatment" },
-    { value: "Extracción", label: "Extracción", name: "treatment" },
-    { value: "Ortodoncia", label: "Ortodoncia", name: "treatment" },
-    {
-      value: "Intervencion especial",
-      label: "Intervencion",
-      name: "treatment",
-    },
-  ];
-
-  const doctorDropdown = [
-    { value: 7, label: "Marta Martinez", name: "employee_id" },
-    { value: "Pedro Palomares", label: "Pedro Palomares", name: "employee_id" },
-    { value: "Sara Sueca", label: "Sara Sueca", name: "employee_id" },
-    { value: "Zaida Zore", label: "Zaida Zore", name: "employee_id" },
-    { value: "Marcos Ruperto", label: "Marcos Ruperto", name: "employee_id" },
-  ];
 
   const checkUserData = () => {
     getOneUser(credentialCheck)
@@ -164,9 +149,7 @@ export const FormAppointment = () => {
                       <Select
                         wrapperClass="mb-4"
                         placeholder="Escoge un tratamiento"
-                        options={treatmentsDropdown}
-                        value={treatmentsDropdown.value}
-                        name="treatment"
+                        options={treatmentList.map(treatment => ({ value: treatment.id, label: treatment.name, name:"treatment"  }))}                        
                         onChange={InputHandlerSelect}
                       />
                     </MDBCol>

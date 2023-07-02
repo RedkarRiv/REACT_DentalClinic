@@ -86,4 +86,9 @@ export const getAllEmployees = async () => {
   return await axios.get(`${root}employees/all`);
 };
 
+export const getAllTreatments = async () => {
+  return await axios.get(`${root}employees/treatments`);
+};
+
+
 
