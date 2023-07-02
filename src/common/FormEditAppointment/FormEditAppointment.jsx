@@ -57,12 +57,6 @@ const appointCancelMeHandler = () => {
 }
 
 
-
-
-
-
-
-
   const checkUserData = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {

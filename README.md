@@ -34,15 +34,23 @@ Por último, como herramientas utilitarias hemos usado JWC_DECODED con el objeti
 
 
 ### 📍 Vistas 📍
-<p align="center">
-<img src="https://raw.githubusercontent.com/RedkarRiv/ClinicaDental_BackEnd_CRS/master/img/diagramaER2.png"  width="800" height="400"></p>
 
+Vista administrador:
+<p align="center">
+<img src="https://raw.githubusercontent.com/RedkarRiv/REACT_DentalClinic/master/img/adminProfileView.png"  width="700" height="400"></p>
+
+Vista usuario:
+<p align="center">
+<img src="https://raw.githubusercontent.com/RedkarRiv/REACT_DentalClinic/master/img/userProfileView.png"  width="700" height="400"></p>
+
+Vista empleado:
+<p align="center">
+<img src="https://raw.githubusercontent.com/RedkarRiv/REACT_DentalClinic/master/img/employeeProfileView.png"  width="600" height="400"></p>
 
 
 ### 👏 Agradecimientos 👏
 
-Este proyecto no habría sido posible sin el inestimable ayuda de Dani Tarazona y David Ochando como profesores y el apoyo de todos los compañeros, con especial mención a Alejandro Cabeza, Hector Mateu, Oriana y Eduardo Kiriakos.
+Este proyecto no habría sido posible sin el inestimable ayuda de los docentes:David Ochando, Mara Scampini y Dani Tarazona.
 
-Tambien quiero aprovechar para dar las gracias a mi mujer por su paciencia siendo mi patito de goma durante todo el proceso.
 
 Si eres desarrollador, te apasiona el mundo de la programación y te gusta colaborar, puedes ponerte en contacto con nuestro equipo en: *gbc_friendsfamilyandfruits@rockon.geeks*.
