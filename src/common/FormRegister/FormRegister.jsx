@@ -19,12 +19,22 @@ import "./FormRegister.css";
 
 export const FormRegister = () => {
   const dispatch = useDispatch();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const registerMeHandler = () => {
     console.log("Registro iniciado");
     registerMe(newCredentials)
       .then((resultado) => {
         console.log(resultado.data.id);
+        console.log("Esto es el resultado del registro");
+        console.log(resultado);
+        console.log("Esto es el message de error resultado del registro");
+        console.log(resultado.data.message); //No ha sido posible crear la cuenta
+
+        if (resultado.data.message == "No ha sido posible crear la cuenta") {
+          setErrorMessage("Ya existe una cuenta con ese DNI o ese email");
+        }
+
         if (resultado.data.id !== "undefined") {
           const instantLoginCredentials = {
             email: resultado.data.email,
@@ -75,6 +85,7 @@ export const FormRegister = () => {
     phoneError: "",
     dniError: "",
     cpError: "",
+    doubleCheckPasswordError: "",
     birth_dateError: "",
   });
 
@@ -87,7 +98,6 @@ export const FormRegister = () => {
 
   const InputCheck = (e, password) => {
     let mensajeError = CheckError(e.target.name, e.target.value, password);
-
     setNewCredentialsError((prevState) => ({
       ...prevState,
       [e.target.name + "Error"]: mensajeError,
@@ -104,7 +114,7 @@ export const FormRegister = () => {
                   <MDBRow>
                     <MDBCol md="6" sm="12">
                       <MDBInput
-                        maxLength={20} 
+                        maxLength={20}
                         placeholder="Nombre"
                         wrapperClass="mb-4"
                         size="lg"
@@ -142,7 +152,7 @@ export const FormRegister = () => {
                   </MDBRow>
 
                   <MDBRow>
-                  <MDBCol md="6" sm="12">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={20}
                         wrapperClass="mb-4"
@@ -182,7 +192,7 @@ export const FormRegister = () => {
                   </MDBRow>
 
                   <MDBRow>
-                  <MDBCol md="6" sm="12">
+                    <MDBCol md="6" sm="12">
                       <MDBInput
                         maxLength={9}
                         wrapperClass="mb-4"
@@ -213,7 +223,7 @@ export const FormRegister = () => {
                         className={
                           newCredentialsError.cpError === ""
                             ? "textInput"
-                            :  "textInput errorInput"
+                            : "textInput"
                         }
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
@@ -254,7 +264,7 @@ export const FormRegister = () => {
                       className={
                         newCredentialsError.passwordError === ""
                           ? "textInput"
-                          :  "textInput errorInput"
+                          : "textInput errorInput"
                       }
                       onChange={(e) => InputHandler(e)}
                       onBlur={(e) => InputCheck(e)}
@@ -272,11 +282,23 @@ export const FormRegister = () => {
                       className={
                         newCredentialsError.doubleCheckPasswordError === ""
                           ? "textInput"
-                          :  "textInput errorInput"
+                          : "textInput errorInput"
                       }
                       onChange={(e) => InputHandler(e)}
                       onBlur={(e) => InputCheck(e, newCredentials.password)}
                     />
+                  </MDBRow>
+                  <MDBRow>
+                  <MDBCol md="12" className="errorMessageDesign">
+                      <p md="12">{errorMessage}</p>
+                      <p md="12">{newCredentialsError.nameError}</p>{" "}
+                      <p md="12">{newCredentialsError.surnameError}</p>{" "}
+                      <p md="12">{newCredentialsError.emailError}</p>{" "}
+                      <p md="12">{newCredentialsError.phoneError}</p>{" "}
+                      <p md="12">{newCredentialsError.passwordError}</p>{" "}
+                      <p md="12">{newCredentialsError.doubleCheckPasswordError}</p>
+                      <p md="12">{newCredentialsError.dniError}</p>{" "}
+                    </MDBCol>
                   </MDBRow>
                   <MDBRow>
                     <div className="d-flex justify-content-center p-0">

@@ -70,9 +70,10 @@ export const CardAdminProfile = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    bringAllUsers()
+    bringAllUsers(credentialCheck)
       .then((resultados) => {
         setUsers(resultados.data.data);
+        console.log(resultados)
       })
       .catch((error) => console.log(error));
   }, []);

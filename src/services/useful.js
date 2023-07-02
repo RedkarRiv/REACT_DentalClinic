@@ -43,10 +43,10 @@ export const CheckError = (name, value, password1) => {
         return "El dni no es válido";
       }
       return "";
-    case "cp":
-      if (!/^\d{5,6}$/.test(value)) {
-        return "El código postal no es válido";
-      }
+    // case "cp":
+    //   if (!/^\d{5,6}$/.test(value)) {
+    //     return "El código postal no es válido";
+    //   }
       break;
 
     default:

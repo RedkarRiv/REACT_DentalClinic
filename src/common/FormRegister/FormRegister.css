@@ -49,4 +49,16 @@ padding-left: 1em;
         border: red solid 0.2em;
       }
 
+
+      .errorMessageDesign {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: red;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
   
+      
