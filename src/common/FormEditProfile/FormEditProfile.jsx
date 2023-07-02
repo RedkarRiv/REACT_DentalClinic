@@ -152,11 +152,7 @@ export const FormEditProfile = () => {
                         id="form6"
                         type="integer"
                         name="cp"
-                        className={
-                          newUserDataError.cpError === ""
-                            ? "textInput"
-                            :  "textInput errorInput"
-                        }
+                        className="textInput"
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
                       />

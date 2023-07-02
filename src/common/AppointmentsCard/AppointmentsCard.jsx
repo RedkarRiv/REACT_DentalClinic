@@ -16,6 +16,7 @@ import { FormEditAppointment } from "../FormEditAppointment/FormEditAppointment"
 import {
   getAllAppointmentsByUser,
   getAllAppointments,
+  searchAppointments,
 } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
@@ -23,7 +24,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
 
-export const AppointmentsCard = () => {
+export const AppointmentsCard = ({ searchDate }) => {
   const navigate = useNavigate();
 
   const [appointmentEditModal, setAppointmentEditModal] = useState(false);
@@ -34,85 +35,69 @@ export const AppointmentsCard = () => {
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
   const credentialRolCheck = credentialsRdx?.credentials?.user?.roleId;
+  const [appointmentData, setappointmentData] = useState([]);
+  const [dropdownState, setDropdownState] = useState({});
 
   const getMyAppointments = () => {
-    switch (credentialRolCheck) {
-      case 1:
-        return getAllAppointmentsByUser(credentialCheck)
+    console.log("Esto es el searchDate");
+    console.log(searchDate);
+    if (searchDate !== "") {
+      const bring = setTimeout(() => {
+        //El siguiente bloque es la búsqueda en si
+        searchAppointments(credentialsRdx, searchDate)
           .then((resultado) => {
-            console.log("Esto es el resultado getAllAppointmentsByUser");
-            console.log(resultado.data.data);
-
-            if (resultado.data.message == "Token invalido") {
-              navigate("/");
-              return;
-            } else {
-              setappointmentData(resultado.data.data);
-            }
-          })
-          .catch((error) => console.log(error));
-      case 2:
-      case 3:
-        return getAllAppointments(credentialCheck)
-          .then((resultado) => {
-            console.log("Esto es el resultado getAllAppointments");
+            console.log(searchDate)
+            console.log("he buscado");
             console.log(resultado);
-            console.log(resultado.data.data);
 
-            if (
-              resultado.data.message == "Token invalido" ||
-              !resultado.data.message
-            ) {
-              navigate("/");
-              return;
-            } else {
-              setappointmentData(resultado.data.data);
-            }
+            setappointmentData(resultado.data.results);
           })
           .catch((error) => console.log(error));
+        ///////////////////////////////////////////
+      }, 350);
+      return () => clearTimeout(bring);
+    } else
+      switch (credentialRolCheck) {
+        case 1:
+          return getAllAppointmentsByUser(credentialCheck)
+            .then((resultado) => {
+              console.log("Esto es el resultado getAllAppointmentsByUser");
+              console.log(resultado.data.data);
 
-      default:
-        navigate("/");
+              if (resultado.data.message == "Token invalido") {
+                navigate("/");
+                return;
+              } else {
+                setappointmentData(resultado.data.data);
+              }
+            })
+            .catch((error) => console.log(error));
+        case 2:
+        case 3:
+          return getAllAppointments(credentialCheck)
+            .then((resultado) => {
+              console.log("Esto es el resultado getAllAppointments");
+              console.log(resultado);
+              console.log(resultado.data.data);
 
-        break;
-    }
+              if (
+                resultado.data.message == "Token invalido" ||
+                !resultado.data.message
+              ) {
+                navigate("/");
+                return;
+              } else {
+                setappointmentData(resultado.data.data);
+              }
+            })
+            .catch((error) => console.log(error));
 
-    if (credentialRolCheck == 1) {
-      getAllAppointmentsByUser(credentialCheck)
-        .then((resultado) => {
-          console.log("Esto es el resultado getAllAppointmentsByUser");
-          console.log(resultado.data.data);
+        default:
+          navigate("/");
 
-          if (resultado.data.message == "Token invalido") {
-            navigate("/");
-            return;
-          } else {
-            setappointmentData(resultado.data.data);
-          }
-        })
-        .catch((error) => console.log(error));
-    } else {
-      getAllAppointments(credentialCheck)
-        .then((resultado) => {
-          console.log("Esto es el resultado getAllAppointmentsByUser");
-          console.log(resultado.data.data);
-
-          if (
-            resultado.data.message == "Token invalido" ||
-            !resultado.data.message
-          ) {
-            navigate("/");
-            return;
-          } else {
-            setappointmentData(resultado.data.data);
-          }
-        })
-        .catch((error) => console.log(error));
-    }
+          break;
+      }
   };
-  const [appointmentData, setappointmentData] = useState({});
-
-  const [dropdownState, setDropdownState] = useState({});
 
   const toggleDropdown = (appointmentId) => {
     setDropdownState((prevState) => ({
@@ -123,11 +108,11 @@ export const AppointmentsCard = () => {
 
   useEffect(() => {
     getMyAppointments();
-  }, [credentialsRdx]);
+  }, [credentialsRdx, searchDate]);
 
   return (
     <>
-      {appointmentData.length > 0 ? (
+      {appointmentData ? (
         appointmentData.map((appointment) => (
           <MDBTableBody className="w-100" key={appointment.id}>
             <tr>

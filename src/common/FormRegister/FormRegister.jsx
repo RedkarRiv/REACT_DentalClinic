@@ -236,11 +236,7 @@ export const FormRegister = () => {
                         id="form7"
                         type="date"
                         name="birth_date"
-                        className={
-                          newCredentialsError.birth_dateError === ""
-                            ? "textInput"
-                            :  "textInput errorInput"
-                        }
+                        className="textInput"
                         onChange={(e) => InputHandler(e)}
                         onBlur={(e) => InputCheck(e)}
                       />

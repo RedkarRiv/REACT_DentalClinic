@@ -70,3 +70,12 @@ export const editMe = async (credentialCheck, newUserData) => {
       }
   })
 }
+
+
+export const searchAppointments = async (credentialCheck, criteria) => {
+  return await axios.post(`${root}appointment/sort`, { date: criteria }, {
+    headers: {
+        authorization: "Bearer " + credentialCheck,
+    }
+}) 
+}

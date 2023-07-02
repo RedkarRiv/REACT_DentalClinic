@@ -34,11 +34,15 @@ import { FormAppointment } from "../FormAppointment/FormAppointment";
 import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
 export const CardUserProfile = () => {
   const navigate = useNavigate();
-
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
+  const [criteria, setCriteria] = useState("");
 
+  const criteriaInputHandler = (e) => {
+    setCriteria(e.target.value);
+  };
+  
   const getMyProfile = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
@@ -58,7 +62,7 @@ export const CardUserProfile = () => {
 
   useEffect(() => {
     getMyProfile();
-  }, [credentialsRdx]);
+  }, [credentialsRdx, criteria]);
 
   const [appointmentModal, setAppointmentModal] = useState(false);
 
@@ -237,6 +241,8 @@ export const CardUserProfile = () => {
                       type="date"
                       className="form-control searchFormDesign"
                       placeholder="..."
+                      name="criteria"
+                      onChange={(e) => criteriaInputHandler(e)}
                     />
                     <div className="redesignButton2">Buscar cita</div>
                   </form>
@@ -264,7 +270,7 @@ export const CardUserProfile = () => {
                           <th scope="col">Detalle</th>
                         </tr>
                       </MDBTableHead>
-                      <AppointmentsCard />
+                      <AppointmentsCard searchDate={criteria} />
                     </MDBTable>
                   </MDBCardBody>
                 </MDBCard>
