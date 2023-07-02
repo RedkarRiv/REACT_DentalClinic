@@ -153,9 +153,7 @@ export const AppointmentsCard = ({ searchDate }) => {
                 </MDBBadge>
               </td>
               <td className="dateAppointmentDesign">
-                {moment(appointment?.appointment_date).format(
-                  "YYYY-MM-DD HH:mm"
-                )}
+                {appointment?.appointment_date}
               </td>
               <td>
                 <div

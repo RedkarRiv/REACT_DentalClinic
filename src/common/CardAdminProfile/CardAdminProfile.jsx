@@ -29,12 +29,16 @@ import moment from "moment/moment";
 
 export const CardAdminProfile = () => {
   const navigate = useNavigate();
-
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
 
   const getMyProfile = () => {
+    if (credentialCheck != 3) {
+      navigate("/");
+      return;
+    }
+
     getOneUser(credentialCheck)
       .then((res) => {
         console.log("Esto es el then de getOneUser");
@@ -98,7 +102,9 @@ export const CardAdminProfile = () => {
                 <p className="text-muted mb-1 mt-4">
                   {userData.name} {userData.surname}
                 </p>
-                <p className="text-muted mb-4"> Registro:{" "}
+                <p className="text-muted mb-4">
+                  {" "}
+                  Registro:{" "}
                   {moment(userData.createdAt).format("YYYY-MM-DD HH:mm")}
                 </p>
                 <div className="d-flex justify-content-center mb-2">
@@ -123,7 +129,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                    {userData.name} {userData.surname}{" "}
+                      {userData.name} {userData.surname}{" "}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -134,7 +140,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                    {userData.email}
+                      {userData.email}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -145,7 +151,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
                     <MDBCardText className="text-muted">
-                    {userData.phone}
+                      {userData.phone}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -156,7 +162,7 @@ export const CardAdminProfile = () => {
                   </MDBCol>
                   <MDBCol sm="9" lg="8" className=" d-flex align-items-center">
                     <MDBCardText className="text-muted">
-                    {userData.birth_date}
+                      {userData.birth_date}
                     </MDBCardText>
                   </MDBCol>
                 </MDBRow>
@@ -166,7 +172,10 @@ export const CardAdminProfile = () => {
                     <MDBCardText>Código postal</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">   {userData.cp}</MDBCardText>
+                    <MDBCardText className="text-muted">
+                      {" "}
+                      {userData.cp}
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -176,7 +185,10 @@ export const CardAdminProfile = () => {
                     <MDBCardText>DNI</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9" lg="8">
-                    <MDBCardText className="text-muted">   {userData.dni} </MDBCardText>
+                    <MDBCardText className="text-muted">
+                      {" "}
+                      {userData.dni}{" "}
+                    </MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />

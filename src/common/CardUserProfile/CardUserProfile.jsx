@@ -60,9 +60,12 @@ export const CardUserProfile = () => {
       .catch((error) => console.log(error));
   };
 
+const [resetCriteria, setResetCriteria] = useState("")
+
+
   useEffect(() => {
     getMyProfile();
-  }, [credentialsRdx, criteria]);
+  }, [credentialsRdx]);
 
   const [appointmentModal, setAppointmentModal] = useState(false);
 
@@ -244,7 +247,7 @@ export const CardUserProfile = () => {
                       name="criteria"
                       onChange={(e) => criteriaInputHandler(e)}
                     />
-                    <div className="redesignButton2">Buscar cita</div>
+                    <div className="redesignButton2" onClick={()=>getMyAppointments()}>Reset</div>
                   </form>
                 </MDBListGroupItem>
               </MDBListGroup>

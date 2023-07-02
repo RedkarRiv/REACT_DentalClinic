@@ -103,7 +103,7 @@ export const FormEditAppointment = ({id}) => {
                         type="time"
                         name="appTime"
                         className="textInput"
-                        onChange={(e) => InputHandler(e)}
+                        onBlur={(e) => InputHandler(e)}
                       />
                     </MDBCol>
                   </MDBRow>
