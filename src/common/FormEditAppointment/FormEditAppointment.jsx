@@ -106,6 +106,7 @@ const appointCancelMeHandler = () => {
                         size="lg"
                         id="form2"
                         type="date"
+                        min={moment().format('YYYY-MM-DD')}
                         name="appDate"
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
