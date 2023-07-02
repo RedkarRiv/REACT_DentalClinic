@@ -21,21 +21,24 @@ export const ProfileButton = ({ avatarImage }) => {
       setNewName(credentialsRdx.credentials.user.email);
     }
   }, [credentialsRdx]);
-
   const logOut = () => {
     dispatch(userout());
   navigate("/")
   };
-
+console.log(credentialsRdx?.credentials?.user?.roleId)
   return (
     <div className="profileButtonCardDesign">
-      <div className="profileAvatar ps-2 pe-2">
+      <div className="profileAvatar ps-2 pe-2"  onClick={
+              credentialsRdx?.credentials?.user?.roleId == 3 ?
+              () => navigate("/managerprofile")
+              :
+              () => navigate("/userprofile")
+            }>
         <div className="avatarImage">
           <img
             className="avatarImageDesign"
             src={avatarImage ? avatarImage : defaultProfileImage}
             alt="Avatar Profile Image"
-            onClick={() => navigate("/")}
           />
         </div>
         <div className="profileName">ÁREA CLIENTE</div>

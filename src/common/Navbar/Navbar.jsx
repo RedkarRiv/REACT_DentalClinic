@@ -36,18 +36,6 @@ export const Navbar2Boots = () => {
           >
             Home
           </Nav.Link>
-          <Nav.Link
-            className="text-light menuItem"
-            onClick={() => navigate("/userprofile")}
-          >
-            Perfil Usuario
-          </Nav.Link>
-          <Nav.Link
-            className="text-light menuItem"
-            onClick={() => navigate("/managerprofile")}
-          >
-            Perfil Admin
-          </Nav.Link>
         </Nav>
         <Nav className="loginDesignAjust ">
           {newToken? (

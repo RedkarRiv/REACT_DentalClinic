@@ -51,6 +51,7 @@ export const CardUserProfile = () => {
         console.log("Esto es el nombre del usuario");
         console.log(resultado.data.data);
         if (resultado.data.message == "Token invalido") {
+          console.log(resultado.data.data)
           navigate("/");
           return;
         } else {
@@ -108,6 +109,8 @@ const [resetCriteria, setResetCriteria] = useState("")
                 <div className="text-muted mb-4 mt-4">
                   {userData.name} {userData.surname}
                 </div>
+
+
                 <div className="d-flex justify-content-center mb-2">
                   <div
                     className="redesignButton"
@@ -159,6 +162,12 @@ const [resetCriteria, setResetCriteria] = useState("")
                       </MDBModalContent>
                     </MDBModalDialog>
                   </MDBModal>
+
+
+
+
+
+                  
                 </div>
               </MDBCardBody>
             </MDBCard>

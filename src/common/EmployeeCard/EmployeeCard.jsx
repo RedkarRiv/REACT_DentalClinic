@@ -52,9 +52,9 @@ export const EmployeeCard = ({
         <td className="mb-1">
         <p>{dni}</p>
           </td>
-        <td>
+        {/* <td>
           <div className="viewButtonDesign">Ver</div>
-        </td>
+        </td> */}
       </tr>
     </MDBTableBody>
   );

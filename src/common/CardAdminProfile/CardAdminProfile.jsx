@@ -19,6 +19,12 @@ import {
   MDBTableHead,
   MDBTable,
   MDBTableBody,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
 } from "mdb-react-ui-kit";
 import { useNavigate } from "react-router-dom";
 import { EmployeeCard } from "../EmployeeCard/EmployeeCard";
@@ -26,35 +32,37 @@ import { bringAllUsers, getOneUser } from "../../services/apiCall";
 import { useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
 import moment from "moment/moment";
+import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
 
 export const CardAdminProfile = () => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
-
   const getMyProfile = () => {
-    if (credentialCheck != 3) {
+
+
+
+    if (credentialsRdx?.credentials?.user?.roleId !== 3) {
       navigate("/");
       return;
+    } else {
+      getOneUser(credentialCheck)
+        .then((res) => {
+          console.log("Esto es el then de getOneUser");
+          console.log(res);
+          console.log("Esto es el nombre del usuario");
+          console.log(res.data.data);
+          if (res.data.data == "Token invalido" || !res.data.data) {
+            navigate("/");
+            return;
+          } else {
+            setUserData(res.data.data);
+          }
+        })
+        .catch((error) => console.log(error));
     }
-
-    getOneUser(credentialCheck)
-      .then((res) => {
-        console.log("Esto es el then de getOneUser");
-        console.log(res);
-        console.log("Esto es el nombre del usuario");
-        console.log(res.data.data);
-        if (res.data.data == "Token invalido" || !res.data.data) {
-          navigate("/");
-          return;
-        } else {
-          setUserData(res.data.data);
-        }
-      })
-      .catch((error) => console.log(error));
   };
-
   useEffect(() => {
     getMyProfile();
   }, [credentialsRdx]);
@@ -69,6 +77,9 @@ export const CardAdminProfile = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const [userEditModal, setUserEditeModal] = useState(false);
+
+  const activateuserEditModal = () => setUserEditeModal(!userEditModal);
   return (
     <section style={{ backgroundColor: "#eee" }}>
       <MDBContainer className="py-5">
@@ -107,17 +118,45 @@ export const CardAdminProfile = () => {
                   Registro:{" "}
                   {moment(userData.createdAt).format("YYYY-MM-DD HH:mm")}
                 </p>
+
+
                 <div className="d-flex justify-content-center mb-2">
-                  <div className="redesignButtonAdmin">Editar</div>
+
+                  <div
+                    className="redesignButton"
+                    onClick={activateuserEditModal}
+                  >
+                    Editar
+                  </div>
+
+                  <MDBModal
+                    show={userEditModal}
+                    setShow={setUserEditeModal}
+                    tabIndex="-1"
+                  >
+                    <MDBModalDialog className="editUserModalDesign">
+                      <MDBModalContent>
+                        <MDBModalHeader>
+                          <MDBModalTitle className="titleModalLogin">
+                            EDITAR USUARIO{" "}
+                          </MDBModalTitle>
+                        </MDBModalHeader>
+                        <MDBModalBody>
+                          <FormEditProfile />
+                        </MDBModalBody>
+                      </MDBModalContent>
+                    </MDBModalDialog>
+                  </MDBModal>
                 </div>
-                <div className="d-flex justify-content-center mb-2">
+
+                {/* <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButtonAdmin">Crear tratamiento</div>
                   <div className="redesignButtonAdmin">Crear empleado</div>
                 </div>
                 <div className="d-flex justify-content-center mb-2">
                   <div className="redesignButtonAdmin">Editar tratamiento</div>
                   <div className="redesignButtonAdmin">Editar empleado</div>
-                </div>
+                </div> */}
               </MDBCardBody>
             </MDBCard>
 
@@ -199,7 +238,7 @@ export const CardAdminProfile = () => {
             <MDBCard className="mb-4">
               <MDBListGroup className="rounded-3">
                 <MDBListGroupItem className="d-flex justify-content-center align-items-center p-3">
-                  <form className="d-flex input-group w-100">
+                  {/* <form className="d-flex input-group w-100">
                     <input
                       type="search"
                       className="form-control searchFormDesign"
@@ -207,7 +246,7 @@ export const CardAdminProfile = () => {
                       aria-label="Search"
                     />
                     <div className="redesignButton2">Buscar usuario</div>
-                  </form>
+                  </form> */}
                 </MDBListGroupItem>
               </MDBListGroup>
             </MDBCard>
@@ -232,7 +271,7 @@ export const CardAdminProfile = () => {
                           <th scope="col">Email</th>
                           <th scope="col">Phone</th>
                           <th scope="col">DNI</th>
-                          <th scope="col">Detalle</th>
+                          {/* <th scope="col">Detalle</th> */}
                         </tr>
                       </MDBTableHead>
                       {users.length > 0 ? (
