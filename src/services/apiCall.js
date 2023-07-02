@@ -81,3 +81,9 @@ export const searchAppointments = async (credentialCheck, criteria) => {
     }
 }) 
 }
+
+export const getAllEmployees = async () => {
+  return await axios.get(`${root}employees/all`);
+};
+
+

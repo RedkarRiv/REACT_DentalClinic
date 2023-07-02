@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CheckError } from "../../services/useful";
 import { useDispatch, useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
-import { getOneUser, appointMe } from "../../services/apiCall";
+import { getOneUser, appointMe, getAllEmployees } from "../../services/apiCall";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 
@@ -70,12 +70,35 @@ export const FormAppointment = () => {
   };
 
   const [newAppointment, setNewAppointment] = useState({
-    employee_id: doctorSelected?.value,
+    employee_id: "",
     appointment_date: "",
     treatment: treatmentSelected?.value,
     comments: "",
     status: "Concertada",
   });
+
+  const [doctorList, setDoctorList] = useState([])
+
+
+
+  useEffect(() => {
+    getAllEmployees()
+    .then((resultado) => {
+      console.log("Esto es el resultado de traer todos los doctores ----------------------")
+      console.log(resultado.data.data);
+      setDoctorList(resultado.data.data)
+    })
+    .catch((error) =>{
+      console.log(error)
+    });
+
+  }, []);
+
+
+
+
+
+
 
   const treatmentsDropdown = [
     { value: 1, label: "Consulta", name: "treatment" },
@@ -154,9 +177,7 @@ export const FormAppointment = () => {
                       <Select
                         wrapperClass="mb-4"
                         placeholder="Escoge un doctor"
-                        options={doctorDropdown}
-                        value={doctorDropdown.value}
-                        name="employee_id"
+                        options={doctorList.map(doctor => ({ value: doctor.id, label: doctor.User.name + " " + doctor.User.surname, name:"employee_id"  }))}                        
                         onChange={InputHandlerSelect}
                       />
                     </MDBCol>
