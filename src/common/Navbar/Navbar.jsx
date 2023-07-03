@@ -30,12 +30,6 @@ export const Navbar2Boots = () => {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="flex-row">
         <Nav className="w-100 d-flex justify-content-center menuNavbarLinksDesign">
-          <Nav.Link
-            className="text-light menuItem"
-            onClick={() => navigate("/")}
-          >
-            Home
-          </Nav.Link>
         </Nav>
         <Nav className="loginDesignAjust ">
           {newToken? (

@@ -1,36 +1,162 @@
 .homeBackground {
-  min-height: 100vh;
+  height: 100vh;
   width: 100vw;
-  background-color: rgb(107, 107, 220);
+  background-color: rgb(181, 181, 235);
   background-size: cover;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-.cardGridContainer {
-  width: 70%;
-  height: auto;
-  background-color: rgb(215, 210, 210);
-  border-radius: 0.8em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   justify-content: flex-start;
   align-items: center;
-  margin-bottom: 2em;
-  border: 0.1em solid black
+  padding-top: 5%;
+  flex-direction: column;
+
 }
 
+.homeBodyContainer {
+  margin-top: 6%;
+  overflow-x: hidden;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+.slide1Container {
+  border-radius: 0.5em;
+width: 60%;
+height: 50%;
+margin-bottom: 5%;
 
-.gridContainer {
+}
+
+.slide2Container {
+  border-radius: 0.5em;
+width: 60%;
+height: 80%;
+margin-top: 2%;
+margin-bottom: 2%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+#carouselExampleSlidesOnly {
+border-radius: 0.5em;
+width: 100%;
+height: auto;
+}
+
+.infoButtonHomeDesign {
+background: rgb(29, 1, 169);
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 2em;
   display: flex;
   justify-content: center;
-  padding-top: 6em;
-  
+  flex-direction: column;
 }
 
-.employeeCardContainer {
-  border: 0.1em solid black;
-width: 100%;
+.titleButtonDesign {
+  color: white;
+  width: 100%;
+  text-align: center;
+  border-bottom: white 0.05em solid;
+  font-weight: bold;
+  font-size: 200%;
+}
+
+.bodyButtonDesign {
+  color: white;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.mapButtonDesign {
+  border-left: white solid 0.1em;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapButtonDesign img{
+  width: 50%;
+}
+
+.contactButtonDesign {
+  border-right: white solid 0.1em;
+  width: 50%;
+  height: 100%;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+flex-direction: column;
+padding-left: 13%;
+}
+
+
+
+@media (max-width: 768px) {
+
+  .contactButtonDesign {
+    padding: 1%;
+    font-size: 80%
+  }
+  .slide1Container {
+    border-radius: 0.5em;
+  width: 100%;
+  margin-bottom: 5%;
+    }
+  
+  .slide2Container {
+    border-radius: 0.5em;
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  
+  }
+
+
+
+
+
+
+  .titleButtonDesign {
+    font-size: 100%;
+  }
+  .infoButtonHomeDesign {
+    width: 90%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding: 2%;
+    border-radius: 0.5em;
+  }
+
+  #carouselExampleSlidesOnly {
+    width: 100%;
+    height: 40%;
+  }
+  .imgContainerDesign  {
+    width:  100%;
+    display: flex;
+justify-content: center;
+align-items: center;
+overflow-x: hidden;
+margin-top: 5%;
+
+    }
+.imgContainerDesign img {
+transform: scale(0.18);
+}
+.homeBodyContainer {
+  margin-top: 0;
+}
+.homeBackground {
+  padding-top: 20%
+
+}
 }
