@@ -1,5 +1,5 @@
 .homeBackground {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: rgb(181, 181, 235);
   background-size: cover;
@@ -8,7 +8,7 @@
   align-items: center;
   padding-top: 5%;
   flex-direction: column;
-
+overflow-x: hidden;
 }
 
 .homeBodyContainer {
@@ -22,7 +22,7 @@ align-items: center;
   border-radius: 0.5em;
 width: 60%;
 height: 50%;
-margin-bottom: 5%;
+margin-bottom: 2%;
 
 }
 
@@ -81,6 +81,7 @@ background: rgb(29, 1, 169);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2%;
 }
 
 .mapButtonDesign img{
@@ -88,7 +89,6 @@ background: rgb(29, 1, 169);
 }
 
 .contactButtonDesign {
-  border-right: white solid 0.1em;
   width: 50%;
   height: 100%;
 display: flex;
