@@ -101,10 +101,17 @@ padding-left: 13%;
 
 
 @media (max-width: 768px) {
-
+  .infoButtonHomeDesign {
+height: 70%;  }
   .contactButtonDesign {
-    padding: 1%;
-    font-size: 80%
+    padding-left: 13%;
+    height: auto;
+    font-size: 80%;
+    width: 100%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
   }
   .slide1Container {
     border-radius: 0.5em;
@@ -120,7 +127,16 @@ padding-left: 13%;
   
   }
 
+  .mapButtonDesign {
+    width: 0%;
+    border: none;
 
+  }
+  
+  .mapButtonDesign img{
+    width: 0%;
+  }
+  
 
 
 
