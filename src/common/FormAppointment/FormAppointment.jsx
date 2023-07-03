@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { CheckError } from "../../services/useful";
 import { useDispatch, useSelector } from "react-redux";
 import { userDataCheck } from "../../pages/userSlice";
-import { getOneUser, appointMe, getAllEmployees, getAllTreatments } from "../../services/apiCall";
+import {
+  getOneUser,
+  appointMe,
+  getAllEmployees,
+  getAllTreatments,
+} from "../../services/apiCall";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
 import moment from "moment/moment";
@@ -29,35 +34,34 @@ export const FormAppointment = () => {
     setNewAppointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-      appointment_date: `${prevState.appDate} ${prevState.appTime}`
-
+      appointment_date: `${prevState.appDate} ${prevState.appTime}`,
     }));
   };
 
   const InputHandlerSelect = (e) => {
-  
+    console.log("esto es el e --------------------");
+    console.log(e);
     setNewAppointment((prevValues) => ({
       ...prevValues,
       [e.name]: e.value,
     }));
   };
 
-
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
 
   const appointMeHandler = () => {
-   
+
     appointMe(credentialCheck, newAppointment)
       .then((resultado) => {
-        setErrorMessage(resultado.data.message)
+        setErrorMessage(resultado.data.message);
         setTimeout(() => {
           navigate("/userprofile");
         }, 500);
       })
-      .catch((error) =>{
-        console.log(error)
+      .catch((error) => {
+        console.log(error);
       });
   };
 
@@ -69,40 +73,33 @@ export const FormAppointment = () => {
     status: "Concertada",
   });
 
-  const [doctorList, setDoctorList] = useState([])
+  const [doctorList, setDoctorList] = useState([]);
 
-  const [treatmentList, setTreatmentList] = useState([])
-
+  const [treatmentList, setTreatmentList] = useState([]);
 
   useEffect(() => {
     getAllEmployees()
-    .then((resultado) => {
-   
-      setDoctorList(resultado.data.data)
-    })
-    .catch((error) =>{
-      console.log(error)
-    });
-
+      .then((resultado) => {
+        setDoctorList(resultado.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   useEffect(() => {
     getAllTreatments()
-    .then((resultado) => {
-     
-      setTreatmentList(resultado.data.data)
-    })
-    .catch((error) =>{
-      console.log(error)
-    });
-
+      .then((resultado) => {
+        setTreatmentList(resultado.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
-
 
   const checkUserData = () => {
     getOneUser(credentialCheck)
       .then((resultado) => {
-       
         if (resultado.data.message == "Token invalido") {
           return;
         } else {
@@ -142,7 +139,11 @@ export const FormAppointment = () => {
                       <Select
                         wrapperClass="mb-4"
                         placeholder="Escoge un tratamiento"
-                        options={treatmentList.map(treatment => ({ value: treatment.id, label: treatment.name, name:"treatment"  }))}                        
+                        options={treatmentList.map((treatment) => ({
+                          value: treatment.id,
+                          label: treatment.name,
+                          name: "treatment",
+                        }))}
                         onChange={InputHandlerSelect}
                       />
                     </MDBCol>
@@ -153,7 +154,11 @@ export const FormAppointment = () => {
                       <Select
                         wrapperClass="mb-4"
                         placeholder="Escoge un doctor"
-                        options={doctorList.map(doctor => ({ value: doctor.id, label: doctor.User.name + " " + doctor.User.surname, name:"employee_id"  }))}                        
+                        options={doctorList.map((doctor) => ({
+                          value: doctor.id,
+                          label: doctor.User.name + " " + doctor.User.surname,
+                          name: "employee_id",
+                        }))}
                         onChange={InputHandlerSelect}
                       />
                     </MDBCol>
@@ -167,7 +172,7 @@ export const FormAppointment = () => {
                         id="form2"
                         type="date"
                         name="appDate"
-                        min={moment().format('YYYY-MM-DD')}
+                        min={moment().format("YYYY-MM-DD")}
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
                       />

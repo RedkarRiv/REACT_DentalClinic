@@ -15,25 +15,26 @@ import {
 } from "mdb-react-ui-kit";
 import "./FormEditAppointment.css";
 
-export const FormEditAppointment = ({id}) => {
+export const FormEditAppointment = ({ id, date }) => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const credentialsRdx = useSelector(userDataCheck);
   const credentialCheck = credentialsRdx?.credentials?.token;
-  const [editAppointment, setEditAppointment] = useState({});
+  const [editAppointment, setEditAppointment] = useState({
+    date: "" || date,
+  });
+  console.log("esto es la date");
+  console.log(date);
 
   const InputHandler = (e) => {
     setEditAppointment((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
-      appointment_date: `${prevState.appDate} ${prevState.appTime}`
+      appointment_date: `${prevState.appDate} ${prevState.appTime}`,
     }));
   };
 
-
-
   const appointEditMeHandler = () => {
-   
     editMyAppoint(credentialCheck, editAppointment, id)
       .then((resultado) => {
         setTimeout(() => {
@@ -43,19 +44,15 @@ export const FormEditAppointment = ({id}) => {
       .catch((error) => console.log(error));
   };
 
-const appointCancelMeHandler = () => {
-  setEditAppointment({
-    status:"Anulada",
-  appointment_date: "2020-00-00 12:00",
-  })
-  editMyAppoint(credentialCheck, editAppointment, id)
-  .then((resultado) => {
-   
-
-  })
-  .catch((error) => console.log(error));
-}
-
+  const appointCancelMeHandler = () => {
+    setEditAppointment({
+      status: "Anulada",
+      appointment_date: "2020-00-00 12:00",
+    });
+    editMyAppoint(credentialCheck, editAppointment, id)
+      .then((resultado) => {})
+      .catch((error) => console.log(error));
+  };
 
   const checkUserData = () => {
     getOneUser(credentialCheck)
@@ -101,7 +98,8 @@ const appointCancelMeHandler = () => {
                         size="lg"
                         id="form2"
                         type="date"
-                        min={moment().format('YYYY-MM-DD')}
+                        value={date.split(" ")[0]}
+                        min={moment().format("YYYY-MM-DD")}
                         name="appDate"
                         className="textInput"
                         onChange={(e) => InputHandler(e)}
@@ -146,7 +144,7 @@ const appointCancelMeHandler = () => {
                     >
                       Editar cita
                     </div>
-                      {/* <div
+                    {/* <div
                         className="sendButtonEditAppointmentDesign"
                         onClick={appointCancelMeHandler}
                       >

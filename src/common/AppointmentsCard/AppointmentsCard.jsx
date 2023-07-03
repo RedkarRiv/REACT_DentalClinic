@@ -213,7 +213,7 @@ export const AppointmentsCard = ({ searchDate }) => {
                                   </MDBModalTitle>
                                 </MDBModalHeader>
                                 <MDBModalBody>
-                                  <FormEditAppointment id={appointment.id} />
+                                  <FormEditAppointment id={appointment.id} date={appointment.appointment_date} />
                                 </MDBModalBody>
                               </MDBModalContent>
                             </MDBModalDialog>
