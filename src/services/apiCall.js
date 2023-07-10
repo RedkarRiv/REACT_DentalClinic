@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const root = "http://localhost:3000/";
+const root = "https://clinica-dental-back-end-crs.vercel.app/";
 
 export const bringAllUsers = async (credentialCheck) => {
   return await axios.get(`${root}users/all`, {

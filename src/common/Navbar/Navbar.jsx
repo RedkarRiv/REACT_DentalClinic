@@ -32,6 +32,9 @@ export const Navbar2Boots = () => {
         <Nav className="w-100 d-flex justify-content-center menuNavbarLinksDesign">
         </Nav>
         <Nav className="loginDesignAjust ">
+
+
+
           {newToken? (
             <div className="profileButtonContainer">
               <ProfileButton avatarImage={avatarImageLink} />
@@ -41,6 +44,11 @@ export const Navbar2Boots = () => {
               <LoginRegisterButtons />
             </div>
           )}
+
+
+
+
+          
         </Nav>
       </Navbar.Collapse>
     </Navbar>
