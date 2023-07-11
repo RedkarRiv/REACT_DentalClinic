@@ -1,17 +1,15 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.css';
+import "bootstrap/dist/css/bootstrap.css";
 import { Body } from "./pages/Body/Body";
-  import { Navbar2Boots } from "./common/Navbar/Navbar";
-  import cors from 'cors';
-  App.use(cors());
+import { Navbar2Boots } from "./common/Navbar/Navbar";
 
 function App() {
   return (
     <>
-      <Navbar2Boots/>
-      <Body/>
+      <Navbar2Boots />
+      <Body />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
