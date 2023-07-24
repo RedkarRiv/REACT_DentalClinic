@@ -1,0 +1,25 @@
+.serviceCardDesign {
+    border-radius: 1em;
+    background-color: rgb(3, 3, 70);
+    color: white;
+    font-weight: bold;
+    width: 10em;
+    user-select: none;
+    cursor: pointer;
+    font-size: 80%;
+}
+
+.serviceCardDesign:hover {
+    background-color: white;
+    color: black;
+}
+
+.serviceCardDesign:active {
+transform: scale(0.9);
+}
+
+@media (max-width:768px) {
+    .serviceCardDesign {
+font-size: 80%;
+    }
+}

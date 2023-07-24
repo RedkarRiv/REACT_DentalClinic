@@ -1,182 +1,93 @@
-.homeBackground {
-  min-height: 100vh;
-  width: 100vw;
-  background-color: rgb(181, 181, 235);
+.imageSlide {
+  background-image: url("https://redkarstorage.blob.core.windows.net/dental-clinic-fsd/mujer-dentista-sonriente-uniforme-hablando-adolescente-clinica-dental.jpg");
   background-size: cover;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-top: 5%;
-  flex-direction: column;
-overflow-x: hidden;
-}
-
-.homeBodyContainer {
-  margin-top: 6%;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 90vh;
+  width: 100vw;
   overflow-x: hidden;
-  display: flex;
-justify-content: center;
-align-items: center;
-}
-.slide1Container {
-  border-radius: 0.5em;
-width: 50%;
-height: 50%;
-margin-bottom: 2%;
-
 }
 
-.slide2Container {
-  border-radius: 0.5em;
-width: 50%;
-height: 60%;
-margin-top: 2%;
-margin-bottom: 2%;
-display: flex;
-justify-content: center;
-align-items: center;
-
+.cardSlide  {
+border: yellow solid 1em;
+min-height: 90vh;
+padding: 2em;
 }
-#carouselExampleSlidesOnly {
-border-radius: 0.5em;
-width: 100%;
-height: auto;
-}
-
-#carouselExampleSlidesOnly img {
-  border-radius: 0.3em;
-  }
-
-.infoButtonHomeDesign {
-background: rgb(29, 1, 169);
-  width: 100%;
-  height: 100%;
-  border-radius: 2em;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.titleButtonDesign {
-  color: white;
-  width: 100%;
-  text-align: center;
-  border-bottom: white 0.05em solid;
-  font-weight: bold;
-  font-size: 200%;
-}
-
-.bodyButtonDesign {
-  color: white;
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.mapButtonDesign {
-  border-left: white solid 0.1em;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2%;
-}
-
-.mapButtonDesign img{
-  width: 50%;
-}
-
-.contactButtonDesign {
-  width: 50%;
-  height: 100%;
-display: flex;
-justify-content: center;
-align-items: flex-start;
-flex-direction: column;
-padding-left: 13%;
-}
-
-
 
 @media (max-width: 768px) {
-  .infoButtonHomeDesign {
-height: 70%;  }
-  .contactButtonDesign {
-    padding-left: 13%;
-    height: auto;
-    font-size: 80%;
-    width: 100%;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+  .imageSlide {
+    margin: 0;
+    padding-top: 25%;
   }
-  .slide1Container {
-    border-radius: 0.5em;
+  .serviceCardContainer {
+    margin: 0;
+    margin-bottom: 2em;
+  }
+  .teamCardDesign {
+    font-size: 70%;
+  }
+}
+
+.homeClaimSlide {
+  background-color: rgb(199, 199, 205);
+  height: 100vh;
+  padding-top: 15em;
+  padding-bottom: 5em;
+}
+
+.titleServices {
+  font-size: 150%;
+  color: white;
+  font-weight: bold;
   width: 100%;
-  margin-bottom: 5%;
-    }
-  
-  .slide2Container {
-    border-radius: 0.5em;
+  text-align: center;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+.serviceCardContainer {
+  background-color: #053c8fdd;
+  border-radius: 1em;
+  padding: 0.5em;
+  width: 80%;
+}
+
+.titleUSP {
+  font-size: 120%;
+  color: white;
+  font-weight: bold;
   width: 100%;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  
-  }
-
-  .mapButtonDesign {
-    width: 0%;
-    border: none;
-
-  }
-  
-  .mapButtonDesign img{
-    width: 0%;
-  }
-  
-
-
-
-
-  .titleButtonDesign {
-    font-size: 100%;
-  }
-  .infoButtonHomeDesign {
-    width: 90%;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    padding: 2%;
-    border-radius: 0.5em;
-  }
-
-  #carouselExampleSlidesOnly {
-    width: 100%;
-    height: 40%;
-  }
-  .imgContainerDesign  {
-    width:  100%;
-    display: flex;
-justify-content: center;
-align-items: center;
-overflow-x: hidden;
-margin-top: 5%;
-
-    }
-.imgContainerDesign img {
-transform: scale(0.18);
+  text-align: center;
 }
-.homeBodyContainer {
-  margin-top: 0;
-}
-.homeBackground {
-  padding-top: 20%
 
+.USPCardContainer {
+  background-color: #273750;
+  padding: 0.5em;
+  height: 10vh;
 }
+
+.teamCardDesign {
+  background-color: red;
+  border-radius: 1em;
+  color: white;
+  text-align: center;
+}
+
+.colCheck {
+  border: green solid 1em;
+  height: 90vh;
+}
+
+.callUsDesign {
+  background-color: rgb(255, 255, 255);
+  border-radius: 2em;
+  color:#273750; 
+  font-size: 180%;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  box-shadow: 0.05em 0.1em 0.3em rgba(0, 0, 0, 0.774);
+  font-weight: bold;
 }

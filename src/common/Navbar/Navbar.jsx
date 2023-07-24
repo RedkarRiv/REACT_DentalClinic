@@ -20,7 +20,7 @@ export const Navbar2Boots = () => {
 
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="p-3" id="navbarRisaldent">
+    <Navbar collapseOnSelect expand="lg" className="p-3 px-md-5" id="navbarRisaldent">
       <Navbar.Brand
         onClick={() => navigate("/")}
         className="text-light logoSelectDesign"
