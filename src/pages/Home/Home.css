@@ -9,9 +9,12 @@
 }
 
 .cardSlide  {
-border: yellow solid 1em;
+  border: yellow solid 0.1em;
 min-height: 90vh;
 padding: 2em;
+padding-top:7em;
+padding-bottom: 2em;
+margin: 0;
 }
 
 .homeClaimSlide {
@@ -38,6 +41,7 @@ padding: 2em;
   width: 80%;
 }
 
+
 .titleUSP {
   font-size: 120%;
   color: white;
@@ -60,7 +64,7 @@ padding: 2em;
 }
 
 .colCheck {
-  border: green solid 1em;
+  border: green solid 0.1em;
   height: auto;
 }
 
@@ -69,7 +73,7 @@ padding: 2em;
   border-radius: 2em;
   color:#273750; 
   font-size: 160%;
-  width: 100%;
+  width: auto;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 0.5em;
@@ -77,6 +81,25 @@ padding: 2em;
   box-shadow: 0.05em 0.1em 0.3em rgba(0, 0, 0, 0.774);
   font-weight: bold;
 }
+
+
+.registerClaimDesign {
+  background-color: rgb(199, 29, 29);
+  border-radius: 2em;
+  color:white; 
+  font-size: 160%;
+  width: auto;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  box-shadow: 0.05em 0.1em 0.3em rgba(0, 0, 0, 0.774);
+  font-weight: bold;
+
+
+
+}
+
 
 
 @media (max-width: 768px) {
@@ -96,8 +119,12 @@ padding: 2em;
   .callUsDesign {
 font-size: 100%;
   }
+  .registerClaimDesign {
+    font-size: 100%;
+  }
   .cardSlide  {
     padding: 0em;
+    margin-top: 6em;
     }
 
 }

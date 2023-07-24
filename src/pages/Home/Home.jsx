@@ -9,14 +9,19 @@ export const Home = () => {
   return (
     <Container fluid className="p-0 m-0">
       <Row className="imageSlide p-0 m-0 d-flex justify-content-around align-items-center">
-        <Col className="colCheck pt-5 m-0 col-11 col-md-8 d-flex flex-column justify-content-end align-items-center"></Col>
-        <Col className="cardSlide col-11 col-md-4 d-flex flex-column justify-content-around align-items-center m-0">
-          <Row className="w-100 p-0 m-0">
-            <Col className="callUsDesign d-flex justify-content-center align-items-center">
-            📞  Llámanos al 900 00 00 00
+      <Col className="cardSlide col-11 col-md-4 d-flex flex-column justify-content-between align-items-center">
+      <Row className="w-100 p-0 my-2">
+            <Col className="registerClaimDesign d-flex justify-content-center align-items-center">
+            😁  Pide cita
             </Col>
           </Row>
-          <Row className="serviceCardContainer d-flex flex-column justify-content-center align-items-center">
+          <Row className="w-100 p-0 my-2">
+            <Col className="callUsDesign d-flex justify-content-center align-items-center">
+            📞 900 00 00 00
+            </Col>
+          </Row>
+
+          <Row className="serviceCardContainer d-flex flex-column justify-content-center align-items-center my-2">
             <Row className="titleServices d-flex justify-content-center align-items-center m-0">
               NUESTROS SERVICIOS
             </Row>
@@ -36,6 +41,8 @@ export const Home = () => {
             <ServicesCard service_name="Dentaduras" />
           </Row>
         </Col>
+        <Col className="colCheck pt-5 m-0 col-11 col-md-8 d-flex flex-column justify-content-end align-items-center"></Col>
+
       </Row>
 
       <Row className="USPCardContainer m-0 p-3 w-100">
