@@ -13,7 +13,7 @@ export const Home = () => {
         <Col className="cardSlide col-11 col-md-4 d-flex flex-column justify-content-around align-items-center m-0">
           <Row className="w-100 p-0 m-0">
             <Col className="callUsDesign d-flex justify-content-center align-items-center">
-            Llámanos al 900 00 00 00
+            📞  Llámanos al 900 00 00 00
             </Col>
           </Row>
           <Row className="serviceCardContainer d-flex flex-column justify-content-center align-items-center">

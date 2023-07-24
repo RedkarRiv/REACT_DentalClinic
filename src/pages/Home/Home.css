@@ -14,20 +14,6 @@ min-height: 90vh;
 padding: 2em;
 }
 
-@media (max-width: 768px) {
-  .imageSlide {
-    margin: 0;
-    padding-top: 25%;
-  }
-  .serviceCardContainer {
-    margin: 0;
-    margin-bottom: 2em;
-  }
-  .teamCardDesign {
-    font-size: 70%;
-  }
-}
-
 .homeClaimSlide {
   background-color: rgb(199, 199, 205);
   height: 100vh;
@@ -75,14 +61,14 @@ padding: 2em;
 
 .colCheck {
   border: green solid 1em;
-  height: 90vh;
+  height: auto;
 }
 
 .callUsDesign {
   background-color: rgb(255, 255, 255);
   border-radius: 2em;
   color:#273750; 
-  font-size: 180%;
+  font-size: 160%;
   width: 100%;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -90,4 +76,28 @@ padding: 2em;
   padding-right: 0.5em;
   box-shadow: 0.05em 0.1em 0.3em rgba(0, 0, 0, 0.774);
   font-weight: bold;
+}
+
+
+@media (max-width: 768px) {
+  .imageSlide {
+    margin: 0;
+    padding-top: 25%;
+  }
+  .serviceCardContainer {
+    margin: 0;
+    margin-bottom: 2em;
+    width: 100%;
+
+  }
+  .teamCardDesign {
+    font-size: 70%;
+  }
+  .callUsDesign {
+font-size: 100%;
+  }
+  .cardSlide  {
+    padding: 0em;
+    }
+
 }
